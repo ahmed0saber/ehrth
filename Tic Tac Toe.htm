@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Tic Tac Toe</title>
+<style>
+input[type="button"]
+{height:100px;
+width:100px;
+margin:5px 5px 5px 5px;
+background-color:#FFFFAA;
+color: black; 
+border: 2px solid #4CAF50;
+transition-duration: 0.5s;
+cursor: pointer;
+border-radius:5px;
+font-size: 50px;}
+input[type="button"]:hover {background-color: #4CAF50;
+color: white;
+border: 2px solid #000000;}
+#play {display:none;
+height:500px;
+width:400px;
+position:absolute;
+top:25%;
+left:25%;
+text-align:center;
+box-shadow:0px 0px 10px #000000;
+background-color:#B8EEF8;}
+#start {position:absolute;
+height:500px;
+width:400px;
+top:25%;
+left:25%;
+text-align:center;
+box-shadow:0px 0px 10px #000000;
+background-color:#B8EEF8;}
+#go0 {height:50px;
+width:200px;
+margin:100px 10px 10px 10px;
+background-color:#FFFFAA;
+color: black; 
+border: 2px solid #4CAF50;
+transition-duration: 0.5s;
+cursor: pointer;
+border-radius:25px;}
+#go0:hover {background-color: #4CAF50;
+color: white;
+border: 2px solid #000000;}
+#back0 {height:50px;
+width:200px;
+margin:20px 10px 40px 10px;
+background-color:#FFFFAA;
+color: black; 
+border: 2px solid #4CAF50;
+transition-duration: 0.5s;
+cursor: pointer;
+border-radius:25px;}
+#back0:hover {background-color: #4CAF50;
+color: white;
+border: 2px solid #000000;}
+#p1 {margin:25px 10px 0px 10px;
+font-size: 20px;}
+#p2 {margin:0px 10px 0px 10px;}
+</style>
+<script>
+var turn=0;
+function done(x){if(turn==0){document.getElementById(x).disabled=true;
+turn=1;
+document.getElementById(x).value="X";}
+else if(turn==1){document.getElementById(x).disabled=true;
+turn=0;
+document.getElementById(x).value="O";}}
+function go(){document.getElementById("play").style.display = "block";
+document.getElementById("start").style.display = "none";}
+function back(){document.getElementById("start").style.display = "block";
+document.getElementById("play").style.display = "none";}
+</script>
+</head>
+<body>
+<div id="start">
+<p id="p1"><b>Tic Tac Toe</b></p><br/>
+<p id="p2">2 Players</p><br/>
+<button onclick="go()" id="go0">Start</button>
+</div>
+<div id="play">
+<button onclick="back()" id="back0">Back</button>
+<table align="center">
+<tr>
+<td><input type="button" value="" onclick="done('b1')" id="b1"/></td>
+<td><input type="button" value="" onclick="done('b2')" id="b2"/></td>
+<td><input type="button" value="" onclick="done('b3')" id="b3"/></td>
+</tr>
+<tr>
+<td><input type="button" value="" onclick="done('b4')" id="b4"/></td>
+<td><input type="button" value="" onclick="done('b5')" id="b5"/></td>
+<td><input type="button" value="" onclick="done('b6')" id="b6"/></td>
+</tr>
+<tr>
+<td><input type="button" value="" onclick="done('b7')" id="b7"/></td>
+<td><input type="button" value="" onclick="done('b8')" id="b8"/></td>
+<td><input type="button" value="" onclick="done('b9')" id="b9"/></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
