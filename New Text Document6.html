@@ -1,0 +1,398 @@
+<html>
+<head>
+<title>2048 puzzle</title>
+<style>
+table , tr , td{
+border : 2px solid black ;
+border-radius: 5px;
+}
+input{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 5px;
+}
+button{
+  border-radius: 5px;
+  background-color: #9999FF;
+}
+button:hover{
+  background-color: #4444FF;
+  border-radius: 8px;
+  transition-duration: 700ms;
+}
+table{
+  background-color: #CCCCEE;
+}
+div{
+  width: 250px;
+  height: 400px;
+  box-shadow: 5px 5px 10px 5px #AAAAAA;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  background-color: #BBBBCC;
+}
+</style>
+<script>
+var _array=[] ;
+var i , rand , n;
+function new_turn(){
+  //get a random number from 0 to 15
+  rand=Math.floor((Math.random() * 16));
+  //then put 2 in its cell
+  if(_array[rand]<2){
+  _array[rand]=2;
+  document.getElementById(rand.toString()).value=2;}
+  else{new_turn();}
+  //colors
+  for(i=0;i<16;i++){
+    if(_array[i]=="")
+	  {document.getElementById(i.toString()).style.backgroundColor="#FFFFFF";}
+	if(_array[i]==2)
+	  {document.getElementById(i.toString()).style.backgroundColor="#EEEEFF";}
+	if(_array[i]==4)
+	  {document.getElementById(i.toString()).style.backgroundColor="#DDDDFF";}
+	if(_array[i]==8)
+	  {document.getElementById(i.toString()).style.backgroundColor="#CCCCFF";}
+	if(_array[i]==16)
+	  {document.getElementById(i.toString()).style.backgroundColor="#BBBBFF";}
+	if(_array[i]==32)
+	  {document.getElementById(i.toString()).style.backgroundColor="#AAAAFF";}
+	if(_array[i]==64)
+	  {document.getElementById(i.toString()).style.backgroundColor="#9999FF";}
+	if(_array[i]==128)
+	  {document.getElementById(i.toString()).style.backgroundColor="#8888FF";}
+	if(_array[i]==256)
+	  {document.getElementById(i.toString()).style.backgroundColor="#7777FF";}
+	if(_array[i]==512)
+	  {document.getElementById(i.toString()).style.backgroundColor="#6666FF";}
+	if(_array[i]==1024)
+	  {document.getElementById(i.toString()).style.backgroundColor="#5555FF";}
+	if(_array[i]==2048)
+	  {document.getElementById(i.toString()).style.backgroundColor="#4444FF";}
+  }
+}
+function new_game(){
+  //let all cells equal zero
+  for(i=0;i<16;i++){
+  _array[i]="";
+  document.getElementById(i.toString()).value="";}
+  new_turn();
+}
+function to_right(){
+  for(i=2;i>=0;i--){
+    for(n=i;n<3;n++){
+      if(_array[n+1]<2){
+	    _array[n+1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	  if((_array[n+1]==_array[n])&(_array[n+1]>0)){
+	    _array[n+1]=_array[n] + _array[n+1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	}
+  }
+  for(i=6;i>=4;i--){
+    for(n=i;n<7;n++){
+      if(_array[n+1]<2){
+	    _array[n+1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	  if((_array[n+1]==_array[n])&(_array[n+1]>0)){
+	    _array[n+1]=_array[n] + _array[n+1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	}
+  }
+  for(i=10;i>=8;i--){
+    for(n=i;n<11;n++){
+      if(_array[n+1]<2){
+	    _array[n+1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	  if((_array[n+1]==_array[n])&(_array[n+1]>0)){
+	    _array[n+1]=_array[n] + _array[n+1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	}
+  }
+  for(i=14;i>=12;i--){
+    for(n=i;n<15;n++){
+      if(_array[n+1]<2){
+	    _array[n+1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	  if((_array[n+1]==_array[n])&(_array[n+1]>0)){
+	    _array[n+1]=_array[n] + _array[n+1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+1).toString()).value=_array[n+1];
+	  }
+	}
+  }
+  new_turn();
+}
+function to_left(){
+  for(i=0;i<=3;i++){
+    for(n=i;n>0;n--){
+      if(_array[n-1]<2){
+	    _array[n-1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	  if((_array[n-1]==_array[n])&(_array[n-1]>0)){
+	    _array[n-1]=_array[n] + _array[n-1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	}
+  }
+  for(i=4;i<=7;i++){
+    for(n=i;n>4;n--){
+      if(_array[n-1]<2){
+	    _array[n-1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	  if((_array[n-1]==_array[n])&(_array[n-1]>0)){
+	    _array[n-1]=_array[n] + _array[n-1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	}
+  }
+  for(i=8;i<=11;i++){
+    for(n=i;n>8;n--){
+      if(_array[n-1]<2){
+	    _array[n-1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	  if((_array[n-1]==_array[n])&(_array[n-1]>0)){
+	    _array[n-1]=_array[n] + _array[n-1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	}
+  }
+  for(i=12;i<=15;i++){
+    for(n=i;n>12;n--){
+      if(_array[n-1]<2){
+	    _array[n-1]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	  if((_array[n-1]==_array[n])&(_array[n-1]>0)){
+	    _array[n-1]=_array[n] + _array[n-1];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-1).toString()).value=_array[n-1];
+	  }
+	}
+  }
+  new_turn();
+}
+function to_top(){
+  for(i=0;i<=12;i+=4){
+    for(n=i;n>0;n-=4){
+      if(_array[n-4]<2){
+	    _array[n-4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	  if((_array[n-4]==_array[n])&(_array[n-4]>0)){
+	    _array[n-4]=_array[n] + _array[n-4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	}
+  }
+  for(i=1;i<=13;i+=4){
+    for(n=i;n>1;n-=4){
+      if(_array[n-4]<2){
+	    _array[n-4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	  if((_array[n-4]==_array[n])&(_array[n-4]>0)){
+	    _array[n-4]=_array[n] + _array[n-4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	}
+  }
+  for(i=2;i<=14;i+=4){
+    for(n=i;n>2;n-=4){
+      if(_array[n-4]<2){
+	    _array[n-4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	  if((_array[n-4]==_array[n])&(_array[n-4]>0)){
+	    _array[n-4]=_array[n] + _array[n-4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	}
+  }
+  for(i=3;i<=15;i+=4){
+    for(n=i;n>3;n-=4){
+      if(_array[n-4]<2){
+	    _array[n-4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	  if((_array[n-4]==_array[n])&(_array[n-4]>0)){
+	    _array[n-4]=_array[n] + _array[n-4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n-4).toString()).value=_array[n-4];
+	  }
+	}
+  }
+  new_turn();
+}
+function to_down(){
+  for(i=12;i>=0;i-=4){
+    for(n=i;n<12;n+=4){
+      if(_array[n+4]<2){
+	    _array[n+4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	  if((_array[n+4]==_array[n])&(_array[n+4]>0)){
+	    _array[n+4]=_array[n] + _array[n+4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	}
+  }
+  for(i=13;i>=1;i-=4){
+    for(n=i;n<13;n+=4){
+      if(_array[n+4]<2){
+	    _array[n+4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	  if((_array[n+4]==_array[n])&(_array[n+4]>0)){
+	    _array[n+4]=_array[n] + _array[n+4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	}
+  }
+  for(i=14;i>=2;i-=4){
+    for(n=i;n<14;n+=4){
+      if(_array[n+4]<2){
+	    _array[n+4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	  if((_array[n+4]==_array[n])&(_array[n+4]>0)){
+	    _array[n+4]=_array[n] + _array[n+4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	}
+  }
+  for(i=15;i>=3;i-=4){
+    for(n=i;n<15;n+=4){
+      if(_array[n+4]<2){
+	    _array[n+4]=_array[n];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	  if((_array[n+4]==_array[n])&(_array[n+4]>0)){
+	    _array[n+4]=_array[n] + _array[n+4];
+		_array[n]="";
+	    document.getElementById(n.toString()).value="";
+	    document.getElementById((n+4).toString()).value=_array[n+4];
+	  }
+	}
+  }
+  new_turn();
+}
+</script>
+</head>
+<body>
+<div id="div1">
+<p><b>2048 puzzle</b></p>
+<table align="center">
+<tr>
+<td><input type="number" disabled="true" id="0"></td>
+<td><input type="number" disabled="true" id="1"></td>
+<td><input type="number" disabled="true" id="2"></td>
+<td><input type="number" disabled="true" id="3"></td>
+</tr>
+<tr>
+<td><input type="number" disabled="true" id="4"></td>
+<td><input type="number" disabled="true" id="5"></td>
+<td><input type="number" disabled="true" id="6"></td>
+<td><input type="number" disabled="true" id="7"></td>
+</tr>
+<tr>
+<td><input type="number" disabled="true" id="8"></td>
+<td><input type="number" disabled="true" id="9"></td>
+<td><input type="number" disabled="true" id="10"></td>
+<td><input type="number" disabled="true" id="11"></td>
+</tr>
+<tr>
+<td><input type="number" disabled="true" id="12"></td>
+<td><input type="number" disabled="true" id="13"></td>
+<td><input type="number" disabled="true" id="14"></td>
+<td><input type="number" disabled="true" id="15"></td>
+</tr>
+</table>
+</br>
+<table align="center">
+  <tr>
+    <td><button onclick="to_right()">Right</button></td>
+    <td><button onclick="to_left()">Left</button></td>
+    <td><button onclick="to_top()">Top</button></td>
+    <td><button onclick="to_down()">Down</button></td>
+  </tr>
+</table>
+</br>
+<button onclick="new_game()">New Game</button>
+</div>
+</body>
+</html>
