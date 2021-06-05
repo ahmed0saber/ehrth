@@ -1,0 +1,102 @@
+<html>
+<head>
+  <style>
+  body{
+    margin: 0;
+    background-color: #E2E2E2;
+    font-family: Times New Roman;
+  }
+  #container{
+    border: 2px solid black;
+    width:300px;
+    margin: auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    background-color: #444;
+  }
+  #_div{
+    overflow-y: auto;
+    height: 350px;
+    width: 300px;
+  }
+  input{
+    width: 225px;
+    height: 50px;
+    margin: 0;
+    padding-left: 10px;
+    border-top:2px solid black;
+    font-size: 16px;
+    font-family: Times New Roman;
+  }
+  button,input[type=submit]{
+    width: 75px;
+    height: 50px;
+    margin: 0;
+    float: right;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    font-family: Times New Roman;
+    font-size: 16px;
+  }
+  p{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #CCC;
+    border-radius: 10px;
+  }
+  #p1{
+    background-color: #AAA;
+    padding: 10px;
+    margin: 0;
+    border-top: 2px solid black;
+    border-radius: 0;
+  }
+  h1{
+    background-color: #AAA;
+    margin: 0;
+    padding: 10px;
+    border-bottom:2px solid black;
+  }
+  span{
+    color: red;
+  }
+  a{
+    color: red;
+  }
+  form{display:inline;}
+  </style>
+</head>
+<body>
+
+<?php
+$text = $_POST['text'];
+if(isset ($_POST['text']))
+{
+    $cloud = fopen('cl.html', 'a');
+    fwrite($cloud, $text . "</br>");
+    fclose($cloud);
+}
+?>
+<?php
+echo " ";
+?>
+<div id="container">
+<h1>Chat <span>Web</span> App</h1>
+<div id="_div" style="overflow:auto;color:green;">
+<?php 
+include "cl.html" ;
+?>
+</div>
+<form action="" method="POST">
+<input type="text" id="tx1" placeholder="Enter a message" name="text"/>
+<input type="submit" value="Submit!" />
+</form>
+<br><p id="p1">Developed by <a href=" gg ">Ahmed Saber</a></p>
+</div><script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+</body>
+</html>
