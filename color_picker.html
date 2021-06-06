@@ -43,19 +43,28 @@ document.getElementById("ttt").value=HexColor;
 document.body.style.background=HexColor;}
 </script>
 <style>
-#ss{border:2px solid #000000;
-position:absolute;
-top:25%;
-left:25%;
+body{
+  margin: 0;
+}
+div{border:2px solid #000000;
 margin:auto;
-text-align:center;
+margin-top: 30px;
+width: 250px;
 background-color:#BBBBBB;}
+input{
+  margin-left:20px;
+  margin-top: 10px;
+}
+p{
+  text-align: center;
+}
+input[type=text]{
+  padding-left: 20px;
+}
 </style>
 </head>
 <body>
-<br/><br/>
-<div id="ss">
-<br/><p>#123456</p><br/>
+<div><br>
 <form oninput="change()">
 <input type="range" value="50" id="red1"/>1 red<br/><br/>
 <input type="range" value="50" id="red2"/>2 red<br/><br/>
