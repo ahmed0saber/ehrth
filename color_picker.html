@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Color Tester</title>
+<script>
+function change(){
+function abcdef(hh){
+if(hh==10){
+hh="A";}
+else if(hh==11){
+hh="B";}
+else if(hh==12){
+hh="C";}
+else if(hh==13){
+hh="D";}
+else if(hh==14){
+hh="E";}
+else if(hh==15){
+hh="F";}
+else if(hh==16){
+hh="F";}
+return hh;}
+x="#";
+r1=document.getElementById("red1").value/6.25;
+r2=document.getElementById("red2").value/6.25;
+g1=document.getElementById("green1").value/6.25;
+g2=document.getElementById("green2").value/6.25;
+b1=document.getElementById("blue1").value/6.25;
+b2=document.getElementById("blue2").value/6.25;
+rr1=r1-r1%1;
+rr2=r2-r2%1;
+gg1=g1-g1%1;
+gg2=g2-g2%1;
+bb1=b1-b1%1;
+bb2=b2-b2%1;
+rr1=abcdef(rr1);
+rr2=abcdef(rr2);
+gg1=abcdef(gg1);
+gg2=abcdef(gg2);
+bb1=abcdef(bb1);
+bb2=abcdef(bb2);
+HexColor=x.concat(rr1,rr2,gg1,gg2,bb1,bb2);
+document.getElementById("ttt").value=HexColor;
+document.body.style.background=HexColor;}
+</script>
+<style>
+#ss{border:2px solid #000000;
+position:absolute;
+top:25%;
+left:25%;
+margin:auto;
+text-align:center;
+background-color:#BBBBBB;}
+</style>
+</head>
+<body>
+<br/><br/>
+<div id="ss">
+<br/><p>#123456</p><br/>
+<form oninput="change()">
+<input type="range" value="50" id="red1"/>1 red<br/><br/>
+<input type="range" value="50" id="red2"/>2 red<br/><br/>
+<input type="range" value="50" id="green1"/>3 green<br/><br/>
+<input type="range" value="50" id="green2"/>4 green<br/><br/>
+<input type="range" value="50" id="blue1"/>5 blue<br/><br/>
+<input type="range" value="50" id="blue2"/>6 blue<br/><br/>
+<input type="text" id="ttt"/><br/>
+</form>
+</div>
+</body>
+</html>
