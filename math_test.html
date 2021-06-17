@@ -151,7 +151,11 @@
       else if(op==3)
       {operator='*';}
       else if(op==4)
-      {operator='/';}
+      {operator='/';
+        var temp=num1;
+        num1*=num2;
+        num2=temp;
+      }
 
 
       document.getElementById("num1").textContent=num1;
