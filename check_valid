@@ -1,0 +1,85 @@
+<html>
+<head>
+  <style>
+  body{
+    margin: 0;
+    background-color: #111;
+  }
+  div {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 220px;
+    text-align: center;
+    font-family: Times New Roman;
+    background-color: #333;
+    box-shadow: 0px 0px 5px 3px #0ff;
+    background: -webkit-linear-gradient(top, teal, teal 50px, #333 50px, #333);
+  }
+  p{
+    margin: 0;
+    color: #EEE;
+    padding: 5px;
+    text-align: left;
+  }
+  input{
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid #111;
+    color: #EEE;
+    background-color: #222;
+    font-family: Times New Roman;
+  }
+  h2{
+    color: #EEE;
+    padding-top: 10px;
+  }
+  button {
+    width: 200px;
+    height: 40px;
+    padding: 0px;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid #EEE;
+    color: #EEE;
+    background-color: #111;
+    transition-duration: 0.8s;
+    font-family: Times New Roman;
+  }
+  button:hover{
+    border: 2px solid #111;
+    color: #111;
+    background-color: #EEE;
+    font-size: 25px;
+  }
+  </style>
+  <script>
+    function check()
+    {
+      if(document.getElementById('t1').value=="ahmed0saber"&&document.getElementById('t2').value=="0123")
+      {
+        document.getElementById('p1').textContent="Correct Data";
+      }
+      else if(document.getElementById('t1').value!=="ahmed0saber"||document.getElementById('t2').value!=="0123")
+      {
+        document.getElementById('p1').textContent="Wrong Data";
+      }
+    }
+  </script>
+</head>
+<body>
+<div>
+  <h2>Login Form</h2>
+  <p>A Login Form created by me to test web automation on it...</p>
+  <input type="text" id="t1" placeholder="username">
+  <input type="password" id="t2" placeholder="password">
+  <button onclick="check()">Log in</button>
+  <p id="p1">Click on the button to check validation</p>
+</div>
+</body>
+</html>
