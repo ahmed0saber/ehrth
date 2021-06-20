@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <style>
+    body{
+      background: #333;
+      margin: 0;
+      padding: 0;
+    }
+    button{
+      border: none;
+      padding: 0;
+      border-radius: 5px;
+      color: #DDD;
+      font-family: Times New Roman;
+      font-size: 22px;
+      background: transparent;
+      width: 50px;
+      height: 50px;
+      margin: 3px;
+      box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+       transition-duration: 0.7s;
+    }
+    button:hover{
+      background-color: #222;
+      color: #FFF;
+      box-shadow:
+       -7px -7px 20px 0px #000,
+       -4px -4px 5px 0px #000,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+       font-size: 28px;
+       width: 52px;
+       height: 52px;
+       margin: 1;
+    }
+    input{
+      border: none;
+      padding: 0;
+      border-radius: 5px;
+      color: #DDD;
+      font-family: Times New Roman;
+      font-size: 34px;
+      background: transparent;
+      width: 230px;
+      height: 70px;
+      margin: 3px;
+      box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+       padding-left: 10px;
+    }
+    table{
+      text-align: center;
+      margin: auto;
+      border: none;
+      padding: 0;
+      border-radius: 5px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      background: transparent;
+      box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+       transition-duration: 0.7s;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function dis(value)
+      {
+        let x=$("#result").val();
+        $("#result").val(x+value);
+      }
+      
+      function solve()
+      {
+        let x=$("#result").val();
+        let y=eval(x);
+        $("#result").val(y);
+      }
+      
+      function clr()
+      {$("#result").val("");}
+    </script>
+  </head>
+  <body>
+      <table>
+        <tr>
+          <td colspan="4"><input type="text" disabled="true" id="result"/></td>
+        </tr>
+        <tr>
+          <td><button onclick="clr()">AC</button></td>
+          <td><button onclick="dis('.')">.</button></td>
+          <td><button onclick="dis('%')">%</button></td>
+          <td><button onclick="dis('+')">+</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="dis('1')">1</button></td>
+          <td><button onclick="dis('2')">2</button></td>
+          <td><button onclick="dis('3')">3</button></td>
+          <td><button onclick="dis('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="dis('4')">4</button></td>
+          <td><button onclick="dis('5')">5</button></td>
+          <td><button onclick="dis('6')">6</button></td>
+          <td><button onclick="dis('*')">*</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="dis('7')">7</button></td>
+          <td><button onclick="dis('8')">8</button></td>
+          <td><button onclick="dis('9')">9</button></td>
+          <td><button onclick="dis('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button onclick="dis('(')">(</button></td>
+          <td><button onclick="dis('0')">0</button></td>
+          <td><button onclick="dis(')')">)</button></td>
+          <td><button onclick="solve()">=</button></td>
+        </tr>
+      </table>
+  </body>
+</html>
