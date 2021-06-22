@@ -1,5 +1,11 @@
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $.getJSON("https://api.countapi.xyz/hit/cv_views/dfaf52bd-1860-4535-89b4-9315fde0ec06/?amount=1", function(response) {
+    $("#views").text(response.value);
+    });
+  </script>
   <style>
   body{
     margin: 0;
@@ -44,7 +50,7 @@
     color: #DDD;
     font-family: Times New Roman;
   }
-  a{
+  a , span{
     color: teal;
   }
   marquee{
@@ -90,7 +96,9 @@
   <p>Feel free to message me at anytime for any reason</p>
   <p>•<a href="https://www.facebook.com/profile.php?id=100004875915808">Facebook</a></p>
   <p>•<a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello">WhatsApp</a></p>
-  <p>•<a href="https://t.me/ahmed0saber">Telegram</a></p>
+  <p>•<a href="https://t.me/ahmed0saber">Telegram</a></p><hr>
+  <marquee>Views</marquee>
+  <p>Viewed by <span id="views">0</span></p>
 </div>
 </body>
 </html>
