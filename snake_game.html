@@ -34,7 +34,6 @@ body{
 }
 table {
   text-align: center;
-  margin: auto;
 }
 input[type=text]{
   width: 200px;
@@ -92,7 +91,7 @@ function game() {
 	}
 
 	if(ax==px && ay==py) {
-		tail+=10;
+		tail+=1;
 		ax=Math.floor(Math.random()*tc);
 		ay=Math.floor(Math.random()*tc);
 	}
