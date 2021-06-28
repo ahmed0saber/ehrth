@@ -1,137 +1,159 @@
-<div id="container">
-<canvas id="game" width="400" height="400"></canvas>
-<div id="movement">
-  <table>
-    <tr>
-      <td colspan="2"><button onclick="go_up()" id="btn">up</button></td>
-      </tr>
-      <tr>
-        <td><button onclick="go_left()" id="btn">left</button></td>
-        <td><button onclick="go_right()" id="btn">right</button></td>
-      </tr>
-      <tr>
-        <td colspan="2"><button onclick="go_down()" id="btn">down</button></td>
-      </tr>
-    </table>
-</div>
-<div id="form1">
-  <input type="hidden" id="score">
-  <input type="text" placeholder="username">
-  <button onclick="send_data()">Submit</button>
-</div>
-</div>
-<style>
-body{
-  margin: 0;
-}
-#form1{
-  display: none;
-}
-#container{
-  margin: auto;
-}
-#movement{
-}
-table {
-  text-align: center;
-}
-input[type=text]{
-  width: 200px;
-  height: 50px;
-}
-button {
-  width: 100px;
-  height: 50px;
-}
-</style>
-<script>
-window.onload=function() {
-	canv=document.getElementById("game");
-	ctx=canv.getContext("2d");
-	document.addEventListener("keydown",keyPush);
-	setInterval(game,1000/15);
-}
-px=py=10;
-gs=tc=20;
-ax=ay=15;
-xv=yv=0;
-trail=[];
-tail = 5;
-function game() {
-	px+=xv;
-	py+=yv;
-	if(px<0) {
-		px= tc-1;
-	}
-	if(px>tc-1) {
-		px= 0;
-	}
-	if(py<0) {
-		py= tc-1;
-	}
-	if(py>tc-1) {
-		py= 0;
-	}
-	ctx.fillStyle="black";
-	ctx.fillRect(0,0,canv.width,canv.height);
+<html>
+    <head>
+        <title>snake game</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            #form1{
+                display: none;
+            }
+            #container{
+                margin: auto;
+                width: 100%;
+            }
+            #movement{
+                position: relative;
+                top: -180px;
+                left: 10;
+            }
+            table{
+                text-align: center;
+            }
+            input[type=text]{
+                width: 200px;
+                height: 50px;
+            }
+            button {
+                width: 75px;
+                height: 50px;
+                opacity: 0.5;
+                font-size:18px;
+            }
+        </style>
 
-	ctx.fillStyle="lime";
-	for(var i=0;i<trail.length;i++) {
-		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
-		if(trail[i].x==px && trail[i].y==py && tail!==5) {
-			document.getElementById("game").style.display="none";
-			document.getElementById("movement").style.display="none";
-			document.getElementById("score").value=tail;
-			document.getElementById("form1").style.display="block";
-		}
-	}
-	trail.push({x:px,y:py});
-	while(trail.length>tail) {
-	trail.shift();
-	}
 
-	if(ax==px && ay==py) {
-		tail+=1;
-		ax=Math.floor(Math.random()*tc);
-		ay=Math.floor(Math.random()*tc);
-	}
-	ctx.fillStyle="red";
-	ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
-}
-function keyPush(evt) {
-	switch(evt.keyCode) {
-		case 37:
-		  if(xv!==1){
-			xv=-1;yv=0;}
-			break;
-		case 38:
-		  if(yv!==1){
-			xv=0;yv=-1;}
-			break;
-		case 39:
-		  if(xv!==-1){
-			xv=1;yv=0;}
-			break;
-		case 40:
-		  if(yv!==-1){
-			xv=0;yv=1;}
-			break;
-	}
-}
-function go_up(){
-  if(yv!==1){
-  xv=0;yv=-1;}
-}
-function go_down(){
-  if(yv!==-1){
-  xv=0;yv=1;}
-}
-function go_left(){
-  if(xv!==1){
-  xv=-1;yv=0;}
-}
-function go_right(){
-  if(xv!==-1){
-  xv=1;yv=0;}
-}
-</script>
+
+        <script>
+            window.onload=function() {
+                canv=document.getElementById("game");
+                ctx=canv.getContext("2d");
+                document.addEventListener("keydown",keyPush);
+                setInterval(game,1000/15);
+            }
+            px=py=10;
+            gs=tc=20;
+            ax=ay=15;
+            xv=yv=0;
+            trail=[];
+            tail = 5;
+            function game() {
+                px+=xv;
+                py+=yv;
+                if(px<0) {
+                    px= tc-1;
+                }
+                if(px>tc-1) {
+                    px= 0;
+                }
+                if(py<0) {
+                    py= tc-1;
+                }
+                if(py>tc-1) {
+                    py= 0;
+                }
+                ctx.fillStyle="black";
+                ctx.fillRect(0,0,canv.width,canv.height);
+
+                ctx.fillStyle="lime";
+                for(var i=0;i<trail.length;i++) {
+                    ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+                    if(trail[i].x==px && trail[i].y==py && tail!==5) {
+                        document.getElementById("game").style.display="none";
+                        document.getElementById("movement").style.display="none";
+                        document.getElementById("score").value=tail;
+                        document.getElementById("span1").textContent=tail;
+                        document.getElementById("form1").style.display="block";
+                    }
+                }
+                trail.push({x:px,y:py});
+                while(trail.length>tail) {
+                trail.shift();
+                }
+
+                if(ax==px && ay==py) {
+                    tail+=1;
+                    ax=Math.floor(Math.random()*tc);
+                    ay=Math.floor(Math.random()*tc);
+                }
+                ctx.fillStyle="red";
+                ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+            }
+            function keyPush(evt) {
+                switch(evt.keyCode) {
+                    case 37:
+                    if(xv!==1){
+                        xv=-1;yv=0;}
+                        break;
+                    case 38:
+                    if(yv!==1){
+                        xv=0;yv=-1;}
+                        break;
+                    case 39:
+                    if(xv!==-1){
+                        xv=1;yv=0;}
+                        break;
+                    case 40:
+                    if(yv!==-1){
+                        xv=0;yv=1;}
+                        break;
+                }
+            }
+            function go_up(){
+            if(yv!==1){
+            xv=0;yv=-1;}
+            }
+            function go_down(){
+            if(yv!==-1){
+            xv=0;yv=1;}
+            }
+            function go_left(){
+            if(xv!==1){
+            xv=-1;yv=0;}
+            }
+            function go_right(){
+            if(xv!==-1){
+            xv=1;yv=0;}
+            }
+        </script>
+    </head>
+
+
+
+    <body>
+        <div id="container">
+            <canvas id="game" width="400" height="400"></canvas>
+            <div id="movement">
+              <table>
+                <tr>
+                  <td colspan="2"><button onclick="go_up()" id="btn">Up</button></td>
+                  </tr>
+                  <tr>
+                    <td><button onclick="go_left()" id="btn">Left</button></td>
+                    <td><button onclick="go_right()" id="btn">Right</button></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><button onclick="go_down()" id="btn">Down</button></td>
+                  </tr>
+                </table>
+            </div>
+            <div id="form1">
+                <h1>Game over...!</h1>
+                <p>Your score : <span id="span1">0</span></p>
+                <input type="hidden" id="score">
+                <input type="text" placeholder="username">
+                <button onclick="send_data()">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>
