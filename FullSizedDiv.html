@@ -17,6 +17,7 @@
       }
     </style>
     <script>
+    function sizeit(){
     var screen_width = window.innerWidth;
     var screen_height = window.innerHeight;
     console.log(screen_width);
@@ -29,15 +30,18 @@
     var game_height=screen_height;
     var game_width=(300/200)*game_height;}
     
-    function sizeit(){
     document.getElementById("div1").style.width=game_width;
     document.getElementById("div1").style.height=game_height;
     console.log(game_width);
     console.log(game_height);
     }
+    
+    window.addEventListener('orientationchange', function(){
+     sizeit();
+    });
     </script>
   </head>
-  <body onload="sizeit()">
+  <body onload="sizeit()" onresize="sizeit()">
     <div id="div1">
       <p>Full sized div</p>
     </div>
