@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+      body{
+      margin: 0;
+      }
+      #div1{
+        height: 200px;
+        width: 300px;
+        background-color: #333;
+        margin: auto;
+      }
+      p{
+        color: #EEE;
+        text-align: center;
+        padding-top: 10px;
+      }
+    </style>
+    <script>
+    var screen_width = window.innerWidth;
+    var screen_height = window.innerHeight;
+    console.log(screen_width);
+    console.log(screen_height);
+    
+    if(screen_height/screen_width>200/300){
+    var game_width=screen_width;
+    var game_height=(200/300)*game_width;}
+    else{
+    var game_height=screen_height;
+    var game_width=(300/200)*game_height;}
+    
+    function sizeit(){
+    document.getElementById("div1").style.width=game_width;
+    document.getElementById("div1").style.height=game_height;
+    console.log(game_width);
+    console.log(game_height);
+    }
+    </script>
+  </head>
+  <body onload="sizeit()">
+    <div id="div1">
+      <p>Full sized div</p>
+    </div>
+  </body>
+</html>
