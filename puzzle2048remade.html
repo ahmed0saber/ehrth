@@ -51,6 +51,9 @@ table{
 #send , #new1{
   width: 100px;
 }
+#div1{
+  touch-action: none;
+}
     </style>
 <script>
 var _array=[] ;
@@ -189,6 +192,91 @@ function to_down(){
   }
   new_turn();
 }
+
+
+
+
+window.onload=function(){
+var myElement = document.getElementById("div1");
+myElement.addEventListener("touchstart", startTouch, false);
+myElement.addEventListener("touchmove", moveTouch, false);
+ 
+// Swipe Up / Down / Left / Right
+var initialX = null;
+var initialY = null;
+ 
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+  initialY = e.touches[0].clientY;
+};
+ 
+function moveTouch(e) {
+  if (initialX === null) {
+    return;
+  }
+ 
+  if (initialY === null) {
+    return;
+  }
+ 
+  var currentX = e.touches[0].clientX;
+  var currentY = e.touches[0].clientY;
+ 
+  var diffX = initialX - currentX;
+  var diffY = initialY - currentY;
+ 
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    // sliding horizontally
+    if (diffX > 0) {
+      // swiped left
+      to_left();
+    } else {
+      // swiped right
+      to_right();
+    }  
+  } else {
+    // sliding vertically
+    if (diffY > 0) {
+      // swiped up
+      to_top();
+    } else {
+      // swiped down
+      to_down();
+    }  
+  }
+ 
+  initialX = null;
+  initialY = null;
+   
+  e.preventDefault();
+};}
+  
+
+
+
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        to_top();
+    }
+    else if (e.keyCode == '40') {
+        to_down();
+    }
+    else if (e.keyCode == '37') {
+       to_left();
+    }
+    else if (e.keyCode == '39') {
+       to_right();
+    }
+
+}
+
+
+
 </script>
   </head>
   <body>
