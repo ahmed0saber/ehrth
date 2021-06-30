@@ -1,0 +1,71 @@
+<div class="anything">404</div>
+<p class="anything">Page not found</p>
+<button onclick="goBack()">Go Back</button>
+<style>
+.anything {
+  color: teal;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow: 
+    0 1px 0 #444, 
+    0 2px 0 #333, 
+    0 3px 0 #555, 
+    0 4px 0 #585858, 
+    0 5px 0 #666, 
+    0 6px 1px rgba(200,200,200,.1), 
+    0 0 5px rgba(200,200,200,.1), 
+    0 1px 3px rgba(200,200,200,.3), 
+    0 3px 5px rgba(200,200,200,.2), 
+    0 5px 10px rgba(200,200,200,.25), 
+    0 10px 10px rgba(200,200,200,.2), 
+    0 20px 20px rgba(200,200,200,.15);
+}
+div{
+  font-size: 12em;
+  }
+body{
+  background-color: #111;
+  margin: 0;
+  text-align: center;
+}
+p{
+  font-size: 4em;
+}
+button {
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+  background-color: teal;
+  border: none;
+  border-radius: 5px;
+  transition-duration: 0.8s;
+  font-weight: bold;
+  box-shadow: 
+  0 1px 0 #444, 
+    0 2px 0 #333, 
+    0 3px 0 #555, 
+    0 4px 0 #585858, 
+    0 5px 0 #666, 
+    0 6px 1px rgba(200,200,200,.1), 
+    0 0 5px rgba(200,200,200,.1), 
+    0 1px 3px rgba(200,200,200,.3), 
+    0 3px 5px rgba(200,200,200,.2), 
+    0 5px 10px rgba(200,200,200,.25), 
+    0 10px 10px rgba(200,200,200,.2), 
+    0 20px 20px rgba(200,200,200,.15);
+    margin-bottom: 50px;
+}
+button:hover{
+  background-color: #111;
+  border: 3px solid teal;
+  color: teal;
+  width: 120px;
+  height: 60px;
+  margin-top: -5px;
+}
+</style>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
