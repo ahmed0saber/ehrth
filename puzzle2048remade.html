@@ -35,24 +35,60 @@ button{
 }
 button:hover{
   background-color: #44F;
+  border: 2px solid #99F;
   border-radius: 8px;
   transition-duration: 700ms;
 }
 table{
   background-color: #CCE;
 }
-#div1 , #div2{
+#div1 , #div2 , #form{
   width: 250px;
   height: 450px;
   text-align: center;
   border-radius: 10px;
   background-color: #AAC;
 }
+#div2{
+  overflow: scroll;
+}
 #send , #new1{
   width: 100px;
 }
 #div1{
   touch-action: none;
+}
+#form{
+  display: none;
+}
+#t1{
+  width: 150px;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 5px;
+}
+#b1{
+  width: 75px;
+  height: 50px;
+  font-size: 16px;
+}
+#r1{
+  width: 75px;
+  margin-bottom: 10px;
+}
+#names{
+  width: 109px;
+  height: 50px;
+  text-align: center;
+}
+#scores{
+  width: 68px;
+  height: 50px;
+  text-align: center;
+}
+#para{
+  margin: 0;
+  margin-bottom: 20px;
 }
     </style>
 <script>
@@ -197,6 +233,74 @@ function to_down(){
 
 
 window.onload=function(){
+
+const domain = "https://api-and-websockets.herokuapp.com";
+let saveScoreBtn = document.querySelector("#b1");
+        saveScoreBtn.onclick = async () => {
+            console.log("start saving the score")
+            let board_name = document.querySelector("#h2").value
+            let board_pass = document.querySelector("#h2").value
+            let score = document.querySelector("#h1").value
+let score_name = document.querySelector("#t1").value
+            let url = domain + "/api/save_score/"
+            let data = await fetch(url , {
+                method: "POST", 
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body:JSON.stringify({
+                    "board": board_name,
+                    "password": board_pass,
+                    "score": parseInt(score),
+                     // you have to send data with the right datatype
+                    "name": score_name
+                })
+            })
+          document.getElementById("div1").style.display="block";
+          document.getElementById("form").style.display="none";
+          let name = document.querySelector("#h2").value;
+        build_board(name);
+        }
+
+
+
+let showBtn = document.querySelector("#r1")
+        let build_board = async (name) => {
+            let url = domain + `/api/get_scores/${name}/` // you can change this to "https://api-and-websockets.herokuapp.com/api/get_scores"
+            console.log(url);
+            let data = await fetch(url)
+            data = await data.json()            
+            let container = document.querySelector("#table1")
+            container.innerHTML = "<tr><td id='scores'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>"
+            var i=0;
+            for (item of data){
+              i++;
+                tag = `
+                <tr>
+                <td id='scores'>
+                    ${i}
+                </td>
+                <td id='names'>
+                    ${item.name}
+                </td>
+                <td id='scores'>
+                    ${item.score}
+                </td>
+                </tr>
+                `
+                container.innerHTML += tag
+            }
+            
+        }
+        
+        showBtn.addEventListener("click", ()=>{
+            let name = document.querySelector("#h2").value;
+            build_board(name);
+        } )
+        let name = document.querySelector("#h2").value;
+        build_board(name);
+
+
 var myElement = document.getElementById("div1");
 myElement.addEventListener("touchstart", startTouch, false);
 myElement.addEventListener("touchmove", moveTouch, false);
@@ -277,6 +381,15 @@ function checkKey(e) {
 
 
 
+function send_score(){
+  document.getElementById("div1").style.display="none";
+  document.getElementById("form").style.display="block";
+  document.getElementById("p2").innerHTML = "Score : " + score.toString();
+  document.getElementById("h1").value=score;
+}
+
+
+
 </script>
   </head>
   <body>
@@ -326,10 +439,22 @@ function checkKey(e) {
 <button onclick="new_game()" id="new1">New Game</button>
 <button onclick="send_score()" id="send">Submit Score</button>
 </div>
+<div id="form">
+  <p id="p2">Score : 0</p>
+  <input type="hidden" id="h1">
+  <input type="hidden" id="h2" value="puzzle2048">
+  <input type="text" placeholder="Username" id="t1">
+  <button id="b1">Submit</button>
+  </div>
+  </div>
 </td>
 <td>
   <div id="div2">
-    <p><b>Leaderboard</b></p>
+    <p id="para"><b>Leaderboard</b></p>
+    <button id="r1">Refresh</button>
+    <table id="table1">
+      
+    </table>
   </div>
   </td>
   </tr>
