@@ -13,15 +13,6 @@
         .item3 { grid-area: right; }
         .item4 { grid-area: footer; }
 
-        
-
-
-
-
-
-
-
-
     body{
     margin: 0;
     background-color: #111;
@@ -85,11 +76,29 @@
         grid-template-areas:
     'menu main main main right right'
     'menu footer footer footer footer footer';
-        grid-gap: 10px;
+        grid-gap: 5px;
         background-color:#111;
         box-shadow:none;
-        margin:10px;
         margin: auto;
+        }
+
+        @media screen and (max-width: 1100px) {
+            .grid-container{
+                grid-template-areas: 
+                'menu right'
+                'main main'
+                'footer footer';
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .grid-container{
+                grid-template-areas: 
+                'menu'
+                'main'
+                'right'
+                'footer';
+            }
         }
 </style>
 </head>
