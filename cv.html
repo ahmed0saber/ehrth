@@ -33,7 +33,7 @@
     color: #EEE;
     font-size: 12px;
     }
-    img{
+    #myimg{
     width: 200px;
     height: 200px;
     padding: 0;
@@ -126,13 +126,23 @@
       #space{
         padding-left: 50px;
       }
+      #project1{
+        width: 300px;
+        height: 300px;
+        box-shadow: none;
+        border: 2px solid #EEE;
+      }
+      #img1{
+        width: 300px;
+        height: 300px;
+      }
 </style>
 </head>
 <body>
 <div class="grid-container">
     <div class="item1">
         <div id="img_div">
-        <img src="https://drive.google.com/u/0/uc?id=19YTRTsOEbgoJj_Bnm4ZsOphdJg0OUX64&export=download"></div>
+        <img id="myimg" src="https://drive.google.com/u/0/uc?id=19YTRTsOEbgoJj_Bnm4ZsOphdJg0OUX64&export=download"></div>
         <h4>Ahmed Saber</h4>
         <p>A developer from Egypt who was born in 2001</p><hr>
         <marquee>Coding Languages</marquee>
@@ -144,6 +154,12 @@
         </div>
         <div class="item2">
             <marquee>Web Projects</marquee>
+            <div id="project1">
+              <img id="img1" src="https://drive.google.com/uc?id=1GyjJ1NO1dT5RNsWOoj8oj79V7j68H0Tl&export=download">
+              
+            </div>
+            
+            
             <p>•<a href="https://leader-board2048.herokuapp.com/">2048 puzzle game with leaderboard</a></p>
             <p>•••Leaderboard (backend) by <a href="https://github.com/ahmedyasserays">Ahmed Yasser</a></p>
             <p>•<a href="https://mathexams.herokuapp.com/">Math quiz game with leaderboard</a></p>
