@@ -7,6 +7,7 @@
         $("#views").text(response.value);
         });
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .item1 { grid-area: menu; }
         .item2 { grid-area: main; }
@@ -69,8 +70,24 @@
     font-size: 22px;
     background-color: rgba(250,250,250,0.1);
     }
-
-
+    .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+  background-color: #222;
+  border: 2px solid #EEE;
+  border-radius: 50%;
+    }
+    .fa:hover{
+      opacity: 0.5;
+    }
+    .item4{
+      text-align: center;
+    }
     .grid-container {
         display: grid;
         grid-template-areas:
@@ -141,13 +158,14 @@
             <p>•••Leaderboard (backend) by <a href="https://github.com/ahmedyasserays">Ahmed Yasser</a></p>
         </div>
         <div class="item4">
-            <marquee>Contact me</marquee>
-            <p>Feel free to message me at anytime for any reason</p>
-            <p>•<a href="https://www.facebook.com/profile.php?id=100004875915808">Facebook</a></p>
-            <p>•<a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello">WhatsApp</a></p>
-            <p>•<a href="https://t.me/ahmed0saber">Telegram</a></p><hr>
-            <marquee>Views</marquee>
-            <p>Viewed <span id="views">0</span> times</p>
+          <marquee>Contact me</marquee>
+            <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook"></a>
+            <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp"></a>
+            <a href="https://t.me/ahmed0saber" class="fa fa-telegram"></a>
+            <a href="https://github.com/ahmed0saber" class="fa fa-github"></a>
+            <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen"></a>
+            <marquee>
+            <p>Viewed <span id="views">0</span> times</p></marquee>
         </div>
     </div>
 </body>
