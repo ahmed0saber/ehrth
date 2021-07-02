@@ -107,30 +107,33 @@ function new_turn(){
   else{new_turn();}
   //colors
   for(i=0;i<16;i++){
+	  let target_element = document.getElementById(i.toString())
+	  
     if(_array[i]=="")
-	  {document.getElementById(i.toString()).style.backgroundColor="#FFFFFF";}
-	if(_array[i]==2)
-	  {document.getElementById(i.toString()).style.backgroundColor="#EEEEFF";}
-	if(_array[i]==4)
-	  {document.getElementById(i.toString()).style.backgroundColor="#DDDDFF";}
-	if(_array[i]==8)
-	  {document.getElementById(i.toString()).style.backgroundColor="#CCCCFF";}
-	if(_array[i]==16)
-	  {document.getElementById(i.toString()).style.backgroundColor="#BBBBFF";}
-	if(_array[i]==32)
-	  {document.getElementById(i.toString()).style.backgroundColor="#AAAAFF";}
-	if(_array[i]==64)
-	  {document.getElementById(i.toString()).style.backgroundColor="#9999FF";}
-	if(_array[i]==128)
-	  {document.getElementById(i.toString()).style.backgroundColor="#8888FF";}
-	if(_array[i]==256)
-	  {document.getElementById(i.toString()).style.backgroundColor="#7777FF";}
-	if(_array[i]==512)
-	  {document.getElementById(i.toString()).style.backgroundColor="#6666FF";}
-	if(_array[i]==1024)
-	  {document.getElementById(i.toString()).style.backgroundColor="#5555FF";}
-	if(_array[i]==2048)
-	  {document.getElementById(i.toString()).style.backgroundColor="#4444FF";}
+	  {target_element.style.backgroundColor="#FFFFFF";}
+	else if(_array[i]==2)
+	  {target_element.style.backgroundColor="#EEEEFF";}
+	else if(_array[i]==4)
+	  {target_element.style.backgroundColor="#DDDDFF";}
+	else if(_array[i]==8)
+	  {target_element.style.backgroundColor="#CCCCFF";}
+	else if(_array[i]==16)
+	  {target_element.style.backgroundColor="#BBBBFF";}
+	else if(_array[i]==32)
+	  {target_element.style.backgroundColor="#AAAAFF";}
+	else if(_array[i]==64)
+	  {target_element.style.backgroundColor="#9999FF";}
+	else if(_array[i]==128)
+	  {target_element.style.backgroundColor="#8888FF";}
+	else if(_array[i]==256)
+	  {target_element.style.backgroundColor="#7777FF";}
+	else if(_array[i]==512)
+	  {target_element.style.backgroundColor="#6666FF";}
+	else if(_array[i]==1024)
+	  {target_element.style.backgroundColor="#5555FF";}
+	else if(_array[i]==2048)
+	  {target_element.style.backgroundColor="#4444FF";}
+	 else {target_element.style.backgroundColor = `${_array[i]}FF`}
   }
 }
 function new_game(){
