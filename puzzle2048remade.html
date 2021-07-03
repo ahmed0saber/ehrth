@@ -79,17 +79,18 @@ table{
   width: 75px;
   margin-bottom: 10px;
 }
-#names{
-  width: 109px;
-  height: 50px;
+#names , #scores , #ranks{
   text-align: center;
   word-break: break-all;
 }
+#names{
+  width: 109px;
+}
 #scores{
-  width: 68px;
-  height: 50px;
-  text-align: center;
-  word-break: break-all;
+  width: 102px;
+}
+#ranks{
+  width: 34px;
 }
 #para{
   margin: 0;
@@ -279,13 +280,13 @@ let showBtn = document.querySelector("#r1")
             let data = await fetch(url)
             data = await data.json()            
             let container = document.querySelector("#table1")
-            container.innerHTML = "<tr><td id='scores'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>"
+            container.innerHTML = "<tr><td id='ranks'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>"
             var i=0;
             for (item of data){
               i++;
                 tag = `
                 <tr>
-                <td id='scores'>
+                <td id='ranks'>
                     ${i}
                 </td>
                 <td id='names'>
