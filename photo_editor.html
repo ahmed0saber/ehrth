@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Photo Editor 2</title>
+<style>
+#d1{
+text-align:center;
+margin-left: 3px;
+display: flex;
+justify-content: center;
+align-items: center;
+border:1px solid #000000;
+box-shadow:5px 5px 10px #777777;
+width:812px;}
+#d2{
+width:400px;
+height:400px;
+text-align:center;
+justify-content: center;
+align-items: center;
+border:1px solid #000000;
+box-shadow:5px 5px 10px #777777;}
+.d3{
+text-align:center;
+border:1px solid #000000;
+box-shadow:5px 5px 10px #777777;
+width: 200px;
+height:400;}
+input{
+margin: 0px 10px 0px 10px;}
+input[type=file]{
+margin: 10px 0px 10px 0px;
+}
+</style>
+
+
+<script>
+window.addEventListener('load', function() {
+  document.querySelector('input[type="file"]').addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+          var img = document.querySelector('img');
+          img.onload = () => {
+              URL.revokeObjectURL(img.src);  // no longer needed, free memory
+          }
+
+          img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+      }
+  });
+});
+
+function change(){document.getElementById("i1").src=document.getElementById("t1").value;}
+function r1(x){document.getElementById("i1").style.filter="blur("+(x/20)+"px)";}
+function r2(x){document.getElementById("i1").style.filter="brightness("+(x)+"%)";}
+function r3(x){document.getElementById("i1").style.filter="contrast("+(x*1.8)+"%)";}
+function r4(x){document.getElementById("i1").style.filter="grayscale("+(x)+"%)";}
+function r5(x){document.getElementById("i1").style.filter="hue-rotate("+(x*3.6)+"deg)";}
+function r6(x){document.getElementById("i1").style.filter="invert("+(x)+"%)";}
+function r7(x){document.getElementById("i1").style.filter="opacity("+(x)+"%)";}
+function r8(x){document.getElementById("i1").style.filter="saturate("+(x/10)+")";}
+function r9(x){document.getElementById("i1").style.filter="sepia("+(x)+"%)";}
+function r10(x){document.getElementById("d2").style.backgroundColor=x;}
+</script>
+</head>
+
+
+<body>
+<div id="d1">
+<input type='file'/>
+</div>
+
+<table>
+<tr>
+<td><div class="d3">
+<br/>
+<p>blur</p>
+<input type="range" id="r1" value="0" min="0" max="100" step="10" oninput="r1(this.value)" onchange="r1(this.value)"/><br/>
+<p>brightness</p>
+<input type="range" id="r2" value="0" min="0" max="100" step="10" oninput="r2(this.value)" onchange="r2(this.value)"/><br/>
+<p>contrast</p>
+<input type="range" id="r3" value="0" min="0" max="100" step="10" oninput="r3(this.value)" onchange="r3(this.value)"/><br/>
+<p>grayscale</p>
+<input type="range" id="r4" value="0" min="0" max="100" step="10" oninput="r4(this.value)" onchange="r4(this.value)"/><br/>
+<p>huerotate</p>
+<input type="range" id="r5" value="0" min="0" max="100" step="10" oninput="r5(this.value)" onchange="r5(this.value)"/>
+</div></td>
+
+<td><div id="d2">
+<img src="" alt="Your Image" width="398px" height="398px" id="i1">
+</div></td>
+
+<td><div class="d3">
+<p>invert</p>
+<input type="range" id="r6" value="0" min="0" max="100" step="10" oninput="r6(this.value)" onchange="r6(this.value)"/><br/>
+<p>opacity</p>
+<input type="range" id="r7" value="0" min="0" max="100" step="10" oninput="r7(this.value)" onchange="r7(this.value)"/><br/>
+<p>saturate</p>
+<input type="range" id="r8" value="0" min="0" max="100" step="10" oninput="r8(this.value)" onchange="r8(this.value)"/><br/>
+<p>sepia</p>
+<input type="range" id="r9" value="0" min="0" max="100" step="10" oninput="r9(this.value)" onchange="r9(this.value)"/><br/>
+<p>border color</p>
+<input type="text" id="r10" onchange="r10(this.value)" placeholder="#000000"/><br/>
+</div></td></tr>
+</body>
+</html>
