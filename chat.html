@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Global Chat</title>
+        <script>
+
+        </script>
+        <style>
+            body{
+                background-color: #111;
+            }
+            *{
+                margin:0;
+            }
+            div{
+                
+            }
+            button{
+                float: right;
+                width: 100px;
+                height: 52px;
+                color: #EEE;
+                border: none;
+                transition-duration: 0.7s;
+                font-size:22px;
+                font-family: 'Times New Roman', Times, serif;
+                box-shadow:
+                    -7px -7px 20px 0px #0009,
+                    -4px -4px 5px 0px #0009,
+                    7px 7px 20px 0px #FFF2,
+                    4px 4px 5px 0px #FFF1;
+                background: transparent;
+            }
+            button:hover{
+                box-shadow:
+                    -7px -7px 20px 0px #2229,
+                    -4px -4px 5px 0px #2229,
+                    2px 2px 20px 0px #EEE2,
+                    1px 1px 5px 0px #EEE2;
+                background-color: #121212;
+                color: #FFF;
+            }
+            input{
+                width: calc(100% - 115px);
+                height: 48px;
+                border: none;
+                padding-left: 10px;
+                font-size:20px;
+                font-family: 'Times New Roman', Times, serif;
+                color: #EEE;
+                box-shadow:
+                    -7px -7px 20px 0px #0009,
+                    -4px -4px 5px 0px #0009,
+                    2px 2px 20px 0px #FFF2,
+                    1px 1px 5px 0px #FFF1;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+            input:focus{
+                box-shadow:
+                    -7px -7px 20px 0px #2229,
+                    -4px -4px 5px 0px #2229,
+                    2px 2px 20px 0px #EEE2,
+                    1px 1px 5px 0px #EEE2;
+                color: #EEE;
+            }
+            h1{
+                padding-left: 20px;
+                color: #EEE;
+                display: inline-block;
+                font-family: 'Times New Roman', Times, serif;
+                text-shadow: 
+                    0 1px 0 #444, 
+                    0 2px 0 #333, 
+                    0 3px 0 #555, 
+                    0 4px 0 #585858, 
+                    0 5px 0 #666, 
+                    0 6px 1px rgba(100,100,100,.1), 
+                    0 0 5px rgba(100,100,100,.1), 
+                    0 1px 3px rgba(100,100,100,.3), 
+                    0 3px 5px rgba(100,100,100,.2), 
+                    0 5px 10px rgba(100,100,100,.25), 
+                    0 10px 10px rgba(100,100,100,.2), 
+                    0 20px 20px rgba(100,100,100,.15);
+            }
+            #msg_container{
+                height:400px;
+                background: transparent;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            #header{
+                padding:10px;
+                border:none;
+                box-shadow:
+                    -7px -7px 20px 0px #0009,
+                    -4px -4px 5px 0px #0009,
+                    7px 7px 20px 0px #FFF2,
+                    4px 4px 5px 0px #FFF1;
+                background: transparent;
+            }
+            p{
+                padding:10px;
+                margin:10px;
+                background-color: #333;
+                color: #EEE;
+                word-break: break-all;
+                width: auto;
+                box-shadow:
+                    -7px -7px 20px 0px #0009,
+                    -4px -4px 5px 0px #0009,
+                    7px 7px 20px 0px #FFF2,
+                    4px 4px 5px 0px #FFF1;
+                background: transparent;
+                display: inline-block;
+            }
+            #user_msg{
+                background-color: #CCC;
+                color: #111;
+                box-shadow:
+                    -7px -7px 20px 0px #0009,
+                    -4px -4px 5px 0px #0009,
+                    7px 7px 20px 0px #FFF2,
+                    4px 4px 5px 0px #FFF1;
+                direction:rtl;
+            }
+            #footer{
+                background-color: #111;
+            }
+            #p1{
+                background-color: #111;
+                margin: 0;
+                display: block;
+            }
+            #user_div{
+                direction:rtl;
+            }
+            ::-webkit-scrollbar {
+                width: 15px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            ::-webkit-scrollbar-track:hover {
+                background: #D1D1D1; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #888; 
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555; 
+            }
+            #logout{
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Global Chat</h1>
+            <button id="logout">Log out</button>
+        </div>
+        <div id="msg_container">
+            <div><p>User : Hello</p></div>
+            <div id="user_div"><p id="user_msg">Ahmed : My name is Ahmed</p></div>
+            <div><p>User : What is your name ??</p></div>
+            <div><p>How are you ??</p></div>
+            <div id="user_div"><p id="user_msg">I am fine</p></div>
+            <div><p>What about you ??</p></div>
+            <div><p>Hope you are good too</p></div>
+            <div><p>aaaaaa</p></div>
+            <div><p>long msg aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></div>
+            <div><p>hhhhhhhhhhhh</p></div>
+            <div><p>Hellooooooooooooo</p></div>
+            <div><p>Helloooooooooo</p></div>
+            <div><p>Hellooooooo</p></div>
+            <div><p>Helloooo</p></div>
+            <div><p>Hello</p></div>
+        </div>
+        <div id="input_area">
+            <input type="text" placeholder="Enter your message here">
+            <button id="">Send</button>
+        </div>
+    </body>
+</html>
