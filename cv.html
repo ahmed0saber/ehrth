@@ -127,11 +127,28 @@
       #space{
         padding-left: 50px;
       }
-      #project1,#project2,#project3,#project4,#project5,#project6,#project7{
+      #project,#front,#back{
         width: 300px;
         height: 300px;
         box-shadow: none;
-        border: 2px solid #EEE;
+        border: none;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #front{
+        border: 1px solid #EEE;
+      }
+      #back:hover{
+        opacity: 1;
+      }
+      #back{
+        position: relative;
+        background-color: #111;
+        top: -310px;
+        opacity: 0;
+        transition-duration: 0.7s;
+        box-shadow: 0px 0px 2px 2px teal;
       }
       #img1{
         width: 300px;
@@ -155,48 +172,77 @@
         </div>
         <div class="item2">
             <marquee>Web Projects</marquee>
-            <div id="project1">
+            
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1I4jc-0bmSKv2dS9x94b105A_EgZaoZw9&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•<a href="https://leader-board2048.herokuapp.com/">2048 puzzle game with leaderboard</a></p>
             </div>
-            <div id="project2">
+            </div>
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1IDDggOE5rR_PDgLBtlLfYk4LcjXS7V1O&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•<a href="https://mathexams.herokuapp.com/">Math quiz game with leaderboard</a></p>
             </div>
-            <div id="project3">
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1IIpxcbvdhIzb2xeyF0Qhxkh8UlPRktkI&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•Photo Editor</p>
             </div>
-            <div id="project4">
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1IKtqY6ZPj5Kx7_GU_ey_0v7z4Q5aUB2t&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•Neumorphism Calculator</p>
             </div>
-            <div id="project5">
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1INPEyLIfCB2KFMh7Q-4I9o--SrRecuL_&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•Tic Tac Toe</p>
             </div>
-            <div id="project6">
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1INzoiAzO1yTAsTVb2sygCLdPgvzUVY9a&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•Snake game</p>
             </div>
-            <div id="project7">
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
               <img id="img1" src="https://drive.google.com/uc?id=1IvhPpWa6lle0BIct0yG1aGU9RvNuAmho&export=download">
             </div>
-            <div>
+            <div id="back">
                 <p>•Glassmorphism login form</p>
             </div>
+            </div>
+            
+            
         </div>
         <div class="item3">
             <marquee>Projects not related to web development</marquee>
