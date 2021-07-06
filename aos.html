@@ -1,0 +1,33 @@
+<doctype html>
+    <html>
+        <head>
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <style>
+                body{
+                    background-color:#111;
+                }
+                .item {
+                    margin: 25px auto;
+                    padding: 100px;
+                    width: 150px;
+                    background: #333;
+                    text-align: center;
+                    color: #EEE;
+                }
+            </style>
+            <script>
+                AOS.init({
+                duration: 1000
+                });
+            </script>
+        </head>
+        <body>
+            <div class="item">Hi</div>
+            <div class="item" data-aos="fade-up">Hello</div>
+            <div class="item" data-aos="fade-up">How are you ?!</div>
+            <div class="item" data-aos="fade-up">What is you name ?!</div>
+            <div class="item" data-aos="fade-up">How old are you ?!</div>
+            <div class="item" data-aos="fade-up">What do you think about this animation ?!</div>
+        </body>
+    </html>
