@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.getJSON("https://api.countapi.xyz/hit/cv_views/dfaf52bd-1860-4535-89b4-9315fde0ec06/?amount=1", function(response) {
+        $("#views").text(response.value);
+        });
+        
+        $(function() {
+          $('#back').hover(function() {
+            $('#front').css('opacity', '0');
+            }, function() {
+    // on mouseout, reset the background colour
+        $('#front').css('opacity', '1');
+        });
+        });
+
+        function view_puzzle()
+        {
+          window.open('https://ahmed0saber.github.io/ehrth/puzzle2048remade.html', '_blank');
+        }
+        function view_mathexam()
+        {
+          window.open('https://mathexams.herokuapp.com/', '_blank');
+        }
+        function view_photoeditor()
+        {
+          window.open('https://ahmed0saber.github.io/ehrth/photo_editor.html', '_blank');
+        }
+        function view_calc()
+        {
+          window.open('https://ahmed0saber.github.io/ehrth/Neumorphism_Calculator.html', '_blank');
+        }
+        function view_xo()
+        {
+          window.open('https://ahmed0saber.github.io/ehrth/TicTacToe.html', '_blank');
+        }
+        function view_snake()
+        {
+          window.open('https://ahmed0saber.github.io/ehrth/snake_game.html', '_blank');
+        }
+        function view_form()
+        {
+          window.open('https://ahmed0saber.github.io/ehrth/Glassmorphism_Login_Form.html', '_blank');
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .item1 { grid-area: menu; }
+        .item2 { grid-area: main; }
+        .item3 { grid-area: right; }
+        .item4 { grid-area: footer; }
+
+    body{
+    margin: 0;
+    background-color: #111;
+    font-family: Times New Roman;
+    }
+    div {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 95%;
+    background: transparent;
+    box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+    }
+    p{
+    padding: 10px;
+    margin: 0;
+    color: #EEE;
+    font-size: 12px;
+    }
+    #myimg{
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    margin-top: 25px;
+    border-radius: 50%;
+    border: 5px solid #111;
+    }
+    #img_div{
+    background: -webkit-linear-gradient(top, #222, #222 130px,#111 130px,#111 135px, #111);
+    display: flex;
+    margin-top: 0px;
+    justify-content: center;
+    width: 100%;
+    box-shadow: none;
+    }
+    h4{
+    margin: 0;
+    margin-top: -37px;
+    padding: 0;
+    text-align: center;
+    color: #DDD;
+    font-family: Times New Roman;
+    font-size:30px;
+    box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+    }
+    a , span{
+    color: #EEE;
+    font-size: 20px;
+    }
+    p{
+        font-size: 18px;
+        box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+    }
+    marquee{
+    color: #EEE;
+    font-size: 22px;
+    background-color: rgba(150,150,150,0.1);
+    box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    }
+    .fa {
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 75px;
+  height: 75px;
+  width: 75px;
+  margin: 5px;
+  background-color: #222;
+  border-radius: 50%;
+  transition-duration: 0.5s;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+    }
+    .fa:hover{
+      opacity: 0.5;
+    }
+    .item4{
+      text-align: center;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+    'menu menu main main main main'
+    'right right main main main main'
+    'footer footer footer footer footer footer';
+        grid-gap: 5px;
+        background-color:#111;
+        box-shadow:none;
+        margin: auto;
+        }
+
+        @media screen and (max-width: 1100px) {
+            .grid-container{
+                grid-template-areas: 
+                'menu right'
+                'main main'
+                'footer footer';
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .grid-container{
+                grid-template-areas: 
+                'menu'
+                'main'
+                'right'
+                'footer';
+            }
+            marquee{
+                font-size:26px;
+            }
+            #views{
+                font-size:28px;
+            }
+        }
+      #space{
+        padding-left: 50px;
+      }
+      #project,#front,#back{
+        width: 300px;
+        height: 300px;
+        border: none;
+        box-shadow: none;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      #project{
+        height: 310px;
+        width: 310px;
+        padding: 5px;
+      }
+      #front{
+        border: 1px solid #EEE;
+        border-radius: 5%;
+        transition-duration: 0.6;
+      }
+      #back:hover{
+        opacity: 1;
+      }
+      #back{
+        width: 302px;
+        height: 302px;
+        position: relative;
+        background-color: #111;
+        top: -320px;
+        text-align: center;
+        opacity: 0;
+        transition-duration: 0.6s;
+        box-shadow:
+       -7px -7px 20px 0px #0009,
+       -4px -4px 5px 0px #0009,
+       7px 7px 20px 0px #FFF2,
+       4px 4px 5px 0px #FFF1;
+      }
+      #img1{
+        width: 300px;
+        height: 300px;
+        border-radius: 5%;
+      }
+      button{
+        width: 150px;
+        height: 50px;
+        color: #EEE;
+        background-color: #222;
+        border: 2px solid #EEE;
+        font-size: 18px;
+        border-radius: 50px;
+        transition-duration: 0.7s;
+      }
+      button:hover{
+        color: #FFF;
+        background-color: #444;
+        border: 2px solid #FFF;
+      }
+      .item2{
+        display: flex;
+        flex-wrap: wrap;
+      }
+</style>
+</head>
+<body>
+<div class="grid-container">
+    <div class="item1">
+        <div id="img_div">
+        <img id="myimg" src="https://drive.google.com/uc?id=1HgQeF7IX2TbwQq2KFBPgfxKRStV2Jyye&export=download"></div>
+        <h4>Ahmed Saber</h4>
+        <p>A developer from Egypt who was born in 2001</p><hr>
+        <marquee>Coding Languages</marquee>
+        <p>•C++<span id="space"></span>•Python</p>
+        <p>•HTML<span id="space"></span>•CSS</p>
+        <p>•JavaScript</p><hr>
+        <marquee>Speaking languages</marquee>
+        <p>•Arabic<span id="space"></span>•English</p>
+        </div>
+        <div class="item2">
+            <marquee>Web Projects</marquee>
+            
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1I4jc-0bmSKv2dS9x94b105A_EgZaoZw9&export=download">
+            </div>
+            <div id="back">
+                <p>2048 puzzle game with leaderboard</p>
+                <button onclick="view_puzzle()">Try Now</button>
+            </div>
+            </div>
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1IDDggOE5rR_PDgLBtlLfYk4LcjXS7V1O&export=download">
+            </div>
+            <div id="back">
+                <p>Math quiz game with leaderboard</p>
+                <button onclick="view_mathexam()">Try Now</button>
+            </div>
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1IIpxcbvdhIzb2xeyF0Qhxkh8UlPRktkI&export=download">
+            </div>
+            <div id="back">
+                <p>Photo Editor</p>
+                <button onclick="view_photoeditor()">Try Now</button>
+            </div>
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1IKtqY6ZPj5Kx7_GU_ey_0v7z4Q5aUB2t&export=download">
+            </div>
+            <div id="back">
+                <p>Neumorphism Calculator</p>
+                <button onclick="view_calc()">Try Now</button>
+            </div>
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1INPEyLIfCB2KFMh7Q-4I9o--SrRecuL_&export=download">
+            </div>
+            <div id="back">
+                <p>Tic Tac Toe</p>
+                <button onclick="view_xo()">Try Now</button>
+            </div>
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1INzoiAzO1yTAsTVb2sygCLdPgvzUVY9a&export=download">
+            </div>
+            <div id="back">
+                <p>Snake game</p>
+                <button onclick="view_snake()">Try Now</button>
+            </div>
+            </div>
+            
+            
+            <div id="project">
+            <div id="front">
+              <img id="img1" src="https://drive.google.com/uc?id=1IvhPpWa6lle0BIct0yG1aGU9RvNuAmho&export=download">
+            </div>
+            <div id="back">
+                <p>Glassmorphism login form</p>
+                <button onclick="view_form()">Try Now</button>
+            </div>
+            </div>
+            
+            
+        </div>
+        <div class="item3">
+            <marquee>Projects not related to web development</marquee>
+            <p>•Learning the basics of programming in C/C++ as my first language , creating more than 90 projects using strings , OOP , functions , windows API , multithreading , structure , file handling and many more , treating with a lot of header as conio.h , windows.h , iostream , vector , thread , string , my own created headers and more</p>
+            <p>•Controling keyboard to press keys and mouse to change position , check pixel color and perform clicks ... then creating 4 Python bots for 4 different games :- piano tiles , aim booster , clicker heroes , dinosaur run</p>
+            <p>•Harvesting data from websites , then extracting the mathematical equations from a game called math quiz (a web game created by me) , solving them , showing the result in the console screen , using Python</p>
+            <p>•Automating HTML elements in a website , then automating a login form (created by me) to find the correct password of a certain known username , using Python</p>
+        </div>
+        <div class="item4">
+          <marquee>Contact me</marquee>
+            <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook"></a>
+            <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp"></a>
+            <a href="https://t.me/ahmed0saber" class="fa fa-telegram"></a>
+            <a href="https://github.com/ahmed0saber" class="fa fa-github"></a>
+            <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen"></a>
+            <marquee>Viewed <span id="views">0</span> times</marquee>
+        </div>
+    </div>
+</body>
+</html>
