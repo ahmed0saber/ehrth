@@ -17,6 +17,27 @@
         });
         });
 
+        function goHome(){
+          var element = document.querySelector(".item1");
+
+          // scroll to element
+          element.scrollIntoView({behavior:'smooth'});
+          
+        }
+        function goProjects(){
+          var element = document.querySelector(".item2");
+
+          // scroll to element
+          element.scrollIntoView({behavior:'smooth'});
+        }
+        function goContact(){
+          var element = document.querySelector(".item4");
+
+          // scroll to element
+          element.scrollIntoView({behavior:'smooth'});
+        }
+        
+
         function view_puzzle()
         {
           window.open('https://ahmed0saber.github.io/ehrth/puzzle2048remade.html', '_blank');
@@ -48,6 +69,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        .item0 { grid-area: header; }
         .item1 { grid-area: menu; }
         .item2 { grid-area: main; }
         .item3 { grid-area: right; }
@@ -60,9 +82,9 @@
     }
     div {
     margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 95%;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: calc(100% - 15px);
     background: transparent;
     box-shadow:
        -7px -7px 20px 0px #0009,
@@ -120,6 +142,7 @@
        4px 4px 5px 0px #FFF1;
     }
     marquee{
+      z-index: 9;
     color: #EEE;
     font-size: 22px;
     background-color: rgba(150,150,150,0.1);
@@ -155,6 +178,9 @@
     .item4{
       text-align: center;
     }
+    .item0{
+      display: none;
+    }
     .grid-container {
         display: grid;
         grid-template-areas:
@@ -177,8 +203,12 @@
         }
 
         @media screen and (max-width: 700px) {
+            .item0{
+              display: block;
+            }
             .grid-container{
                 grid-template-areas: 
+                'header'
                 'menu'
                 'main'
                 'right'
@@ -261,10 +291,32 @@
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         color: #BBB;
       }
+      .header_btns{
+        width: calc(33% - 2px);
+        border: none;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 0;
+      }
+      .header_btns:hover{
+        border: none;
+      }
+      .item0{
+        padding: 2px;
+        margin: 0 auto;
+        position: fixed;
+        background-color: #111;
+        z-index: 10;
+      }
 </style>
 </head>
 <body>
 <div class="grid-container">
+    <div class="item0">
+      <button class="header_btns" onclick="goHome()">Home</button>
+      <button class="header_btns" onclick="goProjects()">Projects</button>
+      <button class="header_btns" onclick="goContact()">Contact</button>
+      </div>
     <div class="item1">
         <div id="img_div">
         <img id="myimg" src="https://drive.google.com/uc?id=1HgQeF7IX2TbwQq2KFBPgfxKRStV2Jyye&export=download"></div>
