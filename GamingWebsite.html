@@ -1,0 +1,269 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gaming Website</title>
+		<script>
+			function play(num)
+			{
+				if (num==1) {
+					window.open("https://cdn.htmlgames.com/AlienInvaders2/");
+				}
+				else if (num==2) {
+					window.open("https://cdn.htmlgames.com/FlowerWorld/");
+				}
+				else if (num==3) {
+					window.open("https://cdn.htmlgames.com/ColoringForKids/");
+				}
+				else if (num==4) {
+					window.open("https://cdn.htmlgames.com/RapidMath/");
+				}
+				else if (num==5) {
+					window.open("https://cdn.htmlgames.com/SoldierAttack1/");
+				}
+				else if (num==6) {
+					window.open("https://cdn.htmlgames.com/TicTacToe/");
+				}
+				else if (num==7) {
+					window.open("https://cdn.htmlgames.com/WorldVoyage/");
+				}
+			}
+		</script>
+		<style>
+		body{
+		margin:0;
+		background-color: #55F;
+		}
+		.horizontal-menu ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #0018c3;
+		}
+		.horizontal-menu li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			transition:0.8s;
+		}
+		.horizontal-menu .active {
+			background-color: #1cbb09;
+			color: white;
+		}
+		.horizontal-menu li {
+			float: left;
+			border-right: 1px solid #bbb;
+		}
+		.horizontal-menu li:last-child {
+			border-right: none;
+		}
+		.horizontal-menu li a:hover {
+			background-color: #111;
+		}
+		
+		
+		
+		
+		* {box-sizing: border-box;}
+		body {font-family: Verdana, sans-serif;}
+		.mySlides {display: none;}
+		img {vertical-align: middle;}
+
+		.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+			margin-bottom: 10px;
+		}
+
+		.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.active {
+			background-color: #717171;
+		}
+
+		.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+
+		@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+		}
+
+		@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+		}
+
+		#iconscontainer{
+			display:flex;
+			flex-wrap: wrap;
+		}
+
+		#imgarea{
+			margin:auto;
+			height: 210px;
+			width: 210px;
+		}
+
+		#icons{
+			margin: 5px auto;
+			height: 200px;
+			width: 200px;
+		}
+
+		#back{
+            margin:0;
+            padding:0;
+            height: 200px;
+            width: 200px;
+            opacity: 0;
+            transition-duration: 0.7s;
+            position: relative;
+            top: -205px;
+			background-color: #EEE;
+			text-align: center;
+        }
+        #back:hover{
+            opacity: 0.9;
+        }
+		p{
+			margin: 0;
+			padding: 5px;
+			font-size: 22px;
+		}
+		button{
+			height:40px;
+			width: 120px;
+			font-size: 22px;
+			border: 2px solid #00A;
+			transition-duration: 0.6s;
+		}
+		button:hover{
+			background-color: #00A;
+			color: #EEE;
+		}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-default " role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<div class="horizontal-menu">
+						<ul>
+							<li><a href="GamingWebsite.html" class="active">Gaming Website</a></li>
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Match 3</a></li>
+							<li><a href="#">Mind</a></li>
+							<li><a href="#">Hidden Object</a></li>
+							<li><a href="#">Time Management</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+
+
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<div class="numbertext">1 / 3</div>
+				<img src="tictactoe800450.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">2 / 3</div>
+				<img src="worldvoyage800.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="flowerworld800.jpg" style="width:100%">
+			</div>
+		</div>
+
+
+
+		<div id="iconscontainer">
+			<div id="imgarea">
+				<img src="alieninvaders2200.jpg" id="icons">
+				<div id="back">
+					<p>Alien Invaders</p>
+					<button onclick="play('1')">Play Now</button>
+				</div>
+			</div>
+			<div id="imgarea">
+				<img src="flowerworld200.jpg" id="icons">
+				<div id="back">
+					<p>Flower World</p>
+					<button onclick="play('2')">Play Now</button>
+				</div>
+			</div>
+			<div id="imgarea">
+				<img src="coloringforkids200.jpg" id="icons">
+				<div id="back">
+					<p>Coloring</p>
+					<button onclick="play('3')">Play Now</button>
+				</div>
+			</div>
+			<div id="imgarea">
+				<img src="rapidmath200.jpg" id="icons">
+				<div id="back">
+					<p>Rapid Math</p>
+					<button onclick="play('4')">Play Now</button>
+				</div>
+			</div>
+			<div id="imgarea">
+				<img src="soldierattack1200.jpg" id="icons">
+				<div id="back">
+					<p>Soldier Attack</p>
+					<button onclick="play('5')">Play Now</button>
+				</div>
+			</div>
+			<div id="imgarea">
+				<img src="tictactoe200.jpg" id="icons">
+				<div id="back">
+					<p>Tic Tac Toe</p>
+					<button onclick="play('6')">Play Now</button>
+				</div>
+			</div>
+			<div id="imgarea">
+				<img src="worldvoyage200.jpg" id="icons">
+				<div id="back">
+					<p>World Voyage</p>
+					<button onclick="play('7')">Play Now</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {slideIndex = 1}
+			slides[slideIndex-1].style.display = "block";  
+			setTimeout(showSlides, 3000);
+		}
+	</script>
+</html>
