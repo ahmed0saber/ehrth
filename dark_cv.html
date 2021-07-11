@@ -17,6 +17,12 @@
         });
         });
 
+
+        function shMenu(){
+          $(".menu_btns").slideToggle(500);
+        }
+        
+        
         function goHome(){
           var element = document.querySelector(".item1");
 
@@ -24,11 +30,19 @@
           element.scrollIntoView({behavior:'smooth'});
           
         }
-        function goProjects(){
+        function goProjects1(){
           var element = document.querySelector(".item2");
 
           // scroll to element
           element.scrollIntoView({behavior:'smooth'});
+          shMenu();
+        }
+        function goProjects2(){
+          var element = document.querySelector(".item3");
+
+          // scroll to element
+          element.scrollIntoView({behavior:'smooth'});
+          shMenu();
         }
         function goContact(){
           var element = document.querySelector(".item4");
@@ -309,14 +323,28 @@
         background-color: #111;
         z-index: 10;
       }
+      .menu_btns{
+        width: 100%;
+        border: none;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 0;
+        display: none;
+        margin: 2px;
+      }
+      .menu_btns:hover{
+        border: none;
+      }
 </style>
 </head>
 <body>
 <div class="grid-container">
     <div class="item0">
       <button class="header_btns" onclick="goHome()">Home</button>
-      <button class="header_btns" onclick="goProjects()">Projects</button>
+      <button class="header_btns" onclick="shMenu()">Projects</button>
       <button class="header_btns" onclick="goContact()">Contact</button>
+      <button class="menu_btns" onclick="goProjects1()">Web Projects</button>
+      <button class="menu_btns" onclick="goProjects2()">More Projects</button>
       </div>
     <div class="item1">
       <marquee>About me</marquee>
