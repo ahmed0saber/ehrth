@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LogIn & SignUp</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(function() {
+          $('#header2').click(function() {
+            $('#front').css('display', 'none');
+            $('#back').css('display', 'block');
+            });
+            
+            $('#header1').click(function() {
+            $('#front').css('display', 'block');
+            $('#back').css('display', 'none');
+            });
+        });
+        </script>
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+                background-color:#111;
+            }
+            div{
+                height: 446px;
+                width: 300px;
+                margin:0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color:#111;
+                text-align: center;
+            }
+            input{
+                width: 200px;
+                height:35px;
+                border: none;
+                outline: none;
+                margin: 15px;
+                font-family: times, "Times New Roman";
+                padding-left: 10px;
+                font-size: 16px;
+                border: 1px solid #111;
+                border-bottom: 1px solid #990;
+                background-color: #111;
+                color: #990;
+                transition-duration: 0.7s;
+            }
+            input:focus{
+                border: 1px solid #BB0;
+                color: #BB0;
+            }
+            button{
+                width: 100px;
+                height:35px;
+                margin: 25px;
+                border-radius: 15px;
+                font-family: serif;
+                background-color: #111;
+                color: #990;
+                transition-duration: 0.6s;
+                font-size: 20px;
+                border: 1px solid #990;
+            }
+            button:hover{
+                background-color: #990;
+                color: #111;
+            }
+            #h_para{
+                color: #990;
+                font-size:30px;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 15px;
+                padding-top: 10px;
+            }
+            span{
+                color: #770;
+                font-family: times, "Times New Roman";
+            }
+            #header1 , #header2{
+              width: 147px;
+              height: 32px;
+              font-size: 20px;
+              margin: 0 auto;
+              border: none;
+              border: 1px solid #990;
+            }
+            #header1{
+              border-radius: 7px 0px 0px 7px;
+            }
+            #header2{
+              border-radius: 0px 7px 7px 0px;
+            }
+            #front{
+              border: 1px solid #990;
+              border-radius: 8px;
+              margin: 0;
+              height: 310px;
+              margin-top: 4px;
+              transition-duration: 0.7s;
+            }
+            #back{
+              border: 1px solid #990;
+              border-radius: 8px;
+              display: none;
+              height: 380px;
+              margin: 0;
+              margin-top: 4px;
+              transition-duration: 0.7s;
+            }
+            input[type=submit]{
+              border: 1px solid #990;
+              font-size: 17px;
+            }
+            input[type=submit]:hover{
+              background-color: #990;
+              color: #111;
+            }
+            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: #550;
+              opacity: 1; /* Firefox */
+            }
+
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: #550;
+            }
+
+            ::-ms-input-placeholder { /* Microsoft Edge */
+              color: #550;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+          <button id="header1">Log in</button>
+          <button id="header2">Sign up</button>
+          <div id="front">
+            <form>
+            <p id="h_para">Log<span>in</span></p>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <input type="submit" value="Log in">
+            </form>
+            </div>
+            <div id="back">
+            <form>
+            <p id="h_para">Sign<span>up</span></p>
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="submit" value="Sign up">
+            </form>
+            </div>
+        </div>
+    </body>
+</html>
