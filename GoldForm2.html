@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign up</title>
+        <script>
+
+        </script>
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+                background-color:#111;
+            }
+            div{
+                height: 415px;
+                width: 300px;
+                margin:auto;
+                margin-top: 20px;
+                box-shadow: 0px 0px 5px 4px #660;
+                background-color:#111;
+                text-align: center;
+                border-left: 2px solid #FF5;
+                border-top: 2px solid #FF5;
+                border-right: 2px solid #990;
+                border-bottom: 2px solid #990;
+            }
+            input{
+                width: 200px;
+                height:35px;
+                border: none;
+                outline: none;
+                margin: 10px;
+                font-family: times, "Times New Roman";
+                padding-left: 10px;
+                font-size: 16px;
+                border: 1px solid #111;
+                border-bottom: 1px solid #BB0;
+                background-color: #111;
+                color: #BB0;
+                transition-duration: 0.7s;
+            }
+            input:focus{
+                border: 1px solid #EE0;
+                color: #EE0;
+            }
+            button{
+                width: 100px;
+                height:35px;
+                margin: 20px;
+                border-radius: 15px;
+                font-family: serif;
+                background-color: #111;
+                color: #BB0;
+                transition-duration: 0.6s;
+                font-size: 20px;
+                border: 1px solid #BB0;
+            }
+            button:hover{
+                background-color: #BB0;
+                border: 1px solid #BB0;
+                color: #000;
+                box-shadow: 0px 0px 6px 3px #990;
+            }
+            #h_para{
+                color: #EE0;
+                font-size:30px;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 20px;
+                padding-top: 15px;
+            }
+            span{
+                color: #AA0;
+                font-family: times, "Times New Roman";
+            }
+            P{
+                color: #FFF;
+                font-family: times, "Times New Roman";
+                font-size:15px;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 15px;
+                padding-top: 10px;
+            }
+            a{
+                color: #BB0;
+                font-family: times, "Times New Roman";
+                transition-duration: 0.7s;
+            }
+            a:hover{
+                color: #DD5;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p id="h_para">Sign<span>up</span></p>
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button>Sign up</button>
+            <p>Already have account ?! <a href="#">Log in</a></p>
+        </div>
+    </body>
+</html>
