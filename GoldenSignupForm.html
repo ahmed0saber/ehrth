@@ -11,7 +11,7 @@
                 margin:0;
             }
             body{
-                background-color:#111;
+                background-color:#000;
             }
             div{
                 height: 530px;
@@ -19,7 +19,7 @@
                 margin:0 auto;
                 margin-top: 20px;
                 margin-bottom: 20px;
-                background-color:#111;
+                background-color:#000;
                 text-align: center;
                 border: 1px solid #990;
                 border-radius: 10px;
@@ -29,13 +29,13 @@
                 height:35px;
                 border: none;
                 outline: none;
-                margin: 15px;
+                margin: 10px;
                 font-family: times, "Times New Roman";
                 padding-left: 10px;
                 font-size: 16px;
-                border: 1px solid #111;
+                border: 1px solid #333;
                 border-bottom: 1px solid #990;
-                background-color: #111;
+                background-color: #000;
                 color: #990;
                 border-radius: 5px;
                 transition-duration: 0.7s;
@@ -60,7 +60,7 @@
                 color: #880;
                 font-size:35px;
                 font-family: 'Times New Roman', Times, serif;
-                margin: 12px;
+                margin: 10px;
                 padding-top: 10px;
                 transition-duration: 0.4s;
             }
@@ -79,7 +79,7 @@
               border: 1px solid #990;
               font-size: 17px;
               width: 150px;
-              margin-bottom: 25px;
+              margin-bottom: 20px;
             }
             input[type=submit]:hover{
               background-color: #990;
@@ -98,19 +98,29 @@
             #names{
               width: 90px;
               margin: 0 auto;
-              margin-bottom: 15px;
-              margin-top: 15px;
+              margin-bottom: 10px;
+              margin-top: 10px;
+            }
+            .fa{
+              font-size: 100px;
+              margin: 5px;
+              transition-duration: 0.6s;
+            }
+            .fa:hover{
+              color: #990;
+              transform: translate(-2px,-2px);
+              text-shadow: 2px 2px #550;
             }
         </style>
     </head>
     <body>
         <div>
             <p id="h_para">Sign<span>up</span></p>
+            <p class="fa fa-user-circle"></p>
             <form>
             <input type="text" placeholder="First name" id="names">
             <input type="text" placeholder="Last name" id="names">
             <input type="text" placeholder="Username">
-            <input type="text" placeholder="Email">
             <input type="password" placeholder="Password">
             <input type="password" placeholder="Confirm password">
             <input type="submit" value="Sign up">
