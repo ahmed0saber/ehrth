@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <style>
+            body{
+                background-color: #111;
+            }
+            *{
+                margin:0;
+            }
+            div{
+                border: 1px solid #550;
+                border-radius: 5px;
+                background: transparent;
+            }
+            button{
+                float: right;
+                width: 100px;
+                height: 50px;
+                color: #770;
+                border-radius: 10px;
+                transition-duration: 0.7s;
+                font-size:22px;
+                height: 40px;
+                font-family: 'Times New Roman', Times, serif;
+                border: 1px solid #660;
+                background: transparent;
+            }
+            button:hover{
+                background-color: #770;
+                color: #111;
+            }
+            h1{
+                padding-left: 10px;
+                color: #880;
+                display: inline-block;
+                font-family: 'Times New Roman', Times, serif;
+                text-shadow: 
+                    0 1px 0 #441, 
+                    0 2px 0 #331, 
+                    0 3px 0 #551, 
+                    0 4px 0 #585811, 
+                    0 5px 0 #661, 
+                    0 6px 1px rgba(100,100,50,.1), 
+                    0 0 5px rgba(100,100,50,.1), 
+                    0 1px 3px rgba(100,100,50,.3), 
+                    0 3px 5px rgba(100,100,50,.2), 
+                    0 5px 10px rgba(100,100,50,.25), 
+                    0 10px 10px rgba(100,100,50,.2), 
+                    0 20px 20px rgba(100,100,50,.15);
+            }
+            h2{
+                display: block;
+                width: 100%;
+                padding: 10px;
+                color: #880;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #header{
+                padding:10px;
+                border: 1px solid #550;
+            }
+            p{
+                padding:10px;
+                margin:10px;
+                margin-left: 25px;
+                background-color: #111;
+                color: #880;
+                border: 1px solid #660;
+                border-radius: 5px;
+            }
+            #container{
+                padding:10px;
+                margin: 20px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #fadeable{
+                height: 300px;
+                width: 300px;
+                margin: auto;
+                border-radius: 0;
+                border: none;
+            }
+            #back{
+                margin:0;
+                padding:0;
+                height: 280px;
+                width: 280px;
+                transition-duration: 0.7s;
+                border-radius: 0;
+                opacity: 0;
+                position: relative;
+                top: -306px;
+                background-color: #111;
+			          z-index: 10;
+			          margin: 10px;
+            }
+            #back:hover{
+              opacity: 1;
+            }
+            #dev{
+                margin:0;
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+            }
+            span{
+                color: #770;
+            }
+            #myimg{
+              width: 280px;
+              height: 280px;
+              margin: 10px;
+              z-index: 9;
+              border: 1px solid #550;
+            }
+            a{
+              color: #990;
+              -webkit-tap-highlight-color: rgba(0,0,0,0);
+              transition-duration: 0.3s;
+            }
+            a:hover{
+              opacity: 0.7;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Our <span>Website</span></h1>
+            <button id="login">Log in</button>
+        </div>
+        <div id="container">
+            <h2>Introduction</h2>
+            <p>Our Website is a website created by Ahmed Saber (frontend developer) and Mohammed El Ganainy (backend developer) ... for more info about the developers , scroll down !!</p>
+            <p>Created in 2021 as a practical part of our learning process...</p>
+            <p>You just need to log in to be able to receive messages from people without knowing their names , to see what they will say if they are honest ... create account if you don't have one (from the above header) .</p>
+        </div>
+        <div id="container">
+            <h2>About the developers</h2>
+            <div id="fadeable">
+                    <img id="myimg" src="https://drive.google.com/uc?id=1HgQeF7IX2TbwQq2KFBPgfxKRStV2Jyye&export=download">
+                <div id="back">
+                    <p id="dev">Name : Ahmed Saber</p>
+                    <p id="dev">A frontend web developer</p>
+                    <p id="dev"><a href="https://ahmed0saber.github.io/ehrth/dark_cv.html" target="_blank">More info</a></p>
+                </div>
+            </div>
+            <div id="fadeable">
+                    <img id="myimg" src="https://drive.google.com/uc?id=1HgQeF7IX2TbwQq2KFBPgfxKRStV2Jyye&export=download">
+                <div id="back">
+                    <p id="dev">Name : Mohammed El Ganainy</p>
+                    <p id="dev">a backend web developer</p>
+                    <p id="dev"><a href="#" target="_blank">More info</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
