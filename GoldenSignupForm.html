@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign up</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="https://drive.google.com/u/0/uc?id=1K4KbbFhnaPsiLqkrNjp8XusqCl5q3Ee-&export=download" type="image/x-icon">
+        </script>
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+                background-color:#111;
+            }
+            div{
+                height: 530px;
+                width: 300px;
+                margin:0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                background-color:#111;
+                text-align: center;
+                border: 1px solid #990;
+                border-radius: 10px;
+            }
+            input{
+                width: 200px;
+                height:35px;
+                border: none;
+                outline: none;
+                margin: 15px;
+                font-family: times, "Times New Roman";
+                padding-left: 10px;
+                font-size: 16px;
+                border: 1px solid #111;
+                border-bottom: 1px solid #990;
+                background-color: #111;
+                color: #990;
+                border-radius: 5px;
+                transition-duration: 0.7s;
+            }
+            input:focus{
+                border: 1px solid #BB0;
+                color: #BB0;
+            }
+            p{
+              color: #770;
+            }
+            a{
+              color: #AA0;
+              text-decoration: none;
+              -webkit-tap-highlight-color: rgba(0,0,0,0);
+              transition-duration: 0.3s;
+            }
+            a:hover{
+              opacity: 0.7;
+            }
+            #h_para{
+                color: #880;
+                font-size:35px;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 12px;
+                padding-top: 10px;
+                transition-duration: 0.4s;
+            }
+            #h_para:hover{
+              color: #AA0;
+            }
+            span{
+                color: #770;
+                font-family: times, "Times New Roman";
+                transition-duration: 0.4s;
+            }
+            span:hover{
+              color: #550;
+            }
+            input[type=submit]{
+              border: 1px solid #990;
+              font-size: 17px;
+              width: 150px;
+              margin-bottom: 25px;
+            }
+            input[type=submit]:hover{
+              background-color: #990;
+              color: #111;
+            }
+            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: #550;
+              opacity: 1; /* Firefox */
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: #550;
+            }
+            ::-ms-input-placeholder { /* Microsoft Edge */
+              color: #550;
+            }
+            #names{
+              width: 90px;
+              margin: 0 auto;
+              margin-bottom: 15px;
+              margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p id="h_para">Sign<span>up</span></p>
+            <form>
+            <input type="text" placeholder="First name" id="names">
+            <input type="text" placeholder="Last name" id="names">
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm password">
+            <input type="submit" value="Sign up">
+            </form>
+            <p>Already have account ?! <a href="">Log in</a></p>
+        </div>
+    </body>
+</html>
