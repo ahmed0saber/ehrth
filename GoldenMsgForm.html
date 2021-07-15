@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Message</title>
+        <link rel="icon" href="https://drive.google.com/u/0/uc?id=1K4KbbFhnaPsiLqkrNjp8XusqCl5q3Ee-&export=download" type="image/x-icon">
+        </script>
+        <style>
+            *{
+                margin:0;
+            }
+            body{
+                background-color:#000;
+            }
+            #container{
+                width: 100%;
+                margin:0 auto;
+                margin-bottom: 20px;
+                background-color:#000;
+                text-align: center;
+            }
+            marquee{
+              color: #990;
+              background-color: #151515;
+              font-size: 22px;
+              padding: 5px;
+            }
+            p{
+              color: #770;
+            }
+            #h_para{
+                color: #990;
+                font-size:35px;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 0 auto;
+                transition-duration: 0.5s;
+            }
+            #h_para:hover{
+              color: #BB0;
+            }
+            input , textarea{
+                height:35px;
+                margin: 10px;
+                font-family: times, "Times New Roman";
+                background-color: #000;
+                color: #990;
+                border-radius: 5px;
+                transition-duration: 0.7s;
+                border: 1px solid #990;
+                font-size: 17px;
+                width: 150px;
+            }
+            textarea{
+              width: 250px;
+              height: 200px;
+              padding: 10px;
+            }
+            input[type=submit]:hover{
+              background-color: #990;
+              color: #000;
+            }
+            img{
+              height: 200px;
+              width: 200px;
+              position: relative;
+              top: -110px;
+              border-radius: 50%;
+              border: 5px solid #000;
+              transition-duration: 0.5s;
+            }
+            img:hover{
+              height: 210px;
+              width: 210px;
+              top: -113px;
+              border: 2px solid #000;
+            }
+            #above{
+              height: 150px;
+              background-color: #550;
+            }
+            #imgarea{
+              height: 260px;
+            }
+            #space{
+              height: 270px;
+              width: 270px;
+              margin: auto;
+            }
+            #msgarea{
+              box-shadow: 0px 0px 5px 3px #552;
+              background-color: #111;
+              width: 250px;
+              height: 250px;
+              margin: 10px;
+              text-align: left;
+              overflow-x: hidden;
+              overflow-y: scroll;
+            }
+            #info{
+              color: #000;
+              background-color: #770;
+              font-size: 20px;
+              padding: 5px;
+            }
+            #msg{
+              padding: 12px;
+              color: #990;
+              font-size: 19px;
+              word-break: break-all;
+            }
+            #allmsgs{
+              display: flex;
+              flex-wrap: wrap;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #222; 
+            }
+            ::-webkit-scrollbar-track:hover {
+                background: #333; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #880; 
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #990; 
+            }
+            ::placeholder{
+              color: #550;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+          <div id="imgarea">
+            <div id="above"></div>
+              <img src="https://drive.google.com/uc?id=1HgQeF7IX2TbwQq2KFBPgfxKRStV2Jyye&export=download">
+          </div>
+            <p id="h_para">Ahmed Saber</p>
+            <form>
+            <textarea placeholder="Type your message here"></textarea>
+            <input type="submit" value="Send">
+            </form>
+        </div>
+    </body>
+</html>
