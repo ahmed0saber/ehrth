@@ -4,47 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Global Chat</title>
-        <script>
-        function _load()
-        {
-          var element = document.getElementById("msg_container");
-          var dimension1 = element.scrollHeight ;
-   
-   for(var i=0;i<5;i++)
-   {
-     var myobj = document.getElementById("loadmsgs");
-     myobj.remove();
-   element.innerHTML = `<button onclick="_load()" id="loadmsgs">Load previous messages</button>` + `
-                    <div id="user_div"><p id="user_msg">Ahmed : Test</p></div>` + element.innerHTML;
-   }
-          var dimension2 = element.scrollHeight ;
-          element.scrollTop = dimension2 - dimension1 ;
-        }
-        
-        
-        
-        function _start()
-        {
-          var element = document.getElementById("msg_container");
-          element.scrollTop = element.scrollHeight;
-        }
-        
-        
-        
-function _send()
-{
-  var element = document.getElementById("msg_container");
-   element.innerHTML = element.innerHTML + `
-                    <div id="user_div"><p id="user_msg">Ahmed : Test</p></div>`;
-            var x = element.scrollHeight-461;
-            var y = element.scrollTop;
-  document.getElementById("tx1").value="";
-  if(x==y)
-{
-    element.scrollTop = element.scrollHeight;
-}
-}
-        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <style>
             body{
                 background-color: #111;
@@ -230,7 +190,7 @@ function _send()
             <button id="logout">Log out</button>
         </div>
         <div id="msg_container">
-          <button onclick="_load()" id="loadmsgs">Load previous messages</button>
+            <button onclick="_load()" id="loadmsgs">Load previous messages</button>
             <div><p>User : Hello</p></div>
             <div id="user_div"><p id="user_msg">Ahmed : My name is Ahmed</p></div>
             <div><p>User : What is your name ??</p></div>
@@ -253,4 +213,62 @@ function _send()
         </div>
         <button id="down" class="fa fa-chevron-down" onclick="_start()"></button>
     </body>
+
+
+
+
+        <script>
+            var scrolled = true;
+        function _load()
+        {
+          var element = document.getElementById("msg_container");
+          var dimension1 = element.scrollHeight ;
+   
+   for(var i=0;i<5;i++)
+   {
+     var myobj = document.getElementById("loadmsgs");
+     myobj.remove();
+   element.innerHTML = `<button onclick="_load()" id="loadmsgs">Load previous messages</button>` + `
+                    <div id="user_div"><p id="user_msg">Ahmed : Test</p></div>` + element.innerHTML;
+   }
+          var dimension2 = element.scrollHeight ;
+          element.scrollTop = dimension2 - dimension1 ;
+        }
+        
+        
+        
+        function _start()
+        {
+          var element = document.getElementById("msg_container");
+          element.scrollTop = element.scrollHeight;
+        }
+        
+        
+        
+function _send()
+{
+  var element = document.getElementById("msg_container");
+   element.innerHTML = element.innerHTML + `
+                    <div id="user_div"><p id="user_msg">Ahmed : Test</p></div>`;
+  document.getElementById("tx1").value="";
+    if (scrolled)
+    {
+        element.scrollTop = element.scrollHeight;
+    }
+}
+
+
+var element = document.getElementById("msg_container");
+element.addEventListener('scroll', function(event)
+{
+    var element = event.target;
+    if (element.scrollHeight - element.scrollTop === element.clientHeight)
+    {
+        scrolled = true;
+    }
+    else{
+        scrolled = false;
+    }
+});
+        </script>
 </html>
