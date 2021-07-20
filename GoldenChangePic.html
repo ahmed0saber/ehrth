@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Change picture</title>
+        <link rel="icon" href="https://drive.google.com/u/0/uc?id=1K4KbbFhnaPsiLqkrNjp8XusqCl5q3Ee-&export=download" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          
+          $("img").click(function(){
+            $("img").css("background-color", "#000");
+            $(this).css("background-color", "#990");
+          });
+          
+          $("#pic1").click(function(){
+            $("#pic_id").val("1");
+          });
+          $("#pic2").click(function(){
+            $("#pic_id").val("2");
+          });
+          $("#pic3").click(function(){
+            $("#pic_id").val("3");
+          });
+          $("#pic4").click(function(){
+            $("#pic_id").val("4");
+          });
+        });
+        </script>
+        <style>
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #222; 
+            }
+            ::-webkit-scrollbar-track:hover {
+                background: #333; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #880; 
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #990; 
+            }
+            body{
+              margin: 0;
+              background-color: #000;
+            }
+            p{
+              color: #AA0;
+              font-family: Times New Roman;
+              font-size: 35px;
+              text-align: center;
+            }
+            input[type=submit]{
+              height: 50px;
+              width: 150px;
+              margin-left: calc(50% - 77px);
+              border-radius: 10px;
+              color: #AA0;
+              background-color: #000;
+              border: 2px solid #AA0;
+              font-size: 30px;
+              margin-top: 25px;
+              margin-bottom: 15px;
+              transition-duration: 0.8s;
+            }
+            input[type=submit]:hover{
+              color: #000;
+              background-color: #AA0;
+              border: 2px solid #000;
+            }
+            img{
+              height: 250px;
+              width: 250px;
+              padding: 10px;
+              border-radius: 50%;
+            }
+            #space{
+              height: 270px;
+              width: 270px;
+              padding: 10px;
+              margin: auto;
+              border-radius: 50%;
+              opacity: 0.6;
+              transition-duration: 0.8s;
+            }
+            #space:hover{
+              opacity: 1;
+            }
+            #pics{
+              display: flex;
+              flex-wrap: wrap;
+            }
+            #p1{
+              color: #770;
+              font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+      <div id="title">
+        <p>Choose a picture</p>
+        <p id="p1">If you click the save button without choosing a picture , your profile picture will be changed to the default one...!
+      </div>
+      <div id="pics">
+        <div id="space">
+          <img id="pic1" src="https://drive.google.com/uc?id=1Kqx9kaXrrOoBeqUhrBpFjD0FlHETkk4b&export=download">
+        </div>
+        <div id="space">
+          <img id="pic2" src="https://drive.google.com/uc?id=1KsXzJgBIPiQcxrlgHMx_aee-TLJtvl4I&export=download">
+        </div>
+        <div id="space">
+          <img id="pic3" src="https://drive.google.com/uc?id=1L-L60SH6aS8BYuLYEJup37A65leGYbS3&export=download">
+        </div>
+        <div id="space">
+          <img id="pic4" src="https://drive.google.com/uc?id=1L0bY1-4TInyjf4hNyLdnOTUeQWBr5eYl&export=download">
+        </div>
+      </div>
+      <div id="hidden_form">
+        <form>
+          <input type="hidden" value="0" id="pic_id">
+          <input type="submit" value="Save">
+        </form>
+      </div>
+    </body>
+</html>
