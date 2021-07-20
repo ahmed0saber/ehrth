@@ -4,7 +4,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home</title>
         <script>
-
+          function saber(){
+            window.open("https://ahmed0saber.github.io/ehrth/dark_cv.html", "_blank");
+          }
+          function yasser(){
+            window.open("https://www.linkedin.com/in/ahmedyasser54/", "_blank");
+          }
         </script>
         <style>
             body{
@@ -95,30 +100,33 @@
                 flex-wrap: wrap;
             }
             #fadeable{
-                height: 300px;
-                width: 300px;
+                height: 270px;
+                width: 270px;
                 margin: auto;
                 margin-top:20px;
                 margin-bottom:20px;
+                box-shadow: none;
             }
             #login{
                 height: 40px;
             }
             #back{
-                margin:0;
                 padding:0;
-                height: 300px;
-                width: 300px;
+                height: 250px;
+                width: 250px;
+                margin: 10px;
                 opacity: 0;
                 transition-duration: 0.7s;
                 position: relative;
-                top: -300px;
+                top: -260px;
+                background-color: #111;
+                box-shadow: none;
             }
             #front{
-                margin:0;
+                margin:10px;
                 padding:0;
-                height: 300px;
-                width: 300px;
+                height: 250px;
+                width: 250px;
             }
             #back:hover{
                 opacity: 1;
@@ -129,6 +137,16 @@
             }
             span{
                 color: #AAA;
+            }
+            img{
+              height: 250px;
+              width: 250px;
+            }
+            .infobtns{
+              margin: 75px;
+              margin-top: 50px;
+              font-size: 16px;
+              height: 30px;
             }
         </style>
     </head>
@@ -147,18 +165,22 @@
             <h2>About the developers</h2>
             <div id="fadeable">
                 <div id="front">
-                    <p id="dev">Ahmed Saber</p>
+                  <img src="https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
                 </div>
                 <div id="back">
-                    <p id="dev">Frontend web developer</p>
+                  <p id="dev">Ahmed Saber</p>
+                  <p id="dev">Frontend web developer</p>
+                  <button class="infobtns" onclick="saber()">More info</button>
                 </div>
             </div>
             <div id="fadeable">
                 <div id="front">
-                    <p id="dev">Ahmed Yasser</p>
+                  <img src="https://drive.google.com/uc?id=1LYrSX9sSsVpQ5Bp2jrz3WmKz3VfIXx4G&export=download">
                 </div>
                 <div id="back">
-                    <p id="dev">Backend web developer</p>
+                  <p id="dev">Ahmed Yasser</p>
+                  <p id="dev">Backend web developer</p>
+                  <button class="infobtns" onclick="yasser()">More info</button>
                 </div>
             </div>
         </div>
