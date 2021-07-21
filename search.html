@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>search</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<style>
+    body{
+        background-color: #000;
+        margin: 0;
+    }
+    img{
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+    }
+    p{
+        float: right;
+        font-size:20px;
+        font-family: 'Times New Roman', Times, serif;
+        color: #990;
+        word-break: break-word;
+        padding:0;
+        margin-top: 33px;
+    }
+    div{
+        margin: 0 auto;
+        width: 350px;
+    }
+    li{
+        transition-duration: 0.6s;
+    }
+    li:hover{
+        opacity:0.5;
+        background-color: #111;
+    }
+    input{
+        background: transparent;
+        width: 90%;
+        height: 50px;
+        margin-left: calc(50% - 45%);
+        padding: 10px;
+        font-size:19px;
+        color: #990;
+        border: 1px solid #990;
+        outline:none;
+    }
+    ::placeholder{
+        color: #550;
+    }
+</style>
+<body class="w3-container">
+
+<input oninput="w3.filterHTML('#id01', 'li', this.value)" placeholder="Search for users">
+
+<ul id="id01" class="w3-ul w3-margin-top">
+    <li><a href="#"><div>
+        <img src='soldierattack1200.jpg'>
+        <p>Ahmed Saber</p>
+    </div></a></li>
+
+    <li><a href="#"><div>
+        <img src='soldierattack1200.jpg'>
+        <p>Mohammed</p>
+    </div></a></li>
+
+    <li><a href="#"><div>
+        <img src='soldierattack1200.jpg'>
+        <p>Ali</p>
+    </div></a></li>
+</ul>
+
+</body>
+</html>
