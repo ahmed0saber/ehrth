@@ -3,7 +3,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>search</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://www.w3schools.com/lib/w3.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myUL a").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 <style>
     body{
         background-color: #000;
@@ -13,15 +23,19 @@
         width: 75px;
         height: 75px;
         border-radius: 50%;
+        float: right;
+        margin-top: -15px;
+        border: 1px solid #990;
+        margin-right: 10px;
     }
     p{
-        float: right;
         font-size:20px;
         font-family: 'Times New Roman', Times, serif;
         color: #990;
         word-break: break-word;
         padding:0;
-        margin-top: 33px;
+        margin-top: 15px;
+        padding-left: 10px;
     }
     div{
         margin: 0 auto;
@@ -29,18 +43,24 @@
     }
     li{
         transition-duration: 0.6s;
+        height: 90px;
         width: 400px;
-        margin: 0 auto;
+        margin-left: calc(50% - 200px);
+        margin-bottom: 10px;
+        margin-top: 10px;
+        background-color: #151500;
+        opacity: 0.8;
     }
     li:hover{
-        opacity:0.5;
-        background-color: #111;
+        opacity:1;
+        background-color: #330;
+        border: 2px solid #BB0;
     }
     input{
         background: transparent;
-        width: 90%;
+        width: 300px;
         height: 50px;
-        margin-left: calc(50% - 45%);
+        margin-left: calc(50% - 150px);
         padding: 10px;
         font-size:19px;
         color: #990;
@@ -50,26 +70,55 @@
     ::placeholder{
         color: #550;
     }
+    a{
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
 </style>
 <body class="w3-container">
 
-<input oninput="w3.filterHTML('#id01', 'li', this.value)" placeholder="Search for users">
+<input oninput="myFunction()" id="myInput" placeholder="Search for users">
 
-<ul id="id01" class="w3-ul w3-margin-top">
-    <li><a href="#"><div>
-        <img src='soldierattack1200.jpg'>
+<ul id="myUL" class="w3-ul w3-margin-top">
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
         <p>Ahmed Saber</p>
-    </div></a></li>
+    </div></li></a>
 
-    <li><a href="#"><div>
-        <img src='soldierattack1200.jpg'>
-        <p>Mohammed</p>
-    </div></a></li>
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
+        <p>Mohammed El Ganainy gggggg</p>
+    </div></li></a>
 
-    <li><a href="#"><div>
-        <img src='soldierattack1200.jpg'>
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
         <p>Ali</p>
-    </div></a></li>
+    </div></li></a>
+    
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
+        <p>Hassan</p>
+    </div></li></a>
+    
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
+        <p>Ebrahim</p>
+    </div></li></a>
+    
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
+        <p>Anything</p>
+    </div></li></a>
+    
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
+        <p>Anyone</p>
+    </div></li></a>
+    
+    <a href="#"><li><div>
+        <img src='a1.jpg'>
+        <p>Any name</p>
+    </div></li></a>
 </ul>
 
 </body>
