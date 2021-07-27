@@ -1,8 +1,15 @@
 <html>
 	<head>
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>animation</title>
-		<script>
+    <style>
+      * {margin:0;padding:0}
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+  </body>
+	<script>
 	let canvas = document.querySelector('canvas');
 	let ctx = canvas.getContext('2d');
 	let w = window.innerWidth;
@@ -60,11 +67,4 @@
 
 	window.requestAnimationFrame(animation)
     </script>
-    <style>
-      * {margin:0;padding:0}
-    </style>
-  </head>
-  <body>
-    <canvas></canvas>
-  </body>
 </html>
