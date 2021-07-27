@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Gaming Website</title>
+		<script>
+      "use strict";
+
+	let canvas = document.querySelector('canvas');
+	let ctx = canvas.getContext('2d');
+	let w = window.innerWidth;
+	let h = window.innerHeight;
+
+	canvas.width = w;
+	canvas.height = 200;
+
+	clearView();
+
+	let particles = [];
+
+	for(let i=0; i<250; i++){
+		particles.push({
+			"px": w/2,
+			"py": h/2,
+			"vx":5-10 * Math.random(),
+			"vy": 5-10 * Math.random(),
+			"r": 5+10 * Math.random()
+		});
+	}
+
+	function animation(){
+
+		clearView();
+
+		ctx.fillStyle = "#990";
+
+		for(var i = 0; i < 120; i++){
+			ctx.beginPath();
+			ctx.arc(particles[i].px, particles[i].py, particles[i].r, 0 * Math.PI, Math.PI * 2);
+			ctx.fill();
+
+			particles[i].px += particles[i].vx;
+			particles[i].py += particles[i].vy;
+
+			if(particles[i].px >= w || particles[i].px <= 0){
+				particles[i].vx = -particles[i].vx;
+			}
+
+			if(particles[i].py >= h || particles[i].py <= 0){
+				particles[i].vy = -particles[i].vy;
+			}
+		}
+
+		return window.requestAnimationFrame(animation)
+	}
+
+	function clearView(){
+		ctx.clearRect(0,0,w,h);
+
+		ctx.fillStyle = "#660";
+		ctx.fillRect(0,0,w,h);
+	}
+
+	window.requestAnimationFrame(animation)
+    </script>
+    <style>
+      * {margin:0;padding:0}
+    </style>
+  </head>
+  <body>
+    <canvas></canvas>
+  </body>
+</html>
