@@ -22,7 +22,7 @@
 
 	let particles = [];
 
-	for(let i=0; i<300; i++){
+	for(let i=0; i<250; i++){
 		particles.push({
 			"px": w/2,
 			"py": h/2,
@@ -38,7 +38,7 @@
 
 		ctx.fillStyle = "#990";
 
-		for(var i = 0; i < 120; i++){
+		for(var i = 0; i < 150; i++){
 			ctx.beginPath();
 			ctx.arc(particles[i].px, particles[i].py, particles[i].r, 0 * Math.PI, Math.PI * 2);
 			ctx.fill();
