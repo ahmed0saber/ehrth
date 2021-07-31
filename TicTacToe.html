@@ -1,6 +1,6 @@
 <html>
 <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tic Tac Toe</title>
 <style>
 body{
@@ -21,15 +21,17 @@ input[type="button"]:hover {background-color: #4CAF50;
 color: white;
 border: 2px solid #000000;}
 #play {display:none;
-height:500px;
+height:550px;
 width:400px;
+margin: auto;
 margin-top:25px;
 text-align:center;
 box-shadow:0px 0px 10px #000000;
 background-color:#B8EEF8;}
 #start {
-height:500px;
+height:550px;
 width:400px;
+margin: auto;
 margin-top:25px;
 text-align:center;
 box-shadow:0px 0px 10px #000000;
@@ -46,7 +48,7 @@ border-radius:25px;}
 #go0:hover {background-color: #4CAF50;
 color: white;
 border: 2px solid #000000;}
-#back0 {height:50px;
+.btns {height:50px;
 width:200px;
 margin:20px 10px 40px 10px;
 background-color:#FFFFAA;
@@ -55,7 +57,7 @@ border: 2px solid #4CAF50;
 transition-duration: 0.5s;
 cursor: pointer;
 border-radius:25px;}
-#back0:hover {background-color: #4CAF50;
+.btns:hover {background-color: #4CAF50;
 color: white;
 border: 2px solid #000000;}
 #p1 {margin:25px 10px 0px 10px;
@@ -63,17 +65,75 @@ font-size: 20px;}
 #p2 {margin:0px 10px 0px 10px;}
 </style>
 <script>
-var turn=0;
-function done(x){if(turn==0){document.getElementById(x).disabled=true;
-turn=1;
-document.getElementById(x).value="X";}
-else if(turn==1){document.getElementById(x).disabled=true;
-turn=0;
-document.getElementById(x).value="O";}}
-function go(){document.getElementById("play").style.display = "block";
-document.getElementById("start").style.display = "none";}
-function back(){document.getElementById("start").style.display = "block";
-document.getElementById("play").style.display = "none";}
+var turn=0 , board=[];
+function done(x){
+    var my_element = document.getElementById('b'+x) ;
+    if(turn==0){my_element.disabled=true;
+        turn=1;
+        my_element.value="X";
+        board[x]='x';
+    }
+    else if(turn==1)
+    {
+        my_element.disabled=true;
+        turn=0;
+        my_element.value="O";
+        board[x]='o';
+    }
+    if(check_win(board[x]))
+    {
+        alert(board[x]+' wins');
+        for(var i=0;i<=8;i++)
+        {
+            document.getElementById('b'+i).disabled=true;
+        }
+    }
+}
+function check_win(player)
+{
+    for(var i=0;i<=2;i++)
+    {
+        if(board[i]==board[i+3]&&board[i]==board[i+6]&&board[i]==player)
+        {
+            return true;
+        }
+    }
+    for(var i=0;i<=6;i+=3)
+    {
+        if(board[i]==board[i+1]&&board[i]==board[i+2]&&board[i]==player)
+        {
+            return true;
+        }
+    }
+    if(board[0]==board[4]&&board[0]==board[8]&&board[0]==player)
+    {
+        return true;
+    }
+    if(board[2]==board[4]&&board[2]==board[6]&&board[2]==player)
+    {
+        return true;
+    }
+}
+function go()
+{
+    document.getElementById("play").style.display = "block";
+    document.getElementById("start").style.display = "none";
+}
+function back()
+{
+    document.getElementById("start").style.display = "block";
+    document.getElementById("play").style.display = "none";
+}
+function restart()
+{
+    for(var i=0;i<=8;i++)
+    {
+        document.getElementById('b'+i).disabled=false;
+        document.getElementById('b'+i).value='';
+        board[i]='';
+        turn=0;
+    }
+}
 </script>
 </head>
 <body>
@@ -83,24 +143,25 @@ document.getElementById("play").style.display = "none";}
 <button onclick="go()" id="go0">Start</button>
 </div>
 <div id="play">
-<button onclick="back()" id="back0">Back</button>
+<button onclick="back()" class="btns" id="back0">Back</button>
 <table align="center">
 <tr>
-<td><input type="button" value="" onclick="done('b1')" id="b1"/></td>
-<td><input type="button" value="" onclick="done('b2')" id="b2"/></td>
-<td><input type="button" value="" onclick="done('b3')" id="b3"/></td>
+<td><input type="button" value="" onclick="done('0')" id="b0"/></td>
+<td><input type="button" value="" onclick="done('1')" id="b1"/></td>
+<td><input type="button" value="" onclick="done('2')" id="b2"/></td>
 </tr>
 <tr>
-<td><input type="button" value="" onclick="done('b4')" id="b4"/></td>
-<td><input type="button" value="" onclick="done('b5')" id="b5"/></td>
-<td><input type="button" value="" onclick="done('b6')" id="b6"/></td>
+<td><input type="button" value="" onclick="done('3')" id="b3"/></td>
+<td><input type="button" value="" onclick="done('4')" id="b4"/></td>
+<td><input type="button" value="" onclick="done('5')" id="b5"/></td>
 </tr>
 <tr>
-<td><input type="button" value="" onclick="done('b7')" id="b7"/></td>
-<td><input type="button" value="" onclick="done('b8')" id="b8"/></td>
-<td><input type="button" value="" onclick="done('b9')" id="b9"/></td>
+<td><input type="button" value="" onclick="done('6')" id="b6"/></td>
+<td><input type="button" value="" onclick="done('7')" id="b7"/></td>
+<td><input type="button" value="" onclick="done('8')" id="b8"/></td>
 </tr>
 </table>
+<button onclick="restart()" class="btns">Restart</button>
 </div>
 </body>
 </html>
