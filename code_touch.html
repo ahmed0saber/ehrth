@@ -1,0 +1,188 @@
+<html>
+  <head>
+    <title>Code Touch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+      function shMenu(){
+          $(".menu_btns").slideToggle(500);
+        }
+    </script>
+    <style>
+      body{
+        background: radial-gradient(#222,#111,#000);
+        margin: 0;
+        padding: 0;
+      }
+      p{
+        color: #EEE;
+        font-size: 18px;
+        font-family: Times New Roman;
+      }
+      #header{
+        background-color: #5556;
+        position: fixed;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: -75px;
+        padding: 10px;
+      }
+      .menu_btns{
+        width: calc(100% - 30px);
+        border: none;
+        margin: 0 auto;
+        padding: 0;
+        border-radius: 0;
+        display: none;
+        margin: 5px;
+        margin-top:15px;
+        color: #EEE;
+        background-color: #0009;
+        border: 1px solid #EEE;
+        height: 30px;
+        font-size: 18px;
+        font-family: Times New Roman;
+      }
+      #footer{
+        background-color: #5556;
+        margin-bottom: -20px;
+        text-align: center;
+      }
+      #title_h{
+        display: inline;
+        font-size: 28px;
+      }
+      #title_f{
+        font-size: 16px;
+        padding: 10px;
+      }
+      #intro{
+        text-align: center;
+        margin: 75px 5px 20px 5px;
+      }
+      #intro_p{
+        display: inline;
+        padding: 10px;
+        font-size: 55px;
+      }
+      #intro2{
+        text-align: center;
+        margin: 5px 5px 20px 5px;
+      }
+      #intro2_p{
+        color: #BBB;
+        display: inline;
+        padding: 3px;
+        font-size: 18px;
+      }
+      #container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+      }
+      #space{
+        margin: 5px auto;
+        height: 240px;
+        width: 240px;
+      }
+      #btns{
+        height: 200px;
+        width: 200px;
+        font-size: 52px;
+        margin-left: calc(50% - 100px);
+        margin-top: calc(50% - 100px);
+        background-color: #0000;
+        color: #EEE8;
+        border: 3px solid #EEE8;
+        font-family: Times New Roman;
+        transition-duration: 0.6s;
+      }
+      #btns:hover{
+        background-color: #4444;
+        color: #FFF;
+        border: 3px solid #FFF;
+      }
+      #header_btn{
+        width: 32px;
+        height: 32px;
+        float: right;
+        margin-right: 20px;
+        color: #EEE;
+        background-color: #0009;
+        border: 1px solid #EEE;
+        font-size: 18px;
+      }
+      hr{
+        width: 80%;
+      }
+      #info{
+        text-align: center;
+        font-size: 20px;
+        color: #FFFD;
+      }
+      #introbtn{
+        height: 200px;
+        width: 200px;
+        font-size: 27px;
+        margin-left: calc(50% - 100px);
+        margin-top: calc(50% - 100px);
+        background-color: #0000;
+        color: #EEE8;
+        border: 3px solid #EEE8;
+        font-family: Times New Roman;
+        transition-duration: 0.6s;
+      }
+      #introbtn:hover{
+        background-color: #4444;
+        color: #FFF;
+        border: 3px solid #FFF;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <p id="title_h">Code Touch</p>
+      <button id="header_btn" onclick="shMenu()" class="fa fa-bars"></button>
+      <button class="menu_btns">Page 1</button>
+      <button class="menu_btns">Page 2</button>
+      <button class="menu_btns">Page 3</button>
+    </div>
+    <div id="intro">
+      <p id="intro_p">Code Touch</p>
+    </div>
+    <div id="intro2">
+      <p id="intro2_p">Learn to code for free</p>
+    </div><hr>
+    <p id="info">‹ Try our free courses ›</p>
+    <div id="container">
+      <div id="space">
+        <button id="introbtn">Introduction to programming</button>
+      </div>
+      <div id="space">
+        <button id="btns">C++</button>
+      </div>
+      <div id="space">
+        <button id="btns">Python</button>
+      </div>
+      <div id="space">
+        <button id="btns">HTML</button>
+      </div>
+      <div id="space">
+        <button id="btns">CSS</button>
+      </div>
+      <div id="space">
+        <button id="btns">JS</button>
+      </div>
+      <div id="space">
+        <button id="btns">PHP</button>
+      </div>
+      <div id="space">
+        <button id="btns">Dart</button>
+      </div>
+    </div>
+    <div id="footer">
+      <p id="title_f">Developed by Ahmed Saber</p>
+    </div>
+  </body>
+</html>
