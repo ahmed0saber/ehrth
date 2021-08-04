@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+            }
+            #header{
+                margin:0px auto;
+                margin-top:50px;
+                padding:0;
+                width: 350px;
+                border: 2px solid black;
+                background-color:#EEF;
+            }
+            .h_btns{
+                margin:0;
+                font-size:20px;
+                width: 70px;
+                height: 40px;
+                border: none;
+                background-color:#EEF;
+                transition-duration:0.4s;
+            }
+            .h_btns:hover{
+                background-color:#AAF
+            }
+            #selected{
+                height: 3px;
+                background-color:blue;
+                width:70px;
+                margin-left: 0px;
+                transition-duration:0.4s;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <button class="h_btns" id="btn1" onclick="move(1)">A</button><button class="h_btns" id="btn2" onclick="move(2)">B</button><button class="h_btns" id="btn3" onclick="move(3)">C</button><button class="h_btns" id="btn4" onclick="move(4)">D</button><button class="h_btns" id="btn5" onclick="move(5)">E</button>
+            <div id="selected"></div>
+        </div>
+    </body>
+    <script>
+        function move(i)
+        {
+            if(i==1)
+            {$("#selected").css("margin-left", "0px");}
+            else if(i==2)
+            {$("#selected").css("margin-left", "70px");}
+            else if(i==3)
+            {$("#selected").css("margin-left", "140px");}
+            else if(i==4)
+            {$("#selected").css("margin-left", "210px");}
+            else if(i==5)
+            {$("#selected").css("margin-left", "280px");}
+        }
+    </script>
+</html>
