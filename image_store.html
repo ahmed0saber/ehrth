@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body{
+        margin:0;
+        padding:55px 0px 0px 0px;
+        background-color:#EEE;
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  line-height:50px;
+  padding:0px 12px;
+  text-decoration: none;
+  font-size: 20px;
+  height: 50px;
+  background-color:#070;
+  transition-duration:0.3s;
+}
+
+li a:hover{
+  background-color: #0A0;
+}
+
+input[type=text] {
+  width: 150px;
+  height: 50px;
+  border: 1px solid #ccc5;
+  border-radius: 2px;
+  font-size:18px;
+  color: #eeec;
+  outline: none;
+  background-color: #1119;
+  padding: 5px 5px 5px 10px;
+  transition: width 0.4s ease-in-out;
+}
+::placeholder{
+    color: #fff7;
+}
+input[type=text]:focus {
+  width: 300px;
+}
+.srch{
+    margin-left:25px;
+    float:right;
+}
+.searchbtn{
+    height: 50px;
+    width: 75px;
+    font-size:18px;
+    border: 1px solid #ccc5;
+    border-radius: 2px;
+    color: #eeec;
+    outline: none;
+    background-color: #1119;
+    transition-duration: 0.3s;
+}
+.searchbtn:hover{
+    background-color: #1919;
+    color: #eeee;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding:1px;
+  background-color:#FFF;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 5px;
+  margin: 6px 0px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 750px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0px;
+  }
+  input[type=text]:focus {
+  width: 250px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.download{
+    height:30px;
+    width:90px;
+    margin:5px;
+    border: 1px solid #aaa5;
+    border-radius: 2px;
+    transition-duration: 0.2s;
+    font-size:16px;
+    font-family: sans-serif;
+}
+.download:hover{
+    border: 1px solid #3335;
+    width: 100px;
+    background-color: #AAF;
+}
+</style>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="">Home</a></li>
+        <li class="srch"><input type="text" placeholder="ex: Flowers"><button class="searchbtn">Search</button></li>
+      </ul>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="https://source.unsplash.com/600x400/?purple?flower0" width="600" height="400">
+      <button class="download">Download</button>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="https://source.unsplash.com/600x400/?purple?flower?1" width="600" height="400">
+      <button class="download">Download</button>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="https://source.unsplash.com/600x400/?purple?flower?2" width="600" height="400">
+      <button class="download">Download</button>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <img src="https://source.unsplash.com/600x400/?purple?flower?3" width="600" height="400">
+      <button class="download">Download</button>
+  </div>
+</div>
+
+<div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?4" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?5" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?6" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?7" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?8" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?9" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower10" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+  
+  
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?11" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+  
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?12" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+  
+  <div class="responsive">
+    <div class="gallery">
+        <img src="https://source.unsplash.com/600x400/?purple?flower?13" width="600" height="400">
+        <button class="download">Download</button>
+    </div>
+  </div>
+  
+  <div class="responsive">
+      <div class="gallery">
+          <img src="https://source.unsplash.com/600x400/?purple?flower?14" width="600" height="400">
+          <button class="download">Download</button>
+      </div>
+    </div>
+  
+    <div class="responsive">
+      <div class="gallery">
+          <img src="https://source.unsplash.com/600x400/?purple?flower?15" width="600" height="400">
+          <button class="download">Download</button>
+      </div>
+    </div>
+  
+    <div class="responsive">
+      <div class="gallery">
+          <img src="https://source.unsplash.com/600x400/?purple?flower?16" width="600" height="400">
+          <button class="download">Download</button>
+      </div>
+    </div>
+  
+    <div class="responsive">
+      <div class="gallery">
+          <img src="https://source.unsplash.com/600x400/?purple?flower?17" width="600" height="400">
+          <button class="download">Download</button>
+      </div>
+    </div>
+  
+    <div class="responsive">
+      <div class="gallery">
+          <img src="https://source.unsplash.com/600x400/?purple?flower?18" width="600" height="400">
+          <button class="download">Download</button>
+      </div>
+    </div>
+  
+    <div class="responsive">
+      <div class="gallery">
+          <img src="https://source.unsplash.com/600x400/?purple?flower?19" width="600" height="400">
+          <button class="download">Download</button>
+      </div>
+    </div>
+</body>
+</html>
