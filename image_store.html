@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     body{
         margin:0;
@@ -179,14 +178,14 @@ div.gallery img {
 <button onclick="getpics()" id="load">Load More</button>
 </body>
 <script>
-    var i=0;
+    var i=0,about="Random";
     getpics();
 
     function getpics() {
         for(var a=i;a<i+10;a++){
             document.getElementById("container").innerHTML += `<div class="responsive">
                 <div class="gallery">
-                <img src="https://source.unsplash.com/600x400/?purple?flower?`+a+`" width="600" height="400">
+                <img src="https://source.unsplash.com/600x400/? `+about+`?`+a+`" width="600" height="400">
                 <button class="download">Download</button>
                 </div>
                 </div>`;
@@ -201,7 +200,12 @@ div.gallery img {
       }
       else
       {
-        document.getElementById("input1").blur();
+        about = document.getElementById("input1").value;
+        i=0;
+        document.getElementById("container").innerHTML = `<div id="container">
+        
+        </div>`
+        getpics();
       }
     }
 </script>
