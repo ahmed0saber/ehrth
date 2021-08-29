@@ -170,7 +170,7 @@ div.gallery img {
 
     <ul>
         <li><a class="active" href="">Home</a></li>
-        <li class="srch"><input type="text" placeholder="ex: Flowers"><button class="searchbtn">Search</button></li>
+        <li class="srch"><input type="text" placeholder="ex: Flowers" id="input1" value=""><button class="searchbtn" onclick="search()">Search</button></li>
       </ul>
 
 <div id="container">
@@ -194,5 +194,15 @@ div.gallery img {
         i+=10;
     }
     
+    function search(){
+      if(document.getElementById("input1").value=="")
+      {
+        document.getElementById("input1").focus();
+      }
+      else
+      {
+        document.getElementById("input1").blur();
+      }
+    }
 </script>
 </html>
