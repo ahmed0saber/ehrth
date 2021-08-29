@@ -62,7 +62,7 @@ input[type=text]:focus {
   color: #eeee;
 }
 .srch{
-    margin-left:2px;
+    margin-left:25px;
     float:right;
 }
 .searchbtn{
@@ -142,6 +142,24 @@ div.gallery img {
     width: 100px;
     background-color: #AAF;
 }
+#load{
+    margin: 10px;
+    margin-left: calc(50% - 100px);
+    width: 200px;
+    height: 50px;
+    font-size:20px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    border: 1px solid #aaa5;
+    transition-duration: 0.2s;
+}
+#load:hover{
+    border: 1px solid #3335;
+    width: 220px;
+    height: 60px;
+    margin: 5px 10px 5px calc(50% - 110px);
+    background-color: #AFA;
+}
 </style>
 </head>
 <body>
@@ -151,146 +169,26 @@ div.gallery img {
         <li class="srch"><input type="text" placeholder="ex: Flowers"><button class="searchbtn">Search</button></li>
       </ul>
 
-<div class="responsive">
-  <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?purple?flower0" width="600" height="400">
-      <button class="download">Download</button>
-  </div>
+<div id="container">
+
 </div>
-
-
-<div class="responsive">
-  <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?purple?flower?1" width="600" height="400">
-      <button class="download">Download</button>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?purple?flower?2" width="600" height="400">
-      <button class="download">Download</button>
-  </div>
-</div>
-
-<div class="responsive">
-  <div class="gallery">
-      <img src="https://source.unsplash.com/600x400/?purple?flower?3" width="600" height="400">
-      <button class="download">Download</button>
-  </div>
-</div>
-
-<div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?4" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?5" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?6" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?7" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?8" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?9" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower10" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-  
-  
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?11" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?12" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-        <img src="https://source.unsplash.com/600x400/?purple?flower?13" width="600" height="400">
-        <button class="download">Download</button>
-    </div>
-  </div>
-  
-  <div class="responsive">
-      <div class="gallery">
-          <img src="https://source.unsplash.com/600x400/?purple?flower?14" width="600" height="400">
-          <button class="download">Download</button>
-      </div>
-    </div>
-  
-    <div class="responsive">
-      <div class="gallery">
-          <img src="https://source.unsplash.com/600x400/?purple?flower?15" width="600" height="400">
-          <button class="download">Download</button>
-      </div>
-    </div>
-  
-    <div class="responsive">
-      <div class="gallery">
-          <img src="https://source.unsplash.com/600x400/?purple?flower?16" width="600" height="400">
-          <button class="download">Download</button>
-      </div>
-    </div>
-  
-    <div class="responsive">
-      <div class="gallery">
-          <img src="https://source.unsplash.com/600x400/?purple?flower?17" width="600" height="400">
-          <button class="download">Download</button>
-      </div>
-    </div>
-  
-    <div class="responsive">
-      <div class="gallery">
-          <img src="https://source.unsplash.com/600x400/?purple?flower?18" width="600" height="400">
-          <button class="download">Download</button>
-      </div>
-    </div>
-  
-    <div class="responsive">
-      <div class="gallery">
-          <img src="https://source.unsplash.com/600x400/?purple?flower?19" width="600" height="400">
-          <button class="download">Download</button>
-      </div>
-    </div>
+<button onclick="getpics()" id="load">Load More</button>
 </body>
+<script>
+    var i=0;
+    getpics();
+
+    function getpics() {
+        for(var a=i;a<i+10;a++){
+            document.getElementById("container").innerHTML += `<div class="responsive">
+                <div class="gallery">
+                <img src="https://source.unsplash.com/600x400/?purple?flower?`+a+`" width="600" height="400">
+                <button class="download">Download</button>
+                </div>
+                </div>`;
+        }
+        i+=10;
+    }
+    
+</script>
 </html>
