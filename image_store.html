@@ -94,8 +94,7 @@ div.gallery:hover {
 
 div.gallery img {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
+  height: auto;
 }
 
 * {
@@ -166,7 +165,7 @@ div.gallery img {
 }
 </style>
 </head>
-<body>
+<br>
 
     <ul>
         <li><a class="active" href="">Home</a></li>
@@ -179,6 +178,8 @@ div.gallery img {
 <button onclick="getpics()" id="load">Load More</button>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
 <script>
     var i=0,about="Random";
     getpics();
@@ -186,12 +187,12 @@ div.gallery img {
     function getpics() {
         for(let a=i;a<i+10;a++){
           /*var url = "https://api.unsplash.com/search/photos?query="+about+"&per_page="+(a+1)+"&client_id=gK52De2Tm_dL5o1IXKa9FROBAJ-LIYqR41xBdlg3X2k";*/
-          fetch("https://source.unsplash.com/300x200/?"+about+"?"+a).then((response)=> { console.log(response);
+          fetch("https://source.unsplash.com/600x400/?"+about+"?"+a).then((response)=> { console.log(response);
           
             document.getElementById("container").innerHTML += `<div class="responsive">
                 <div class="gallery">
-                <img src="`+response.url+`" width="600px" height="400px">
-                <button class="download">Download</button>
+                <div id="img`+a+`"><img src="`+response.url+`" width="600px" height="400px"></div>
+                <button class="download" onclick="download(`+a+`)">Download</button>
                 </div>
                 </div>`;
         });
@@ -213,6 +214,18 @@ div.gallery img {
         </div>`
         getpics();
       }
+    }
+
+    function download(x){
+      var img_id = "img"+x;
+      html2canvas(document.getElementById(img_id), {
+        allowTainted: false,
+        useCORS: true,
+            onrendered: function(canvas) {
+                // document.body.appendChild(canvas);
+              return Canvas2Image.saveAsPNG(canvas);
+            }
+        });
     }
 </script>
 </html>
