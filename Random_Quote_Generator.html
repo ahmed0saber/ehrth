@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>Random Quote Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color: #000;
+  }
+  #space{
+    width: 310px;
+    margin: 0px auto;
+    margin-top: 40px;
+  }
+  #card{
+    padding: 5px;
+    width: 300px;
+    height: auto;
+    background-color: #333;
+    box-shadow: 0px 0px 5px 3px #0ff;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+  }
+  p{
+    padding: 10px;
+    color: #EEE;
+    font-family: Consolas;
+    line-height: 25px;
+    font-size: 17px;
+  }
+  #header{
+    background-color: teal;
+    border-radius: 5px 5px 0px 0px;
+  }
+  #author{
+    font-family: Times New Roman;
+    font-size: 18px;
+  }
+  #btnscontainer{
+    text-align: center;
+    margin: 0px auto;
+  }
+  .btns{
+    height: 40px;
+    width: 100px;
+    margin: 15px;
+    background: transparent;
+    color: teal;
+    border: 2px solid teal;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: Times New Roman;
+    transition-duration: 0.3s;
+  }
+  .btns:hover{
+    opacity: 0.7;
+  }
+  </style>
+</head>
+<body>
+<div id="space">
+<div id="card">
+  <p id="header"><span id="author">Ahmed Saber</span> once said :</p>
+  <p id="quote">Don't impute unknown-reason actions to luck.</p>
+</div>
+</div>
+<div id="btnscontainer">
+  <button class="btns" onclick="save()">Save</button>
+  <button class="btns" onclick="generateQuote()">Change</button>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+<script>
+  const url = "https://api.quotable.io/random";
+  generateQuote();
+  
+  function generateQuote(){
+    document.getElementById("card").style.opacity="0";
+   fetch(url)
+  .then(function(data) {
+         return data.json();
+    })
+    .then(function(data){
+      console.log(data);
+    document.getElementById("quote").innerHTML="\""+data.content+"\"";
+    document.getElementById("author").innerHTML=data.author;
+    document.getElementById("card").style.opacity="1";
+   });
+ }
+ 
+ function save(){
+      html2canvas(document.getElementById("space"), {
+            onrendered: function(canvas) {
+              return Canvas2Image.saveAsPNG(canvas);
+            }
+        });
+    }
+</script>
+</html>
