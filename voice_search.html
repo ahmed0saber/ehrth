@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+    color: #EEE;
+}
+#div1{
+  margin: 50px auto;
+  text-align: center;
+}
+#text{
+  font-size: 22px;
+  font-family: Times New Roman;
+}
+#microphone{
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border:2px solid #EEEA ;
+  color: #EEEA;
+  background: transparent;
+  transition-duration: 0.2s;
+}
+#microphone:hover{
+  border:2px solid #EEEF ;
+  color: #EEEF;
+}
+    </style>
+</head>
+<body>
+    <div id="div1">
+      <p id="text">Hello sir , How can I help you ?!</p>
+      <button id="microphone"><i class="fa fa-microphone"></i></button>
+    </div>
+</body>
+<script>
+        var speech = new SpeechSynthesisUtterance();
+        console.log("Ready");
+        const btn = document.querySelector('#microphone');
+        
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition =  new SpeechRecognition();
+
+        recognition.onstart = function(){
+            console.log('How Can I Help You , sir ?');
+            speech.text = 'How Can I Help You , sir ?';
+            window.speechSynthesis.speak(speech);
+        }
+        recognition.onresult = function (event) {
+            const current = event.resultIndex;
+
+            const transcript = event.results[current][0].transcript;
+            console.log("You said : "+transcript);
+            readOutLoud(transcript);
+
+        };
+
+        btn.addEventListener('click', () =>{
+            recognition.start();
+        });
+
+
+        function readOutLoud(message){
+            speech.text = 'I cannot understand you , sir ! can you say that again ?';
+
+            if(message.includes('hello')){
+                console.log("Hello , sir");
+                speech.text = "Hello , sir"; 
+            }
+            else if(message.includes('YouTube')){
+                understood('https://www.youtube.com/');
+            }
+            else if(message.includes('Google')){
+                understood('https://www.google.com/');
+            }
+            else if(message.includes('Facebook')){
+                understood('https://www.facebook.com/');
+            }
+            
+            speech.volume = 1;
+            speech.rate = 1.1;
+            speech.pitch = 1;
+
+            window.speechSynthesis.speak(speech);
+        }
+        function understood(link)
+        {
+          console.log("opening , please wait !");
+          speech.text = "opening , please wait !"; 
+          window.open(link);
+        }
+</script>
+</html>
