@@ -1,0 +1,191 @@
+<html>
+  <head>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      #container{
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        background-color: #eee9;
+        margin: auto;
+        margin-top: 50px;
+        box-shadow: 0px 0px 5px #0009;
+        border-radius: 20px;
+      }
+      p{
+        padding: 10px;
+        font-family: Times New Roman;
+        font-size: 18px;
+        word-break: break-word;
+      }
+      #question{
+        padding: 5px 5px 5px 10px;
+      }
+      #score{
+        text-align: center;
+        font-size: 22px;
+      }
+      #btn{
+        width: 90%;
+        height: 40px;
+        font-family: Times New Roman;
+        font-size: 20;
+        box-shadow: 0px 0px 5px #0009;
+        border-radius: 15px;
+        border: none;
+        margin: 5px 0px 5px 5%;
+        background-color: #00eb;
+        color: #eee;
+      }
+      .answer{
+        margin: 2px 10px 2px 2px;
+        width: 20px;
+        height: 20px;
+      }
+      #choice{
+        box-shadow: 0px 0px 5px #0009;
+        border-radius: 10px;
+        width: 80%;
+        margin: 10px 0px 10px calc(10% - 5px);
+        padding: 3px;
+        background-color: #eeeb;
+        min-height: 30px;
+        line-height: 22px;
+      }
+      #info{
+        text-align: center;
+      }
+      .span1{
+        display: inline-block;
+        font-size: 18px;
+        margin: 0px;
+        padding: 0px;
+      }
+      #div0{
+        padding: 25px 0px 25px 0px;
+      }
+      #div0 #btn{
+        margin: 20px 5%;
+      }
+      #div1{
+        display: none;
+      }
+      #div2{
+        display: none;
+      }
+      #div3{
+        display: none;
+      }
+      #back{
+        height: 40px;
+        width: 60px;
+        background-color: #00eb;
+        border: none;
+        border-radius: 20px 0 0 0;
+        font-size: 18px;
+        font-family: Times New Roman;
+        color: #eee;
+        box-shadow: 0px 0px 5px #0009;
+      }
+      .text{
+        display: inline-block;
+        width: calc(100% - 40px);
+      }
+      #div11{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="div0">
+        <button id="btn" onclick="test()">Test your HTML</button>
+        <button id="btn" onclick="view()">View the leaderboard</button>
+        <button id="btn" onclick="about()">About the developer</button>
+      </div>
+      <div id="div1">
+      <button id="back" onclick="back()">Back</button>
+      <p id="score">Score : 0</p>
+      <div id="div10">
+      <p id="question">What is your name ?!</p>
+      <div id="choice"><input type="radio" name="ans" class="answer" id="answer1"><div class="text"><p class="span1" id="choice1">Ahmed</p></div></div>
+      <div id="choice"><input type="radio" name="ans" class="answer" id="answer2"><div class="text"><p class="span1" id="choice2">Ahmed</p></div></div>
+      <div id="choice"><input type="radio" name="ans" class="answer" id="answer3"><div class="text"><p class="span1" id="choice3">Ahmed</p></div></div>
+      <div id="choice"><input type="radio" name="ans" class="answer" id="answer4"><div class="text"><p class="span1" id="choice4">Ahmed</p></div></div>
+      <input type="submit" id="btn" onclick="check()" value="Check">
+      <p id="info">Question number <span id="num">1</span> out of 10</p>
+      </div>
+      <div id="div11">
+        <p>submit your score</p>
+      </div>
+      </div>
+      <div id="div2">
+        <button id="back" onclick="back()">Back</button>
+        <p>Leaderboard</p>
+      </div>
+      <div id="div3">
+        <button id="back" onclick="back()">Back</button>
+        <p>About</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let questions = ["Which tag is used to create a caption for a fieldset element ?!" , "To pick only one choice from many radio inputs , They must have the same ..." , "A form is used to ..." , "Where can the script tag be used ?!" , "Can a web page work without title ?!" , "Which one isn't an input type ?!" , "If you want to insert a web page inside your own one , what should you use ?!" , "The canvas tag is used to ..." , "How many style tags can be used in the same page ?!" , "Using <a> tag , to open an url in a new tab , we use ..."] , a = ["marquee" , "name" , "arrange elements" , "in head" , "yes" , "hidden" , "<canvas>" , "run animation" , "unlimited number" , "tab=\"_new\""] , b = ["legend" , "value" , "get data from the user as input" , "in body" , "no" , "button" , "<iframe>" , "draw shapes" , "just one" , "tab=\"_same\""] , c = ["view" , "text" , "show data to the user as output" , "outside both of them" , "depends upon the browser" , "touch" , "<a>" , "develop games" , "depends upon how many head tags exist" , "target=\"_blank\""] , d = ["caption" , "type" , "allow user to use a keyboard" , "all of the above" , "depends upon if it has head or not" , "color" , "<webview>" , "all of the above" , "none of the above" , "target=\"_self\""] , answers = ["2" , "1" , "2" , "4" , "1" , "3" , "2" , "4" , "1" , "3"] , i=0 , score=0;
+    document.getElementById("question"). textContent=questions[i];
+    document.getElementById("choice1"). textContent=a[i];
+    document.getElementById("choice2"). textContent=b[i];
+    document.getElementById("choice3"). textContent=c[i];
+    document.getElementById("choice4"). textContent=d[i];
+    document.getElementById("num"). textContent=i+1;
+    function check()
+    {
+      var id = "answer"+answers[i];
+      if(document.getElementById(id).checked)
+      {
+        score+=10;
+        document.getElementById("score"). textContent="Score : "+score;
+      }
+      for(var x=1;x<5;x++)
+      {
+        document.getElementById("answer"+x).checked=false;
+      }
+      i++;
+      if(i==10)
+      {
+        document.getElementById("div10"). style.display="none";
+        document.getElementById("div11"). style.display="block";
+      }
+      document.getElementById("question"). textContent=questions[i];
+      document.getElementById("choice1"). textContent=a[i];
+      document.getElementById("choice2"). textContent=b[i];
+      document.getElementById("choice3"). textContent=c[i];
+      document.getElementById("choice4"). textContent=d[i];
+      document.getElementById("num"). textContent=i+1;
+    }
+    function test()
+    {
+      document.getElementById("div0"). style.display="none";
+      document.getElementById("div1"). style.display="block";
+    }
+    function view()
+    {
+      document.getElementById("div0"). style.display="none";
+      document.getElementById("div2"). style.display="block";
+    }
+    function about()
+    {
+      document.getElementById("div0"). style.display="none";
+      document.getElementById("div3"). style.display="block";
+    }
+    function back()
+    {
+      document.getElementById("div1"). style.display="none";
+      document.getElementById("div2"). style.display="none";
+      document.getElementById("div3"). style.display="none";
+      document.getElementById("div0"). style.display="block";
+    }
+  </script>
+</html>
