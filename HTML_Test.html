@@ -400,6 +400,8 @@
             container.innerHTML = "<tr><td id='ranks'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>";
             var x=0;
             for (item of data){
+              if(item.score<=100)
+              {
                 x++;
                 tag = `
                 <tr>
@@ -415,6 +417,7 @@
                 </tr>
                 `
                 container.innerHTML += tag
+              }
             }
             
         }
