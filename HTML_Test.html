@@ -239,7 +239,7 @@
         line-height: 50px;
         height: 50px;
         width: 50px;
-        margin: 5px;
+        margin: 5px 5px 10px 5px;
         padding:0;
         background-color: #00eb;
         color: #fff;
@@ -253,15 +253,53 @@
     #footer{
         text-align: center;
     }
+    .btns{
+        width: 30%;
+        height: 40px;
+        margin: 5px 0px 0px 0px;
+        background-color:#00e;
+        color: #eee;
+        font-weight: 600;
+        font-size:20px;
+        border: none;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        transition-duration: 0.2s;
+    }
+    .btns:hover{
+        opacity: 0.7;
+    }
+    #btn1{
+        width: 40%;
+    }
+    #picker{
+        height: 40px;
+        width: 40%;
+        opacity: 0.4;
+        margin-top:-40px;
+        background-color:#eef;
+        transition-duration: 0.45s;
+    }
+    #cssrank , #jsrank{
+        display: none;
+    }
+    #soon{
+        display: none;
+    }
     </style>
   </head>
   <body>
     <div id="container">
       <div id="div0">
         <p id="info">Viewed <span id="viewsnum">0</span> times !</p>
-        <button id="btn" onclick="test()">Test your HTML</button>
+        <button id="btn" onclick="test('1')">Test your HTML</button>
+        <button id="btn" onclick="test('2')">Test your CSS</button>
+        <button id="btn" onclick="test('3')">Test your JavaScript</button>
         <button id="btn" onclick="view()">View the leaderboard</button>
         <button id="btn" onclick="about()">About the developer</button>
+      </div>
+      <div id="soon">
+        <button id="back" onclick="back()">Back</button>
+        <p>Coming soon...</p>
       </div>
       <div id="div1">
       <button id="back" onclick="back()">Back</button>
@@ -287,10 +325,26 @@
       </div>
       </div>
       <div id="div2">
-        <button id="back" onclick="back()">Back</button>
-        <table id="ranking">
+        <button id="back" onclick="back()">Back</button><br>
+        <button class="btns chosen" id="btn1" onclick="nav('1')">HTML</button><button class="btns" id="btn2" onclick="nav('2')">CSS</button><button class="btns" id="btn3" onclick="nav('3')">JS</button>
+        <div id="picker"></div>
+        <div id="htmlrank">
+            <table id="ranking">
 
-        </table>
+            </table>
+        </div>
+        <div id="cssrank">
+            <p>CSS ranking is coming soon</p>
+            <table id="ranking2">
+
+            </table>
+        </div>
+        <div id="jsrank">
+            <p>JavaScript ranking is coming soon</p>
+            <table id="ranking3">
+
+            </table>
+        </div>
       </div>
       <div id="div3">
         <button id="back" onclick="back()">Back</button>
@@ -355,10 +409,23 @@
       document.getElementById("choice4"). textContent=d[i];
       document.getElementById("num"). textContent=i+1;
     }
-    function test()
+    function test(i)
     {
-      document.getElementById("div0"). style.display="none";
-      document.getElementById("div1"). style.display="block";
+        if(i==1)
+        {
+            document.getElementById("div0"). style.display="none";
+            document.getElementById("div1"). style.display="block";
+        }
+        else if(i==2)
+        {
+            document.getElementById("div0"). style.display="none";
+            document.getElementById("soon"). style.display="block";
+        }
+        else if(i==3)
+        {
+            document.getElementById("div0"). style.display="none";
+            document.getElementById("soon"). style.display="block";
+        }
     }
     function view()
     {
@@ -375,8 +442,41 @@
       document.getElementById("div1"). style.display="none";
       document.getElementById("div2"). style.display="none";
       document.getElementById("div3"). style.display="none";
+      document.getElementById("soon"). style.display="none";
       document.getElementById("div0"). style.display="block";
     }
+
+
+    function nav(i) {
+        if (i == 1) {
+            $("#picker").css("margin-left", "0%");
+            $("#btn1").css("width", "40%");
+            $("#btn2").css("width", "30%");
+            $("#btn3").css("width", "30%");
+            $("#htmlrank").css("display", "block");
+            $("#cssrank").css("display", "none");
+            $("#jsrank").css("display", "none");
+        }
+        else if (i == 2) {
+            $("#picker").css("margin-left", "30%");
+            $("#btn1").css("width", "30%");
+            $("#btn2").css("width", "40%");
+            $("#btn3").css("width", "30%");
+            $("#htmlrank").css("display", "none");
+            $("#cssrank").css("display", "block");
+            $("#jsrank").css("display", "none");
+        }
+        else if (i == 3) {
+            $("#picker").css("margin-left", "60%");
+            $("#btn1").css("width", "30%");
+            $("#btn2").css("width", "30%");
+            $("#btn3").css("width", "40%");
+            $("#htmlrank").css("display", "none");
+            $("#cssrank").css("display", "none");
+            $("#jsrank").css("display", "block");
+        }
+    }
+
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
