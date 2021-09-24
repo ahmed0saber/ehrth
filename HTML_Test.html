@@ -263,7 +263,7 @@
         font-size:20px;
         border: none;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        transition-duration: 0.2s;
+        transition-duration: 0.6s;
     }
     .btns:hover{
         opacity: 0.7;
@@ -277,7 +277,7 @@
         opacity: 0.4;
         margin-top:-40px;
         background-color:#eef;
-        transition-duration: 0.45s;
+        transition-duration: 0.6s;
     }
     #cssrank , #jsrank{
         display: none;
@@ -449,22 +449,22 @@
 
     function nav(i) {
         if (i == 1) {
-            $("#picker").css("margin-left", "0%");
-            $("#btn1").css("width", "40%");
+            $("#picker").css("margin-left", "0px");
             $("#btn2").css("width", "30%");
             $("#btn3").css("width", "30%");
-            $("#htmlrank").css("display", "block");
+            $("#btn1").css("width", "40%");
             $("#cssrank").css("display", "none");
             $("#jsrank").css("display", "none");
+            $("#htmlrank").css("display", "block");
         }
         else if (i == 2) {
             $("#picker").css("margin-left", "30%");
             $("#btn1").css("width", "30%");
-            $("#btn2").css("width", "40%");
             $("#btn3").css("width", "30%");
+            $("#btn2").css("width", "40%");
             $("#htmlrank").css("display", "none");
-            $("#cssrank").css("display", "block");
             $("#jsrank").css("display", "none");
+            $("#cssrank").css("display", "block");
         }
         else if (i == 3) {
             $("#picker").css("margin-left", "60%");
@@ -480,15 +480,23 @@
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
+  if(localStorage.getItem("viewed")=="y")
+  {
+    console.log('0');
+  }
+  else
+  {
   var views = new XMLHttpRequest();
   views.open("GET", "https://api.countapi.xyz/hit/clicks/85bb3a11-5fb8-45fe-b571-2a119a4316a9");
   views.responseType = "json";
   views.send();
+  localStorage.setItem("viewed", "y");
+  }
   $.getJSON("https://api.countapi.xyz/get/clicks/85bb3a11-5fb8-45fe-b571-2a119a4316a9", function(response) {
   console.log(response);
   $("#viewsnum").text(response.value);
   });
-
+  
 
   const domain = "https://api-and-websockets.herokuapp.com"
   let build_board = async (name) => {
@@ -500,7 +508,7 @@
             container.innerHTML = "<tr><td id='ranks'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>";
             var x=0;
             for (item of data){
-              if(item.score<=100)
+              if(item.score<=100&&item.score>=0&&item.score%10==0)
               {
                 x++;
                 tag = `
