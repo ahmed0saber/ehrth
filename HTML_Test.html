@@ -1,559 +1,559 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Test</title>
-    <style>
-      *{
-        margin: 0;
-        padding: 0;
-      }
-      #container{
-        width: 90%;
-        max-width: 400px;
-        height: auto;
-        background-color: #eee;
-        margin: 50px auto;
-        box-shadow: 0px 0px 5px #0009;
-        border-radius: 20px;
-      }
-      p{
-        padding: 10px;
-        font-family: Times New Roman;
-        font-size: 18px;
-        word-break: break-word;
-      }
-      #question{
-        padding: 5px 5px 5px 10px;
-      }
-      #score{
-        text-align: center;
-        font-size: 22px;
-      }
-      #btn{
-        width: 90%;
-        height: 40px;
-        font-family: Times New Roman;
-        font-size: 20;
-        box-shadow: 0px 0px 5px #0009;
-        border-radius: 15px;
-        border: none;
-        margin: 5px 0px 5px 5%;
-        background-color: #00eb;
-        color: #eee;
-        transition-duration: 0.3s;
-      }
-      #btn:hover{
-          opacity: 0.7;
-      }
-      .answer{
-        margin: 2px 10px 2px 2px;
-        width: 20px;
-        height: 20px;
-      }
-      #choice{
-        box-shadow: 0px 0px 5px #0009;
-        border-radius: 10px;
-        width: 80%;
-        margin: 10px 0px 10px calc(10% - 5px);
-        padding: 3px;
-        background-color: #eeeb;
-        min-height: 30px;
-        line-height: 22px;
-      }
-      #info{
-        text-align: center;
-      }
-      .span1{
-        display: inline-block;
-        font-size: 18px;
-        margin: 0px;
-        padding: 0px;
-      }
-      #div0{
-        padding: 25px 0px 25px 0px;
-      }
-      #div0 #btn{
-        margin: 20px 5%;
-      }
-      #div1{
-        display: none;
-      }
-      #div2{
-        display: none;
-      }
-      #div3{
-        display: none;
-      }
-      #back{
-        height: 40px;
-        width: 60px;
-        background-color: #00eb;
-        border: none;
-        border-radius: 20px 0 0 0;
-        font-size: 18px;
-        font-family: Times New Roman;
-        color: #eee;
-        box-shadow: 0px 0px 5px #0009;
-        transition-duration: 0.3s;
-      }
-      #back:hover{
-          opacity: 0.7;
-      }
-      .text{
-        display: inline-block;
-        width: calc(100% - 40px);
-      }
-      #div11{
-        display: none;
-      }
-      #info{
-          text-align: center;
-      }
-      #score_name{
-        height:40px;
-        width:70%;
-        margin: 10px 0px 10px 15%;
-        font-family: Times New Roman;
-        font-size: 20;
-        box-shadow: 0px 0px 5px #0009;
-        border-radius: 15px;
-        border: none;
-        background-color: #eee;
-        color: #000;
-        padding-left: 10px;
-        outline: none;
-      }
-      ::placeholder{
-        color: #0007;
-      }
-      #submitscore , #restart{
-        height:40px;
-        width:40%;
-        margin: 10px 0px 10px 30%;
-        font-family: Times New Roman;
-        font-size: 20;
-        box-shadow: 0px 0px 5px #0009;
-        border-radius: 15px;
-        border: none;
-        background-color: #00eb;
-        color: #eee;
-        transition-duration: 0.3s;
-      }
-      #restart{
-          display: none;
-      }
-      #submitscore:hover{
-          opacity: 0.7;
-      }
-      #restart:hover{
-          opacity: 0.7;
-      }
-      #resdiv{
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HTML Test</title>
+      <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        #container{
+          width: 90%;
+          max-width: 400px;
+          height: auto;
+          background-color: #eee;
+          margin: 50px auto;
+          box-shadow: 0px 0px 5px #0009;
+          border-radius: 20px;
+        }
+        p{
           padding: 10px;
-      }
-      table , tr , td{
-          border: 1px solid #0007;
-          text-align: center;
-          padding:2px;
-          border-radius: 5px;
-      }
-      table{
-        border: none;
-        padding:5px;
-        margin: auto;
-        width: 100%;
-      }
-      td{
-          background-color: #00eb;
-          color: #fff;
+          font-family: Times New Roman;
+          font-size: 18px;
           word-break: break-word;
-          padding:10px 2px;
-      }
-      td:hover{
-          opacity: 0.8;
-      }
-      #cover{
-          width:100%;
-          height:125px;
-          background-color: #00eb;
-      }
-      img{
-          height:120px;
-          width:120px;
-          border-radius:50%;
-          animation: spin0 2s linear infinite;
-          border: 8px solid #00eb;
-      }
-      #loader1{
-          height:152px;
-          width:152px;
-          text-align:center;
-          margin: auto;
-          border-radius:50%;
-          margin-top:-84px;
-          background-color:#eee;
-          border: 8px solid #eee;
-          border-top: 8px solid #3498db;
-          animation: spin1 2s linear infinite;
-      }
-      #loader2{
-          height:136px;
-          width:136px;
-          text-align:center;
-          margin: auto;
-          border-radius:50%;
-          border: 8px solid #eee;
-          border-top: 8px solid #3498db;
-          animation: spin2 1s linear infinite;
-      }
-      @keyframes spin0 {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      @keyframes spin1 {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      @keyframes spin2 {
-        0% { transform: rotate(360deg); }
-        100% { transform: rotate(0deg); }
-      }
-      #myname{
+        }
+        #question{
+          padding: 5px 5px 5px 10px;
+        }
+        #score{
           text-align: center;
-          font-size:30px;
-          font-weight:bold;
+          font-size: 22px;
+        }
+        #btn{
+          width: 90%;
+          height: 40px;
+          font-family: Times New Roman;
+          font-size: 20;
+          box-shadow: 0px 0px 5px #0009;
+          border-radius: 15px;
+          border: none;
+          margin: 5px 0px 5px 5%;
+          background-color: #00eb;
+          color: #eee;
+          transition-duration: 0.3s;
+        }
+        #btn:hover{
+            opacity: 0.7;
+        }
+        .answer{
+          margin: 2px 10px 2px 2px;
+          width: 20px;
+          height: 20px;
+        }
+        #choice{
+          box-shadow: 0px 0px 5px #0009;
+          border-radius: 10px;
+          width: 80%;
+          margin: 10px 0px 10px calc(10% - 5px);
+          padding: 3px;
+          background-color: #eeeb;
+          min-height: 30px;
+          line-height: 22px;
+        }
+        #info{
+          text-align: center;
+        }
+        .span1{
+          display: inline-block;
+          font-size: 18px;
+          margin: 0px;
+          padding: 0px;
+        }
+        #div0{
+          padding: 25px 0px 25px 0px;
+        }
+        #div0 #btn{
+          margin: 20px 5%;
+        }
+        #div1{
+          display: none;
+        }
+        #div2{
+          display: none;
+        }
+        #div3{
+          display: none;
+        }
+        #back{
+          height: 40px;
+          width: 60px;
+          background-color: #00eb;
+          border: none;
+          border-radius: 20px 0 0 0;
+          font-size: 18px;
+          font-family: Times New Roman;
+          color: #eee;
+          box-shadow: 0px 0px 5px #0009;
+          transition-duration: 0.3s;
+        }
+        #back:hover{
+            opacity: 0.7;
+        }
+        .text{
+          display: inline-block;
+          width: calc(100% - 40px);
+        }
+        #div11{
+          display: none;
+        }
+        #info{
+            text-align: center;
+        }
+        #score_name{
+          height:40px;
+          width:70%;
+          margin: 10px 0px 10px 15%;
+          font-family: Times New Roman;
+          font-size: 20;
+          box-shadow: 0px 0px 5px #0009;
+          border-radius: 15px;
+          border: none;
+          background-color: #eee;
+          color: #000;
+          padding-left: 10px;
+          outline: none;
+        }
+        ::placeholder{
+          color: #0007;
+        }
+        #submitscore , #restart{
+          height:40px;
+          width:40%;
+          margin: 10px 0px 10px 30%;
+          font-family: Times New Roman;
+          font-size: 20;
+          box-shadow: 0px 0px 5px #0009;
+          border-radius: 15px;
+          border: none;
+          background-color: #00eb;
+          color: #eee;
+          transition-duration: 0.3s;
+        }
+        #restart{
+            display: none;
+        }
+        #submitscore:hover{
+            opacity: 0.7;
+        }
+        #restart:hover{
+            opacity: 0.7;
+        }
+        #resdiv{
+            padding: 10px;
+        }
+        table , tr , td{
+            border: 1px solid #0007;
+            text-align: center;
+            padding:2px;
+            border-radius: 5px;
+        }
+        table{
+          border: none;
+          padding:5px;
+          margin: auto;
+          width: 100%;
+        }
+        td{
+            background-color: #00eb;
+            color: #fff;
+            word-break: break-word;
+            padding:10px 2px;
+        }
+        td:hover{
+            opacity: 0.8;
+        }
+        #cover{
+            width:100%;
+            height:125px;
+            background-color: #00eb;
+        }
+        img{
+            height:120px;
+            width:120px;
+            border-radius:50%;
+            animation: spin0 2s linear infinite;
+            border: 8px solid #00eb;
+        }
+        #loader1{
+            height:152px;
+            width:152px;
+            text-align:center;
+            margin: auto;
+            border-radius:50%;
+            margin-top:-84px;
+            background-color:#eee;
+            border: 8px solid #eee;
+            border-top: 8px solid #3498db;
+            animation: spin1 2s linear infinite;
+        }
+        #loader2{
+            height:136px;
+            width:136px;
+            text-align:center;
+            margin: auto;
+            border-radius:50%;
+            border: 8px solid #eee;
+            border-top: 8px solid #3498db;
+            animation: spin2 1s linear infinite;
+        }
+        @keyframes spin0 {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes spin1 {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes spin2 {
+          0% { transform: rotate(360deg); }
+          100% { transform: rotate(0deg); }
+        }
+        #myname{
+            text-align: center;
+            font-size:30px;
+            font-weight:bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #00eb;
+            margin: 0;
+            padding: 5px;
+        }
+        #myinfo{
           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
           color: #00eb;
-          margin: 0;
-          padding: 5px;
+        }
+        .fa {
+          font-size: 25px;
+          text-align: center;
+          text-decoration: none;
+          line-height: 50px;
+          height: 50px;
+          width: 50px;
+          margin: 5px 5px 10px 5px;
+          padding:0;
+          background-color: #00eb;
+          color: #fff;
+          border-radius: 50%;
+          transition-duration: 0.3s;
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
       }
-      #myinfo{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: #00eb;
-      }
-      .fa {
-        font-size: 25px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 50px;
-        height: 50px;
-        width: 50px;
-        margin: 5px 5px 10px 5px;
-        padding:0;
-        background-color: #00eb;
-        color: #fff;
-        border-radius: 50%;
-        transition-duration: 0.3s;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-    }
-    .fa:hover{
-      opacity: 0.7;
-    }
-    #footer{
-        text-align: center;
-    }
-    .btns{
-        width: 30%;
-        height: 40px;
-        margin: 5px 0px 0px 0px;
-        background-color:#00e;
-        color: #eee;
-        font-weight: 600;
-        font-size:20px;
-        border: none;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        transition-duration: 0.6s;
-    }
-    .btns:hover{
+      .fa:hover{
         opacity: 0.7;
-    }
-    #btn1{
-        width: 40%;
-    }
-    #picker{
-        height: 40px;
-        width: 40%;
-        opacity: 0.4;
-        margin-top:-40px;
-        background-color:#eef;
-        transition-duration: 0.6s;
-    }
-    #cssrank , #jsrank{
-        display: none;
-    }
-    #soon{
-        display: none;
-    }
-    </style>
-  </head>
-  <body>
-    <div id="container">
-      <div id="div0">
-        <p id="info"><span id="viewsnum">0</span> Users</p>
-        <button id="btn" onclick="test('1')">Test your HTML</button>
-        <button id="btn" onclick="test('2')">Test your CSS</button>
-        <button id="btn" onclick="test('3')">Test your JavaScript</button>
-        <button id="btn" onclick="view()">View the leaderboard</button>
-        <button id="btn" onclick="about()">About the developer</button>
-      </div>
-      <div id="soon">
+      }
+      #footer{
+          text-align: center;
+      }
+      .btns{
+          width: 30%;
+          height: 40px;
+          margin: 5px 0px 0px 0px;
+          background-color:#00e;
+          color: #eee;
+          font-weight: 600;
+          font-size:20px;
+          border: none;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          transition-duration: 0.6s;
+      }
+      .btns:hover{
+          opacity: 0.7;
+      }
+      #btn1{
+          width: 40%;
+      }
+      #picker{
+          height: 40px;
+          width: 40%;
+          opacity: 0.4;
+          margin-top:-40px;
+          background-color:#eef;
+          transition-duration: 0.6s;
+      }
+      #cssrank , #jsrank{
+          display: none;
+      }
+      #soon{
+          display: none;
+      }
+      </style>
+    </head>
+    <body>
+      <div id="container">
+        <div id="div0">
+          <p id="info"><span id="viewsnum">0</span> Users</p>
+          <button id="btn" onclick="test('1')">Test your HTML</button>
+          <button id="btn" onclick="test('2')">Test your CSS</button>
+          <button id="btn" onclick="test('3')">Test your JavaScript</button>
+          <button id="btn" onclick="view()">View the leaderboard</button>
+          <button id="btn" onclick="about()">About the developer</button>
+        </div>
+        <div id="soon">
+          <button id="back" onclick="back()">Back</button>
+          <p>Coming soon...</p>
+        </div>
+        <div id="div1">
         <button id="back" onclick="back()">Back</button>
-        <p>Coming soon...</p>
-      </div>
-      <div id="div1">
-      <button id="back" onclick="back()">Back</button>
-      <p id="score">Score : 0</p>
-      <div id="div10">
-      <p id="question">What is your name ?!</p>
-      <div id="choice"><input type="radio" name="ans" class="answer" id="answer1"><div class="text"><p class="span1" id="choice1">Ahmed</p></div></div>
-      <div id="choice"><input type="radio" name="ans" class="answer" id="answer2"><div class="text"><p class="span1" id="choice2">Ahmed</p></div></div>
-      <div id="choice"><input type="radio" name="ans" class="answer" id="answer3"><div class="text"><p class="span1" id="choice3">Ahmed</p></div></div>
-      <div id="choice"><input type="radio" name="ans" class="answer" id="answer4"><div class="text"><p class="span1" id="choice4">Ahmed</p></div></div>
-      <input type="submit" id="btn" onclick="check()" value="Check">
-      <p id="info">Question number <span id="num">1</span> out of 10</p>
-      </div>
-      <div id="div11">
-        <div class="scoreform">
-            <input id='user_score' type="hidden"/>
-            <input id="score_name" type="text" placeholder="Username">
-            <button id='submitscore' >Submit</button>
+        <p id="score">Score : 0</p>
+        <div id="div10">
+        <p id="question">What is your name ?!</p>
+        <div id="choice"><input type="radio" name="ans" class="answer" id="answer1"><div class="text"><p class="span1" id="choice1">Ahmed</p></div></div>
+        <div id="choice"><input type="radio" name="ans" class="answer" id="answer2"><div class="text"><p class="span1" id="choice2">Ahmed</p></div></div>
+        <div id="choice"><input type="radio" name="ans" class="answer" id="answer3"><div class="text"><p class="span1" id="choice3">Ahmed</p></div></div>
+        <div id="choice"><input type="radio" name="ans" class="answer" id="answer4"><div class="text"><p class="span1" id="choice4">Ahmed</p></div></div>
+        <input type="submit" id="btn" onclick="check()" value="Check">
+        <p id="info">Question number <span id="num">1</span> out of 10</p>
+        </div>
+        <div id="div11">
+          <div class="scoreform">
+              <input id='user_score' type="hidden"/>
+              <input id="score_name" type="text" placeholder="Username">
+              <button id='submitscore' >Submit</button>
+          </div>
+        </div>
+        <div id="resdiv">
+          <button id='restart' onclick="begin()">Try again</button>
+        </div>
+        </div>
+        <div id="div2">
+          <button id="back" onclick="back()">Back</button><br>
+          <button class="btns chosen" id="btn1" onclick="nav('1')">HTML</button><button class="btns" id="btn2" onclick="nav('2')">CSS</button><button class="btns" id="btn3" onclick="nav('3')">JS</button>
+          <div id="picker"></div>
+          <div id="htmlrank">
+              <table id="ranking">
+  
+              </table>
+          </div>
+          <div id="cssrank">
+              <p>CSS ranking is coming soon</p>
+              <table id="ranking2">
+  
+              </table>
+          </div>
+          <div id="jsrank">
+              <p>JavaScript ranking is coming soon</p>
+              <table id="ranking3">
+  
+              </table>
+          </div>
+        </div>
+        <div id="div3">
+          <button id="back" onclick="back()">Back</button>
+          <div id="cover"></div>
+          <div id="loader1">
+              <div id="loader2">
+                  <img src="https://drive.google.com/u/0/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
+              </div>
+          </div>
+          <p id="myname">Ahmed Saber</p>
+          <p id="myinfo">An egyptian frontend web developer who was born in 2001 !!</p>
+          <div id="footer">
+              <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook" target="_blank"></a>
+              <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp" target="_blank"></a>
+              <a href="https://t.me/ahmed0saber" class="fa fa-telegram" target="_blank"></a>
+              <a href="https://github.com/ahmed0saber" class="fa fa-github" target="_blank"></a>
+              <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen" target="_blank"></a>
+          </div>
         </div>
       </div>
-      <div id="resdiv">
-        <button id='restart' onclick="begin()">Try again</button>
-      </div>
-      </div>
-      <div id="div2">
-        <button id="back" onclick="back()">Back</button><br>
-        <button class="btns chosen" id="btn1" onclick="nav('1')">HTML</button><button class="btns" id="btn2" onclick="nav('2')">CSS</button><button class="btns" id="btn3" onclick="nav('3')">JS</button>
-        <div id="picker"></div>
-        <div id="htmlrank">
-            <table id="ranking">
-
-            </table>
-        </div>
-        <div id="cssrank">
-            <p>CSS ranking is coming soon</p>
-            <table id="ranking2">
-
-            </table>
-        </div>
-        <div id="jsrank">
-            <p>JavaScript ranking is coming soon</p>
-            <table id="ranking3">
-
-            </table>
-        </div>
-      </div>
-      <div id="div3">
-        <button id="back" onclick="back()">Back</button>
-        <div id="cover"></div>
-        <div id="loader1">
-            <div id="loader2">
-                <img src="https://drive.google.com/u/0/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
-            </div>
-        </div>
-        <p id="myname">Ahmed Saber</p>
-        <p id="myinfo">An egyptian frontend web developer who was born in 2001 !!</p>
-        <div id="footer">
-            <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook" target="_blank"></a>
-            <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp" target="_blank"></a>
-            <a href="https://t.me/ahmed0saber" class="fa fa-telegram" target="_blank"></a>
-            <a href="https://github.com/ahmed0saber" class="fa fa-github" target="_blank"></a>
-            <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen" target="_blank"></a>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script>
-    let questions = ["Which tag is used to create a caption for a fieldset element ?!" , "To pick only one choice from many radio inputs , They must have the same ..." , "A form is used to ..." , "Where can the script tag be used ?!" , "Can a web page work without title ?!" , "Which one isn't an input type ?!" , "If you want to insert a web page inside your own one , what should you use ?!" , "The canvas tag is used to ..." , "How many style tags can be used in the same page ?!" , "Using <a> tag , to open an url in a new tab , we use ..."] , a = ["marquee" , "name" , "arrange elements" , "in head" , "yes" , "hidden" , "<canvas>" , "run animation" , "unlimited number" , "tab=\"_new\""] , b = ["legend" , "value" , "get data from the user as input" , "in body" , "no" , "button" , "<iframe>" , "draw shapes" , "just one" , "tab=\"_same\""] , c = ["view" , "text" , "show data to the user as output" , "outside both of them" , "depends upon the browser" , "touch" , "<a>" , "develop games" , "depends upon how many head tags exist" , "target=\"_blank\""] , d = ["caption" , "type" , "allow user to use a keyboard" , "all of the above" , "depends upon if it has head or not" , "color" , "<webview>" , "all of the above" , "none of the above" , "target=\"_self\""] , answers = ["2" , "1" , "2" , "4" , "1" , "3" , "2" , "4" , "1" , "3"] , i=0 , score=0;
-    begin();
-    function begin(){
-        document.getElementById("restart"). style.display="none";
-        document.getElementById("div11"). style.display="none";
-        document.getElementById("div10"). style.display="block";
-        document.getElementById("score").textContent="Score : 0"
-        i=0;
-        score=0;
+    </body>
+    <script>
+      let questions = ["Which tag is used to create a caption for a fieldset element ?!" , "To pick only one choice from many radio inputs , They must have the same ..." , "A form is used to ..." , "Where can the script tag be used ?!" , "Can a web page work without title ?!" , "Which one isn't an input type ?!" , "If you want to insert a web page inside your own one , what should you use ?!" , "The canvas tag is used to ..." , "How many style tags can be used in the same page ?!" , "Using <a> tag , to open an url in a new tab , we use ..."] , a = ["marquee" , "name" , "arrange elements" , "in head" , "yes" , "hidden" , "<canvas>" , "run animation" , "unlimited number" , "tab=\"_new\""] , b = ["legend" , "value" , "get data from the user as input" , "in body" , "no" , "button" , "<iframe>" , "draw shapes" , "just one" , "tab=\"_same\""] , c = ["view" , "text" , "show data to the user as output" , "outside both of them" , "depends upon the browser" , "touch" , "<a>" , "develop games" , "depends upon how many head tags exist" , "target=\"_blank\""] , d = ["caption" , "type" , "allow user to use a keyboard" , "all of the above" , "depends upon if it has head or not" , "color" , "<webview>" , "all of the above" , "none of the above" , "target=\"_self\""] , answers = ["2" , "1" , "2" , "4" , "1" , "3" , "2" , "4" , "1" , "3"] , i=0 , score=0;
+      begin();
+      function begin(){
+          document.getElementById("restart"). style.display="none";
+          document.getElementById("div11"). style.display="none";
+          document.getElementById("div10"). style.display="block";
+          document.getElementById("score").textContent="Score : 0"
+          i=0;
+          score=0;
+          document.getElementById("question"). textContent=questions[i];
+          document.getElementById("choice1"). textContent=a[i];
+          document.getElementById("choice2"). textContent=b[i];
+          document.getElementById("choice3"). textContent=c[i];
+          document.getElementById("choice4"). textContent=d[i];
+          document.getElementById("num"). textContent=i+1;
+      }
+      function check()
+      {
+        var id = "answer"+answers[i];
+        if(document.getElementById(id).checked)
+        {
+          score+=10;
+          document.getElementById("score"). textContent="Score : "+score;
+        }
+        for(var x=1;x<5;x++)
+        {
+          document.getElementById("answer"+x).checked=false;
+        }
+        i++;
+        if(i==10)
+        {
+          document.getElementById("div10"). style.display="none";
+          document.getElementById("div11"). style.display="block";
+          document.querySelector("#user_score").value=score;
+        }
         document.getElementById("question"). textContent=questions[i];
         document.getElementById("choice1"). textContent=a[i];
         document.getElementById("choice2"). textContent=b[i];
         document.getElementById("choice3"). textContent=c[i];
         document.getElementById("choice4"). textContent=d[i];
         document.getElementById("num"). textContent=i+1;
-    }
-    function check()
-    {
-      var id = "answer"+answers[i];
-      if(document.getElementById(id).checked)
-      {
-        score+=10;
-        document.getElementById("score"). textContent="Score : "+score;
       }
-      for(var x=1;x<5;x++)
+      function test(i)
       {
-        document.getElementById("answer"+x).checked=false;
+          if(i==1)
+          {
+              document.getElementById("div0"). style.display="none";
+              document.getElementById("div1"). style.display="block";
+          }
+          else if(i==2)
+          {
+              document.getElementById("div0"). style.display="none";
+              document.getElementById("soon"). style.display="block";
+          }
+          else if(i==3)
+          {
+              document.getElementById("div0"). style.display="none";
+              document.getElementById("soon"). style.display="block";
+          }
       }
-      i++;
-      if(i==10)
+      function view()
       {
-        document.getElementById("div10"). style.display="none";
-        document.getElementById("div11"). style.display="block";
-        document.querySelector("#user_score").value=score;
+        document.getElementById("div0"). style.display="none";
+        document.getElementById("div2"). style.display="block";
       }
-      document.getElementById("question"). textContent=questions[i];
-      document.getElementById("choice1"). textContent=a[i];
-      document.getElementById("choice2"). textContent=b[i];
-      document.getElementById("choice3"). textContent=c[i];
-      document.getElementById("choice4"). textContent=d[i];
-      document.getElementById("num"). textContent=i+1;
-    }
-    function test(i)
-    {
-        if(i==1)
-        {
-            document.getElementById("div0"). style.display="none";
-            document.getElementById("div1"). style.display="block";
-        }
-        else if(i==2)
-        {
-            document.getElementById("div0"). style.display="none";
-            document.getElementById("soon"). style.display="block";
-        }
-        else if(i==3)
-        {
-            document.getElementById("div0"). style.display="none";
-            document.getElementById("soon"). style.display="block";
-        }
-    }
-    function view()
-    {
-      document.getElementById("div0"). style.display="none";
-      document.getElementById("div2"). style.display="block";
-    }
-    function about()
-    {
-      document.getElementById("div0"). style.display="none";
-      document.getElementById("div3"). style.display="block";
-    }
-    function back()
-    {
-      document.getElementById("div1"). style.display="none";
-      document.getElementById("div2"). style.display="none";
-      document.getElementById("div3"). style.display="none";
-      document.getElementById("soon"). style.display="none";
-      document.getElementById("div0"). style.display="block";
-    }
-
-
-    function nav(i) {
-        if (i == 1) {
-            $("#picker").css("margin-left", "0px");
-            $("#btn2").css("width", "30%");
-            $("#btn3").css("width", "30%");
-            $("#btn1").css("width", "40%");
-            $("#cssrank").css("display", "none");
-            $("#jsrank").css("display", "none");
-            $("#htmlrank").css("display", "block");
-        }
-        else if (i == 2) {
-            $("#picker").css("margin-left", "30%");
-            $("#btn1").css("width", "30%");
-            $("#btn3").css("width", "30%");
-            $("#btn2").css("width", "40%");
-            $("#htmlrank").css("display", "none");
-            $("#jsrank").css("display", "none");
-            $("#cssrank").css("display", "block");
-        }
-        else if (i == 3) {
-            $("#picker").css("margin-left", "60%");
-            $("#btn1").css("width", "30%");
-            $("#btn2").css("width", "30%");
-            $("#btn3").css("width", "40%");
-            $("#htmlrank").css("display", "none");
-            $("#cssrank").css("display", "none");
-            $("#jsrank").css("display", "block");
-        }
-    }
-
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-  if(localStorage.getItem("viewed")=="y")
-  {
-    console.log('0');
-  }
-  else
-  {
-  var views = new XMLHttpRequest();
-  views.open("GET", "https://api.countapi.xyz/hit/clicks/85bb3a11-5fb8-45fe-b571-2a119a4316a9");
-  views.responseType = "json";
-  views.send();
-  localStorage.setItem("viewed", "y");
-  }
-  $.getJSON("https://api.countapi.xyz/get/clicks/85bb3a11-5fb8-45fe-b571-2a119a4316a9", function(response) {
-  console.log(response);
-  $("#viewsnum").text(response.value);
-  });
+      function about()
+      {
+        document.getElementById("div0"). style.display="none";
+        document.getElementById("div3"). style.display="block";
+      }
+      function back()
+      {
+        document.getElementById("div1"). style.display="none";
+        document.getElementById("div2"). style.display="none";
+        document.getElementById("div3"). style.display="none";
+        document.getElementById("soon"). style.display="none";
+        document.getElementById("div0"). style.display="block";
+      }
   
-
-  const domain = "https://api-and-websockets.herokuapp.com"
-  let build_board = async (name) => {
-            let url = domain + `/api/get_scores/${name}/` // you can change this to "https://api-and-websockets.herokuapp.com/api/get_scores"
-            console.log(url);
-            let data = await fetch(url)
-            data = await data.json()            
-            let container = document.querySelector("#ranking");
-            container.innerHTML = "<tr><td id='ranks'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>";
-            var x=0;
-            for (item of data){
-              if(item.score<=100&&item.score>=0&&item.score%10==0)
-              {
-                x++;
-                tag = `
-                <tr>
-                <td id='ranks'>
-                    ${x}
-                </td>
-                <td id='names'>
-                    ${item.name}
-                </td>
-                <td id='scores'>
-                    ${item.score}
-                </td>
-                </tr>
-                `
-                container.innerHTML += tag
+  
+      function nav(i) {
+          if (i == 1) {
+              $("#picker").css("margin-left", "0px");
+              $("#btn2").css("width", "30%");
+              $("#btn3").css("width", "30%");
+              $("#btn1").css("width", "40%");
+              $("#cssrank").css("display", "none");
+              $("#jsrank").css("display", "none");
+              $("#htmlrank").css("display", "block");
+          }
+          else if (i == 2) {
+              $("#picker").css("margin-left", "30%");
+              $("#btn1").css("width", "30%");
+              $("#btn3").css("width", "30%");
+              $("#btn2").css("width", "40%");
+              $("#htmlrank").css("display", "none");
+              $("#jsrank").css("display", "none");
+              $("#cssrank").css("display", "block");
+          }
+          else if (i == 3) {
+              $("#picker").css("margin-left", "60%");
+              $("#btn1").css("width", "30%");
+              $("#btn2").css("width", "30%");
+              $("#btn3").css("width", "40%");
+              $("#htmlrank").css("display", "none");
+              $("#cssrank").css("display", "none");
+              $("#jsrank").css("display", "block");
+          }
+      }
+  
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    if(localStorage.getItem("viewed")=="y")
+    {
+      console.log('0');
+    }
+    else
+    {
+    var views = new XMLHttpRequest();
+    views.open("GET", "https://api.countapi.xyz/hit/users/8a21fd30-abc2-42c1-ba8d-4e24da353a8c");
+    views.responseType = "json";
+    views.send();
+    localStorage.setItem("viewed", "y");
+    }
+    $.getJSON("https://api.countapi.xyz/get/users/8a21fd30-abc2-42c1-ba8d-4e24da353a8c", function(response) {
+    console.log(response);
+    $("#viewsnum").text(response.value);
+    });
+    
+  
+    const domain = "https://api-and-websockets.herokuapp.com"
+    let build_board = async (name) => {
+              let url = domain + `/api/get_scores/${name}/` // you can change this to "https://api-and-websockets.herokuapp.com/api/get_scores"
+              console.log(url);
+              let data = await fetch(url)
+              data = await data.json()            
+              let container = document.querySelector("#ranking");
+              container.innerHTML = "<tr><td id='ranks'>Rank</td><td id='names'>Name</td><td id='scores'>Score</td></tr>";
+              var x=0;
+              for (item of data){
+                if(item.score<=100&&item.score>=0&&item.score%10==0)
+                {
+                  x++;
+                  tag = `
+                  <tr>
+                  <td id='ranks'>
+                      ${x}
+                  </td>
+                  <td id='names'>
+                      ${item.name}
+                  </td>
+                  <td id='scores'>
+                      ${item.score}
+                  </td>
+                  </tr>
+                  `
+                  container.innerHTML += tag
+                }
               }
-            }
-            
-        }
-
-  build_board("html");
-
-
-  let saveScoreBtn = document.querySelector("#submitscore")
-        saveScoreBtn.onclick = async () => {
-            console.log("start saving the score")
-            let user_score = document.querySelector("#user_score").value
-            let user_name = document.querySelector("#score_name").value
-            let url = domain + "/api/save_score/"
-            let data = await fetch(url , {
-                method: "POST", 
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body:JSON.stringify({
-                    "board": "html",
-                    "password": "ahmed0saber",
-                    "score": parseInt(user_score), // you have to send data with the right datatype
-                    "name": user_name
-                }) 
-            })
-            document.getElementById("div11"). style.display="none";
-            document.getElementById("score").textContent="Score submited";
-            document.getElementById("restart"). style.display="block";
-        }
-  </script>
+              
+          }
+  
+    build_board("html");
+  
+  
+    let saveScoreBtn = document.querySelector("#submitscore")
+          saveScoreBtn.onclick = async () => {
+              console.log("start saving the score")
+              let user_score = document.querySelector("#user_score").value
+              let user_name = document.querySelector("#score_name").value
+              let url = domain + "/api/save_score/"
+              let data = await fetch(url , {
+                  method: "POST", 
+                  headers: {
+                      "Content-Type": "application/json"
+                  },
+                  body:JSON.stringify({
+                      "board": "html",
+                      "password": "ahmed0saber",
+                      "score": parseInt(user_score), // you have to send data with the right datatype
+                      "name": user_name
+                  }) 
+              })
+              document.getElementById("div11"). style.display="none";
+              document.getElementById("score").textContent="Score submited";
+              document.getElementById("restart"). style.display="block";
+          }
+    </script>
 </html>
