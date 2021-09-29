@@ -142,6 +142,27 @@
                 padding: 10px;
                 background-color: var(--pri);
                 border-radius: 5px;
+                position: relative;
+            }
+            .front{
+              width: 100%;
+            }
+            .back{
+              position: absolute;
+              width: calc(100% - 20px);
+              top: 0;
+              margin: 10px 0px;
+              display: none;
+              background-color: #0005;
+              color: #fff;
+              border-radius: 5px;
+            }
+            .centered{
+              position: absolute;
+              top: 50%;
+              width: 100%;
+              -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
             }
             .projectImg{
                 width:100%;
@@ -150,7 +171,9 @@
                 border: 1px solid #0002;
                 border-radius: 5px;
                 box-sizing: border-box;
+                transition: filter 0.6s linear;
             }
+            .blur { filter: blur(3px); }
             .try{
                 width: 75%;
                 height: 35px;
@@ -261,7 +284,7 @@
                     'down down';
                 }
                 #project{
-                    width:calc(50% - 30px);
+                    width:calc(100% - 30px);
                 }
             }
             @media screen and (max-width: 650px) {
@@ -295,14 +318,14 @@
                 <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp social" target="_blank"></a>
                 <a href="https://t.me/ahmed0saber" class="fa fa-telegram social" target="_blank"></a>
                 <a href="https://github.com/ahmed0saber" class="fa fa-github social" target="_blank"></a>
-                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen social" target="_blank"></a>
+                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen social" target="_blank"></a><br>
                 <button class="edit" onclick="pic()">Change Picture</button>
                 <button class="edit" onclick="theme()">Change Theme</button>
                 <p>You can change the theme and profile picture using these two buttons , Just try !!</p>
             </div>
             <div id="bio" class="divs">
                 <p class="shaded header">Who is me ?!<span id="righted">1 minute read</span></p>
-                <p class="shaded">Hello there ,<br>My name is Ahmed Saber , An egyptian developer who was born in 2001.<br>I like coding , gaming , painting , reading , writing and finally you.</p><hr><p class="shaded">Looking at past , I used to play computer games when I was less than 10 years , I still remember these games , Warcraft , red alert , stronghold crusader , epic war III/IV/V/saga and more , which made me think about how these games got created , asking my friend Google , I got introduced to Scratch , Game maker studio and Construct 2 , which helped me create my first few games and upload them to Kongregate.</p><hr><p class="shaded">After years , I met Sketchware on my road "The road to be programmer" which is an easy-to-use tool making android app development more and more easier.</p><hr><p class="shaded">Years later , I just wanted to know how these game engines treat with machine , ok we all know the rest , I have became a coder.</p><hr><p class="shaded">Beginning with C++ to get an idea about this topic called coding , then Python because I wanted to let the hacker inside me out by scraping and automating web pages.</p><hr><p class="shaded">But now , I'm the one creating these pages , how weird , I have become a web developer , yet my designs were scary that's why I'm learning UI/UX design.</p>
+                <p class="shaded">Hello there ,<br>My name is Ahmed Saber , An egyptian developer who was born in 2001.<br>I like coding , gaming , painting , reading , writing and finally you.</p><hr><p class="shaded">Looking at past , I used to play computer games when I was less than 10 years , I still remember these games , Warcraft , red alert , stronghold crusader , epic war III/IV/V/saga and more , which made me think about how these games got created , asking my friend Google , I got introduced to Scratch , Game maker studio and Construct 2 , which helped me create my first few games and upload them to Kongregate.</p><hr><p class="shaded">After years , I met Sketchware on my road "The road to be programmer" which is an easy-to-use tool making android app development more and more easier.</p><hr><p class="shaded">Years later , I just wanted to know how these game engines treat with machine , ok we all know the rest , I have become a coder.</p><hr><p class="shaded">Beginning with C++ to get an idea about this topic called coding , then Python because I wanted to let the hacker inside me out by scraping and automating web pages.</p><hr><p class="shaded">But now , I'm the one creating these pages , how weird , I have become a web developer , yet my designs were scary that's why I'm learning UI/UX design.</p>
                 <button class="react" onclick="like()"><i class="fa fa-thumbs-up liker"></i><span id="likebtn">Like</span></button>
                 <p id="likes"><span id="counter">0</span> people liked this</p>
             </div>
@@ -338,64 +361,81 @@
                         <div class="front">
                             <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
-                        <div id="back">
+                        <div class="back">
+                          <div class="centered">
                             <p>Project 1</p>
                             <p>Description</p>
                             <button class="try">Try Now</button>
-                            <button class="try">More info</button>
+                            </div>
                         </div>
+                        <button class="try backbtn" onclick="moreInfo(0)">More info</button>
                     </div>
-    
+                    
                     <div id="project">
                         <div class="front">
                             <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
-                        <div id="back">
-                            <p>Project 1</p>
+                        <div class="back">
+                          <div class="centered">
+                            <p>Project 2</p>
                             <p>Description</p>
                             <button class="try">Try Now</button>
+                            </div>
                         </div>
+                        <button class="try backbtn" onclick="moreInfo(1)">More info</button>
                     </div>
-    
+                    
                     <div id="project">
                         <div class="front">
                             <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
-                        <div id="back">
-                            <p>Project 1</p>
+                        <div class="back">
+                          <div class="centered">
+                            <p>Project 3</p>
                             <p>Description</p>
                             <button class="try">Try Now</button>
+                            </div>
                         </div>
+                        <button class="try backbtn" onclick="moreInfo(2)">More info</button>
                     </div>
-    
+                    
                     <div id="project">
                         <div class="front">
                             <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
-                        <div id="back">
-                            <p>Project 1</p>
+                        <div class="back">
+                          <div class="centered">
+                            <p>Project 4</p>
                             <p>Description</p>
                             <button class="try">Try Now</button>
+                            </div>
                         </div>
+                        <button class="try backbtn" onclick="moreInfo(3)">More info</button>
                     </div>
-    
+                    
                     <div id="project">
                         <div class="front">
                             <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
-                        <div id="back">
-                            <p>Project 1</p>
+                        <div class="back">
+                          <div class="centered">
+                            <p>Project 5</p>
                             <p>Description</p>
                             <button class="try">Try Now</button>
+                            </div>
                         </div>
+                        <button class="try backbtn" onclick="moreInfo(4)">More info</button>
                     </div>
+    
+                    
+    
+                    
+                    
+                    
+                    
                 </div>
                 
-
-
-
             </div>
-
 
         </div>
     </body>
@@ -502,6 +542,21 @@
         document.querySelector(':root').style.setProperty('--title',themes3[themeNum]);
         if(themeNum==5)
         {themeNum=-1;}
+      }
+      
+      function moreInfo(x)
+      {
+        document.getElementsByClassName("projectImg")[x].classList.toggle('blur');
+        if(document.getElementsByClassName("back")[x].style.display==false || document.getElementsByClassName("back")[x].style.display=="none")
+        {
+          document.getElementsByClassName("back")[x].style.height=document.getElementsByClassName("front")[x].offsetHeight-5;
+        document.getElementsByClassName("back")[x].style.display="block";
+        document.getElementsByClassName("backbtn")[x].textContent="Less info";
+        }
+        else{
+          document.getElementsByClassName("back")[x].style.display="none";
+          document.getElementsByClassName("backbtn")[x].textContent="More info";
+        }
       }
     </script>
 </html>
