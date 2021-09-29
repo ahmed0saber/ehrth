@@ -14,8 +14,8 @@
             #projects { grid-area: down; }
             .divs {
                 margin: 5px auto;
-                width: calc(100% - 30px);
-                /*height: 300px;*/
+                width: calc(100% - 5px);
+                box-sizing: border-box;
                 background-color:#fff;
                 border: 1px solid #0003;
                 border-radius:5px;
@@ -37,6 +37,7 @@
             #cover{
                 height:150px;
                 width:100%;
+                box-sizing: border-box;
                 background-color:#33f;
                 border-radius:5px;
                 border: 1px solid #0002;
@@ -46,17 +47,18 @@
                 width: 150px;
                 border: 4px solid #fff;
                 border-radius:50%;
-                animation: spin0 2s linear infinite;
+                animation: spin0 2.5s linear infinite;
             }
             #imgcontainer{
-                border: 12px solid #0000;
+                border: 12px solid #fff;
                 border-top: 12px solid #33f;
                 border-bottom: 12px solid #33f;
+                background-color: #ddf;
                 border-radius: 50%;
                 width: 158px;
                 height: 158px;
                 margin: 0px;
-                animation: spin1 2s linear infinite;
+                animation: spin1 2.5s linear infinite;
             }
             @keyframes spin0{
                 0% {transform: rotate(0deg);}
@@ -78,11 +80,14 @@
             #name{
                 font-size:25px;
                 font-weight:bold;
+                -webkit-text-stroke: 1px #000;
+                color: #00f;
                 font-family: 'Times New Roman', Times, serif;
             }
             #title{
                 font-size:20px;
-                opacity:0.85;
+                opacity:0.8;
+                color: #005;
             }
             .fa {
                 color:#33f;
@@ -93,28 +98,29 @@
                 height: 50px;
                 width: 50px;
                 margin: 10px 4px 5px 4px;
-                background-color: #ddd;
+                background-color: #dde;
                 border-radius: 50%;
                 border: 1px solid #0002;
                 transition-duration: 0.5s;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
             }
             .fa:hover{
-                opacity: 0.7;
+                opacity: 0.6;
             }
             #bio{
                 background-color: #33f;
             }
             .shaded{
                 color: #fff;
-                text-shadow: 2px 2px 0px #005;
+                text-shadow: 1px 1px 0px #005;
                 font-size: 18px;
                 line-height:26px;
             }
             .stroked{
                 color: #00f;
                 -webkit-text-stroke: 1px #000;
-                font-size:18px;
+                font-size:19px;
+                line-height: 26px;
             }
             #contact{
                 background-color: #33f;
@@ -124,30 +130,84 @@
                 flex-wrap: wrap;
             }
             #project{
-                width:calc(20% - 30px);
+                width:calc(25% - 30px);
                 text-align: center;
                 margin: 4px;
                 border: 1px solid #0002;
                 padding: 10px;
-                background-color: #77f;
+                background-color: #33f;
                 border-radius: 5px;
             }
             .projectImg{
                 width:100%;
                 height: auto;
-                border: 1px solid #0002;
-            }
-            button{
-                width: 80%;
-                height: 30px;
-                margin: 5px 0 0 0;
+                margin: 0 0 5px 0;
                 border: 1px solid #0002;
                 border-radius: 5px;
-                background-color: #009;
-                color: #fff;
+                box-sizing: border-box;
             }
-            button:hover{
-                opacity: 0.85;
+            .try{
+                width: 75%;
+                height: 35px;
+                margin: 5px 0 0 0;
+                border: 2px solid #fff;
+                border-radius: 5px;
+                background-color: #33f;
+                color: #fff;
+                font-size: 18px;
+            }
+            .try:hover{
+                opacity: 0.75;
+            }
+            .edit{
+              width: 135px;
+              height: 35px;
+              font-size: 17px;
+              margin: 5px;
+              border: 1px solid #0002;
+              border-radius: 5px;
+              background-color: #33f;
+              color: #fff;
+            }
+            .react{
+              width: 65px;
+              height: 35px;
+              font-size: 19px;
+              margin: 5px 0px -11px -11px;
+              border: 2px solid #fff;
+              border-radius: 0px 0px 0px 5px;
+              background-color: #33f;
+              color: #fff;
+            }
+            #likes{
+              float: right;
+              color: #fff;
+              margin: 10px 0 0 0;
+            }
+            .more{
+              width: 135px;
+              height: 35px;
+              font-size: 19px;
+              margin: 5px;
+              border: 1px solid #0002;
+              border-radius: 5px;
+              background-color: #33f;
+              color: #fff;
+            }
+            .save{
+              width: 80px;
+              height: 35px;
+              font-size: 19px;
+              border: 2px solid #fff;
+              border-radius: 50px;
+              background-color: #33f;
+              color: #fff;
+              margin: 5px;
+              margin-left: calc(50% - 40px);
+            }
+            .hidden{
+              opacity: 0;
+              transition-duration: 1s;
             }
 
 
@@ -165,7 +225,7 @@
                     'down down';
                 }
                 #project{
-                    width:calc(25% - 30px);
+                    width:calc(100%/3 - 30px);
                 }
             }
             @media screen and (max-width: 950px) {
@@ -176,7 +236,7 @@
                     'down down';
                 }
                 #project{
-                    width:calc(100%/3 - 30px);
+                    width:calc(50% - 30px);
                 }
             }
             @media screen and (max-width: 650px) {
@@ -189,7 +249,7 @@
                     'down';
                 }
                 #project{
-                    width:calc(50% - 30px);
+                    width:calc(100% - 30px);
                 }
             }
         </style>
@@ -206,30 +266,40 @@
                 <p id="name">Ahmed Saber</p>
                 <p id="title">Frontend web developer</p>
                 <p id="title">UI/UX designer</p>
-                <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook"></a>
-                <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp"></a>
-                <a href="https://t.me/ahmed0saber" class="fa fa-telegram"></a>
-                <a href="https://github.com/ahmed0saber" class="fa fa-github"></a>
-                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen"></a>
-                <p></p>
+                <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook" target="_blank"></a>
+                <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp" target="_blank"></a>
+                <a href="https://t.me/ahmed0saber" class="fa fa-telegram" target="_blank"></a>
+                <a href="https://github.com/ahmed0saber" class="fa fa-github" target="_blank"></a>
+                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen" target="_blank"></a>
+                <button class="edit" onclick="pic()">Change Picture</button>
+                <button class="edit" onclick="theme()">Change Theme</button>
+                <p>You can change the theme and profile picture using these two buttons , Just try !!</p>
             </div>
             <div id="bio" class="divs">
                 <p class="shaded">{Bio}</p>
                 <p class="shaded">My name is Ahmed Saber</p>
                 <p class="shaded">I was born in Egypt</p>
                 <p class="shaded">To be continued...</p>
+                <button class="react">Like</button>
+                <p id="likes">0 people liked this</p>
             </div>
             <div id="contact" class="divs">
                 <p class="shaded">{Contact}</p>
+                <p class="shaded">Name : Ahmed Saber</p>
+                <p class="shaded">Birthday : 5 july 2001</p>
                 <p class="shaded">Address : Desouk , Kafr El Sheikh , Egypt</p>
                 <p class="shaded">Phone number : +20 120 861 1892</p>
                 <p class="shaded">Gmail : ahmed0saber33@gmail.com</p>
-                <p class="shaded">To be continued...</p>
+                <a id="infoPic" href="https://drive.google.com/uc?id=1YZHzIcZ6SZTKKL-go10-bY1e5mqhYv0G&export=download" download><button class="save">Save</button></a>
             </div>
             <div id="skills" class="divs">
                 <p class="stroked">{Skills}</p>
-                <p class="stroked">HTML , CSS , JavaScript</p>
-                <p class="stroked">To be continued...</p>
+                <p class="stroked">HTML<span class="hidden">/HTML5</span></p>
+                <p class="stroked">CSS<span class="hidden">/CSS3 , Bootstrap</span></p>
+                <p class="stroked">JavaScript<span class="hidden">/ES6 , jQuery</span></p>
+                <p class="stroked"><span class="hidden">C++</span></p>
+                <p class="stroked"><span class="hidden">Python</span></p>
+                <button class="more" onclick="show()" id="showhide">See more</button>
             </div>
 
 
@@ -243,56 +313,56 @@
                 <div id="projectsContainer">
                     <div id="project">
                         <div class="front">
-                            <img class="projectImg" src="https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
+                            <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
                         <div id="back">
                             <p>Project 1</p>
                             <p>Description</p>
-                            <button>Try Now</button>
+                            <button class="try">Try Now</button>
                         </div>
                     </div>
     
                     <div id="project">
                         <div class="front">
-                            <img class="projectImg" src="https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
+                            <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
                         <div id="back">
                             <p>Project 1</p>
                             <p>Description</p>
-                            <button>Try Now</button>
+                            <button class="try">Try Now</button>
                         </div>
                     </div>
     
                     <div id="project">
                         <div class="front">
-                            <img class="projectImg" src="https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
+                            <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
                         <div id="back">
                             <p>Project 1</p>
                             <p>Description</p>
-                            <button>Try Now</button>
+                            <button class="try">Try Now</button>
                         </div>
                     </div>
     
                     <div id="project">
                         <div class="front">
-                            <img class="projectImg" src="https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
+                            <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
                         <div id="back">
                             <p>Project 1</p>
                             <p>Description</p>
-                            <button>Try Now</button>
+                            <button class="try">Try Now</button>
                         </div>
                     </div>
     
                     <div id="project">
                         <div class="front">
-                            <img class="projectImg" src="https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download">
+                            <img class="projectImg" src="https://via.placeholder.com/404x250">
                         </div>
                         <div id="back">
                             <p>Project 1</p>
                             <p>Description</p>
-                            <button>Try Now</button>
+                            <button class="try">Try Now</button>
                         </div>
                     </div>
                 </div>
@@ -305,4 +375,57 @@
 
         </div>
     </body>
+    <script>
+    var alerted = false;
+    var hidden = true;
+    var picNum = 0;
+    var pics = ["https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download","https://drive.google.com/uc?id=1Yz8dbMRUjJYIwAN8Wp7PlrwQ74Vl5UVq&export=download"];
+    var themeNum = 0;
+    themes = ["#33f","#a0a","#b33","#3a3","#0aa","#aa0"];
+      function show()
+      {
+        var x = document.getElementsByClassName("hidden");
+        for (var i = 0; i < x.length; i++) {
+          if(hidden)
+          {
+          x[i].style.opacity = "1";
+          }
+          else
+          {
+            x[i].style.opacity = "0";
+          }
+          }
+          if(hidden)
+          {hidden = false;
+            document.getElementById("showhide").textContent="See less";
+          }
+          else{hidden = true;
+            document.getElementById("showhide").textContent="See more";
+          }
+      }
+      
+      function pic()
+      {
+        if(picNum==0)
+        {picNum=1;}
+        else
+        {picNum=0;}
+        document.getElementById("profile_pic").src=pics[picNum];
+        if(!alerted)
+        {
+        alert("This process may take seconds , that depends upon your internet connection");
+        alerted=true;
+        }
+      }
+      
+      function theme()
+      {
+        themeNum+=1;
+        document.getElementById("cover").style.backgroundColor=themes[themeNum];
+        document.getElementById("imgcontainer").style.borderTop="12px solid "+themes[themeNum];
+        document.getElementById("imgcontainer").style.borderBottom="12px solid "+themes[themeNum];
+        if(themeNum==5)
+        {themeNum=-1;}
+      }
+    </script>
 </html>
