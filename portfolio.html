@@ -449,9 +449,9 @@
     localStorage.setItem("liked", "y");
     $.getJSON("https://api.countapi.xyz/get/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1", function(response) {
     console.log(response);
-    document.getElementById("likebtn").textContent="Liked";
     $("#counter").text(response.value);
     });
+    document.getElementById("likebtn").textContent="Liked";
     }
     }
     
