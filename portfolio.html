@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Portfolio</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -94,7 +95,7 @@
                 opacity:0.8;
                 color: var(--title);
             }
-            .fa {
+            .social {
                 color: var(--pri);
                 font-size: 30px;
                 text-align: center;
@@ -108,7 +109,7 @@
                 border: 1px solid #0002;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
             }
-            .fa:hover{
+            .social:hover{
                 opacity: 0.6;
             }
             #bio{
@@ -174,7 +175,7 @@
               color: #fff;
             }
             .react{
-              width: 65px;
+              width: 80px;
               height: 35px;
               font-size: 19px;
               margin: 5px 0px -11px -11px;
@@ -182,6 +183,12 @@
               border-radius: 0px 0px 0px 5px;
               background-color: var(--pri);
               color: #fff;
+            }
+            .react:hover{
+              opacity: 0.7;
+            }
+            .liker{
+              padding: 2px;
             }
             #likes{
               float: right;
@@ -284,11 +291,11 @@
                 <p id="name">Ahmed Saber</p>
                 <p id="title">Frontend web developer</p>
                 <p id="title">UI/UX designer</p>
-                <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook" target="_blank"></a>
-                <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp" target="_blank"></a>
-                <a href="https://t.me/ahmed0saber" class="fa fa-telegram" target="_blank"></a>
-                <a href="https://github.com/ahmed0saber" class="fa fa-github" target="_blank"></a>
-                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen" target="_blank"></a>
+                <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook social" target="_blank"></a>
+                <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp social" target="_blank"></a>
+                <a href="https://t.me/ahmed0saber" class="fa fa-telegram social" target="_blank"></a>
+                <a href="https://github.com/ahmed0saber" class="fa fa-github social" target="_blank"></a>
+                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen social" target="_blank"></a>
                 <button class="edit" onclick="pic()">Change Picture</button>
                 <button class="edit" onclick="theme()">Change Theme</button>
                 <p>You can change the theme and profile picture using these two buttons , Just try !!</p>
@@ -296,8 +303,8 @@
             <div id="bio" class="divs">
                 <p class="shaded header">Who is me ?!<span id="righted">1 minute read</span></p>
                 <p class="shaded">Hello there ,<br>My name is Ahmed Saber , An egyptian developer who was born in 2001.<br>I like coding , gaming , painting , reading , writing and finally you.</p><hr><p class="shaded">Looking at past , I used to play computer games when I was less than 10 years , I still remember these games , Warcraft , red alert , stronghold crusader , epic war III/IV/V/saga and more , which made me think about how these games got created , asking my friend Google , I got introduced to Scratch , Game maker studio and Construct 2 , which helped me create my first few games and upload them to Kongregate.</p><hr><p class="shaded">After years , I met Sketchware on my road "The road to be programmer" which is an easy-to-use tool making android app development more and more easier.</p><hr><p class="shaded">Years later , I just wanted to know how these game engines treat with machine , ok we all know the rest , I have became a coder.</p><hr><p class="shaded">Beginning with C++ to get an idea about this topic called coding , then Python because I wanted to let the hacker inside me out by scraping and automating web pages.</p><hr><p class="shaded">But now , I'm the one creating these pages , how weird , I have become a web developer , yet my designs were scary that's why I'm learning UI/UX design.</p>
-                <button class="react">Like</button>
-                <p id="likes">0 people liked this</p>
+                <button class="react" onclick="like()"><i class="fa fa-thumbs-up liker"></i><span id="likebtn">Like</span></button>
+                <p id="likes"><span id="counter">0</span> people liked this</p>
             </div>
             <div id="contact" class="divs">
                 <p class="shaded header">Contact info</p>
@@ -417,6 +424,35 @@
     {
       themeNum=parseInt(localStorage.getItem("index"))-1;
       theme();
+    }
+    
+    $.getJSON("https://api.countapi.xyz/get/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1", function(response) {
+    console.log(response);
+    $("#counter").text(response.value);
+    });
+    if(localStorage.getItem("liked")=="y")
+    {
+      document.getElementById("likebtn").textContent="Liked";
+    }
+    
+    function like()
+    {
+    if(localStorage.getItem("liked")=="y")
+    {
+    }
+    else
+    {
+    var views = new XMLHttpRequest();
+    views.open("GET", "https://api.countapi.xyz/hit/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1");
+    views.responseType = "json";
+    views.send();
+    localStorage.setItem("liked", "y");
+    $.getJSON("https://api.countapi.xyz/get/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1", function(response) {
+    console.log(response);
+    document.getElementById("likebtn").textContent="Liked";
+    $("#counter").text(response.value);
+    });
+    }
     }
     
       function show()
