@@ -114,6 +114,7 @@
             }
             #bio{
                 background-color: var(--pri);
+                overflow-y: auto;
             }
             .shaded{
                 color: #fff;
@@ -201,7 +202,7 @@
               width: 80px;
               height: 35px;
               font-size: 19px;
-              margin: 5px 0px -11px -11px;
+              margin: 5px 0px 0px 0px;
               border: 2px solid #fff;
               border-radius: 0px 0px 0px 5px;
               background-color: var(--pri);
@@ -216,7 +217,7 @@
             #likes{
               float: right;
               color: #fff;
-              margin: 10px 0 0 0;
+              margin: 14px 0 0 0;
             }
             .more{
               width: 135px;
@@ -245,6 +246,8 @@
             }
             hr{
               border: 1px solid #fff9;
+              width: 80%;
+              margin-left: 10%;
             }
             #righted{
               float: right;
@@ -256,6 +259,22 @@
               background-color: #bbb3;
               border: 1px solid #0002;
               border-radius: 5px;
+            }
+            ::-webkit-scrollbar {
+                width: 15px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #d9d9d944;
+                border-radius: 0px 3px 3px 0px;
+                border: 1px solid #fff2;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #d9d9d955;
+                border-radius: 0px 3px 3px 0px;
+                border: 1px solid #fff2;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #d9d9d977;
             }
 
 
@@ -317,8 +336,7 @@
                 <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook social" target="_blank"></a>
                 <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp social" target="_blank"></a>
                 <a href="https://t.me/ahmed0saber" class="fa fa-telegram social" target="_blank"></a>
-                <a href="https://github.com/ahmed0saber" class="fa fa-github social" target="_blank"></a>
-                <a href="https://codepen.io/ahmed0saber" class="fa fa-codepen social" target="_blank"></a><br>
+                <a href="https://github.com/ahmed0saber" class="fa fa-github social" target="_blank"></a><br>
                 <button class="edit" onclick="pic()">Change Picture</button>
                 <button class="edit" onclick="theme()">Change Theme</button>
                 <p>You can change the theme and profile picture using these two buttons , Just try !!</p>
@@ -440,6 +458,23 @@
         </div>
     </body>
     <script>
+    reportWindowSize();
+    function reportWindowSize() {
+        if(window.innerWidth>650)
+        {
+            document.getElementById("bio").style.height="0px";
+            document.getElementById("bio").style.height=document.getElementById("profile").offsetHeight;
+            document.getElementById("bio").style.overflow="auto";
+        }
+        else
+        {
+            document.getElementById("bio").style.overflow="hidden";
+            document.getElementById("bio").style.height="auto";
+        }
+    }
+    window.addEventListener('resize', reportWindowSize);
+
+    
     var alerted = false;
     var hidden = true;
     var picNum = 0;
@@ -483,15 +518,15 @@
     else
     {
     var views = new XMLHttpRequest();
+    $.getJSON("https://api.countapi.xyz/get/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1", function(response) {
+    console.log(response);
+    $("#counter").text(response.value+1);
+    });
+    document.getElementById("likebtn").textContent="Liked";
     views.open("GET", "https://api.countapi.xyz/hit/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1");
     views.responseType = "json";
     views.send();
     localStorage.setItem("liked", "y");
-    $.getJSON("https://api.countapi.xyz/get/likes/ea519fd0-3d00-42f0-8a05-71080cce09b1", function(response) {
-    console.log(response);
-    $("#counter").text(response.value);
-    });
-    document.getElementById("likebtn").textContent="Liked";
     }
     }
     
