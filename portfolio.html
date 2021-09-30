@@ -1,13 +1,15 @@
 <html>
     <head>
         <title>Portfolio</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             :root {
               --body: #bbf;
-              --pri: #33f;
+              --pri: #3030dd;
               --title: #005;
             }
             *{margin:0;
@@ -45,7 +47,7 @@
                 width:100%;
                 box-sizing: border-box;
                 background-color:var(--pri);
-                border-radius:5px;
+                border-radius:5px 5px 0 0;
                 border: 1px solid #0002;
             }
             #profile_pic{
@@ -108,9 +110,6 @@
                 border-radius: 50%;
                 border: 1px solid #0002;
                 -webkit-tap-highlight-color: rgba(0,0,0,0);
-            }
-            .social:hover{
-                opacity: 0.6;
             }
             #bio{
                 background-color: var(--pri);
@@ -185,9 +184,6 @@
                 color: #fff;
                 font-size: 18px;
             }
-            .try:hover{
-                opacity: 0.75;
-            }
             .edit{
               width: 135px;
               height: 35px;
@@ -207,9 +203,6 @@
               border-radius: 0px 0px 0px 5px;
               background-color: var(--pri);
               color: #fff;
-            }
-            .react:hover{
-              opacity: 0.7;
             }
             .liker{
               padding: 2px;
@@ -258,7 +251,7 @@
               padding: 5px;
               background-color: #bbb3;
               border: 1px solid #0002;
-              border-radius: 5px;
+              border-radius: 5px 5px 0 0;
             }
             ::-webkit-scrollbar {
                 width: 15px;
@@ -275,6 +268,36 @@
             }
             ::-webkit-scrollbar-thumb:hover {
                 background: #d9d9d977;
+            }
+            .social:hover{
+                opacity: 0.7;
+            }
+            button:hover{
+                opacity: 0.7;
+                cursor: pointer;
+            }
+
+            .accordion {
+                background-color: #eee;
+                color: #000;
+                cursor: pointer;
+                padding: 15px;
+                width: 100%;
+                border: 1px solid #0002;
+                text-align: left;
+                outline: none;
+                font-size: 20px;
+            }
+            .active, .accordion:hover {
+                background-color: #ccc;
+                opacity: 1;
+            }
+            .panel {
+                padding: 0;
+                background-color: #ddd;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
             }
 
 
@@ -318,6 +341,15 @@
                 #project{
                     width:calc(100% - 30px);
                 }
+                .social:hover{
+                    opacity: 1;
+                }
+                button:hover{
+                    opacity: 1;
+                }
+                .active , .accordion:hover {
+                    background-color: #eee;
+                }
             }
         </style>
     </head>
@@ -332,6 +364,7 @@
                 </div>
                 <p id="name">Ahmed Saber</p>
                 <p id="title">Frontend web developer</p>
+                <p id="title">Android developer</p>
                 <p id="title">UI/UX designer</p>
                 <a href="https://www.facebook.com/profile.php?id=100004875915808" class="fa fa-facebook social" target="_blank"></a>
                 <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp social" target="_blank"></a>
@@ -358,105 +391,163 @@
             </div>
             <div id="skills" class="divs">
                 <p class="stroked header">My skills</p>
-                <p class="stroked">HTML<span class="hidden">/HTML5</span></p>
-                <p class="stroked">CSS<span class="hidden">/CSS3 , Bootstrap</span></p>
-                <p class="stroked">JavaScript<span class="hidden">/ES6 , jQuery</span></p>
-                <p class="stroked"><span class="hidden">C++</span></p>
-                <p class="stroked"><span class="hidden">Python</span></p>
+                <p class="stroked">-HTML<span class="hidden">/HTML5</span></p>
+                <p class="stroked">-CSS<span class="hidden">/CSS3 , Bootstrap</span></p>
+                <p class="stroked">-JavaScript<span class="hidden">/ES6 , jQuery , electronJS</span></p>
+                <p class="stroked">-Dart<span class="hidden"> , Flutter</span></p>
+                <p class="stroked"><span class="hidden">-C++</span></p>
                 <button class="more" onclick="show()" id="showhide">See more</button>
             </div>
 
 
             <div id="projects" class="divs">
-                <p class="stroked header">My projects<span id="righted">5 projects</span></p>
+                <p class="stroked header">My projects<span id="righted">7 projects</span></p>
+                <button class="accordion">Web projects<span id="righted">5 projects</span></button>
+                <div class="panel">
+                    <div id="projectsContainer">
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 1</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(0)">More info</button>
+                        </div>
+                        
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 2</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(1)">More info</button>
+                        </div>
+                        
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 3</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(2)">More info</button>
+                        </div>
+                        
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 4</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(3)">More info</button>
+                        </div>
+                        
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 5</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(4)">More info</button>
+                        </div>
+                    </div><!--projectsContainer-->
+                </div><!--panel-->
+
+                <button class="accordion">Android apps<span id="righted">1 project</span></button>
+                <div class="panel">
+                    <div id="projectsContainer">
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 1</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(5)">More info</button>
+                        </div>
+                    </div><!--projectsContainer-->
+                </div><!--panel-->
+
+                <button class="accordion">UI/UX designs<span id="righted">1 project</span></button>
+                <div class="panel">
+                    <div id="projectsContainer">
+                        <div id="project">
+                            <div class="front">
+                                <img class="projectImg" src="https://via.placeholder.com/404x250">
+                            </div>
+                            <div class="back">
+                              <div class="centered">
+                                <p>Project 1</p>
+                                <p>Description</p>
+                                <button class="try">Try Now</button>
+                                </div>
+                            </div>
+                            <button class="try backbtn" onclick="moreInfo(6)">More info</button>
+                        </div>
+                    </div><!--projectsContainer-->
+                </div><!--panel-->
 
 
 
 
-
-                <div id="projectsContainer">
-                    <div id="project">
-                        <div class="front">
-                            <img class="projectImg" src="https://via.placeholder.com/404x250">
-                        </div>
-                        <div class="back">
-                          <div class="centered">
-                            <p>Project 1</p>
-                            <p>Description</p>
-                            <button class="try">Try Now</button>
-                            </div>
-                        </div>
-                        <button class="try backbtn" onclick="moreInfo(0)">More info</button>
-                    </div>
-                    
-                    <div id="project">
-                        <div class="front">
-                            <img class="projectImg" src="https://via.placeholder.com/404x250">
-                        </div>
-                        <div class="back">
-                          <div class="centered">
-                            <p>Project 2</p>
-                            <p>Description</p>
-                            <button class="try">Try Now</button>
-                            </div>
-                        </div>
-                        <button class="try backbtn" onclick="moreInfo(1)">More info</button>
-                    </div>
-                    
-                    <div id="project">
-                        <div class="front">
-                            <img class="projectImg" src="https://via.placeholder.com/404x250">
-                        </div>
-                        <div class="back">
-                          <div class="centered">
-                            <p>Project 3</p>
-                            <p>Description</p>
-                            <button class="try">Try Now</button>
-                            </div>
-                        </div>
-                        <button class="try backbtn" onclick="moreInfo(2)">More info</button>
-                    </div>
-                    
-                    <div id="project">
-                        <div class="front">
-                            <img class="projectImg" src="https://via.placeholder.com/404x250">
-                        </div>
-                        <div class="back">
-                          <div class="centered">
-                            <p>Project 4</p>
-                            <p>Description</p>
-                            <button class="try">Try Now</button>
-                            </div>
-                        </div>
-                        <button class="try backbtn" onclick="moreInfo(3)">More info</button>
-                    </div>
-                    
-                    <div id="project">
-                        <div class="front">
-                            <img class="projectImg" src="https://via.placeholder.com/404x250">
-                        </div>
-                        <div class="back">
-                          <div class="centered">
-                            <p>Project 5</p>
-                            <p>Description</p>
-                            <button class="try">Try Now</button>
-                            </div>
-                        </div>
-                        <button class="try backbtn" onclick="moreInfo(4)">More info</button>
-                    </div>
-    
-                    
-    
-                    
-                    
-                    
-                    
-                </div>
                 
-            </div>
-
-        </div>
+                
+            </div><!--projects-->
+        </div><!--grid-container-->
     </body>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+    <script>
+        if(window.innerWidth<=650){
+            document.getElementById("skills").setAttribute('data-aos','slide-up');
+            document.getElementById("contact").setAttribute('data-aos','zoom-in');
+        }
+        AOS.init({
+        duration: 500
+        });
+    </script>
     <script>
     reportWindowSize();
     function reportWindowSize() {
@@ -480,8 +571,8 @@
     var picNum = 0;
     var pics = ["https://drive.google.com/uc?id=1LerskcCbdpHcbnCKzKUoW0AcqtuRJoj5&export=download","https://drive.google.com/uc?id=1Yz8dbMRUjJYIwAN8Wp7PlrwQ74Vl5UVq&export=download"];
     var themeNum = 0;
-    themes = ["#33f","#800080","#b33","#383","#0aa","#990"];
-    themes2 = ["#bbf","#fbf","#fbb","#bfb","#bff","#ffb"];
+    themes = ["#3030dd","#800080","#b82020","#308830","#008080","#808000"];
+    themes2 = ["#bbf","#eae","#fbb","#bfb","#aee","#eea"];
     themes3 = ["#005","#505","#500","#050","#055","#550"];
     
     if(localStorage.getItem("index3")==1)
