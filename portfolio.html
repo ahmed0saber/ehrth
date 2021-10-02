@@ -13,7 +13,8 @@
               --title: #005;
             }
             *{margin:0;
-            padding:0;}
+            padding:0;
+            font-family: 'Times New Roman', Times, serif;}
             #profile {grid-area: topLeft;
             text-align: center;}
             #bio { grid-area: topRight; }
@@ -183,6 +184,25 @@
                 background-color: var(--pri);
                 color: #fff;
                 font-size: 18px;
+                animation: zooming 1s linear infinite;
+            }
+            @keyframes zooming{
+                0%{
+                    width: 75%;
+                    height: 35px;
+                    margin: 5px 0 0 0;
+                }
+                50%{
+                    width: 80%;
+                    height: 41px;
+                    margin: 2px 0 -3px 0;
+                }
+                100%
+                {
+                    width: 75%;
+                    height: 35px;
+                    margin: 5px 0 0 0;
+                }
             }
             .edit{
               width: 135px;
@@ -301,6 +321,11 @@
                 overflow: hidden;
                 transition: max-height 0.2s ease-out;
             }
+            .new1{
+                background-color: #fff;
+                color: #000;
+                border: 1px solid #000;
+            }
 
 
 
@@ -372,14 +397,14 @@
                 <a href="https://api.whatsapp.com/send?phone=+201208611892&text=Hello" class="fa fa-whatsapp social" target="_blank"></a>
                 <a href="https://t.me/ahmed0saber" class="fa fa-telegram social" target="_blank"></a>
                 <a href="https://github.com/ahmed0saber" class="fa fa-github social" target="_blank"></a><br>
-                <button class="edit" onclick="pic()">Change Picture</button>
-                <button class="edit" onclick="theme()">Change Theme</button>
+                <button class="edit buttons" onclick="pic()">Change Picture</button>
+                <button class="edit buttons" onclick="theme()">Change Theme</button>
                 <p>You can change the theme and profile picture using these two buttons , Just try !!</p>
             </div>
             <div id="bio" class="divs">
                 <p class="shaded header">Who is me ?!<span id="righted">1 minute read</span></p>
                 <p class="shaded">Hello there ,<br>My name is Ahmed Saber , An egyptian developer who was born in 2001.<br>I like coding , gaming , painting , reading , writing and finally you.</p><hr><p class="shaded">Looking at past , I used to play computer games when I was less than 10 years , I still remember these games , Warcraft , red alert , stronghold crusader , epic war III/IV/V/saga and more , which made me think about how these games got created , asking my friend Google , I got introduced to Scratch , Game maker studio and Construct 2 , which helped me create my first few games and upload them to Kongregate.</p><hr><p class="shaded">After years , I met Sketchware on my road "The road to be programmer" which is an easy-to-use tool making android app development more and more easier.</p><hr><p class="shaded">Years later , I just wanted to know how these game engines treat with machine , ok we all know the rest , I have become a coder.</p><hr><p class="shaded">Beginning with C++ to get an idea about this topic called coding , then Python because I wanted to let the hacker inside me out by scraping and automating web pages.</p><hr><p class="shaded">But now , I'm the one creating these pages , how weird , I have become a web developer , yet my designs were scary that's why I'm learning UI/UX design.</p>
-                <button class="react" onclick="like()"><i class="fa fa-thumbs-up liker"></i><span id="likebtn">Like</span></button>
+                <button class="react buttons" onclick="like()"><i class="fa fa-thumbs-up liker"></i><span id="likebtn">Like</span></button>
                 <p id="likes"><span id="counter">0</span> people liked this</p>
             </div>
             <div id="contact" class="divs">
@@ -389,7 +414,7 @@
                 <p class="shaded">Address : Desouk , Kafr El Sheikh , Egypt</p>
                 <p class="shaded">Phone number : +20 120 861 1892</p>
                 <p class="shaded">Gmail : ahmed0saber33@gmail.com</p>
-                <a id="infoPic" href="https://drive.google.com/uc?id=1YZHzIcZ6SZTKKL-go10-bY1e5mqhYv0G&export=download" download><button class="save">Save</button></a>
+                <a id="infoPic" href="https://drive.google.com/uc?id=1YZHzIcZ6SZTKKL-go10-bY1e5mqhYv0G&export=download" download><button class="save buttons">Save</button></a>
             </div>
             <div id="skills" class="divs">
                 <p class="stroked header">My skills</p>
@@ -398,7 +423,7 @@
                 <p class="stroked">-JavaScript<span class="hidden">/ES6 , jQuery , electronJS</span></p>
                 <p class="stroked">-Dart<span class="hidden"> , Flutter</span></p>
                 <p class="stroked"><span class="hidden">-C++</span></p>
-                <button class="more" onclick="show()" id="showhide">See more</button>
+                <button class="more buttons" onclick="show()" id="showhide">See more</button>
             </div>
 
 
@@ -526,6 +551,16 @@
         </div><!--grid-container-->
     </body>
     <script>
+      $(document).ready(function() {
+        $(".nohover").click(function() {
+          $(this).addClass("new1");
+          setTimeout(function(){
+            $(".new1").removeClass("new1");
+          },100);
+        });
+      });
+    </script>
+    <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
         
@@ -543,8 +578,12 @@
     </script>
     <script>
         if(window.innerWidth<=650){
-            document.getElementById("skills").setAttribute('data-aos','slide-up');
+            document.getElementById("skills").setAttribute('data-aos','zoom-in');
             document.getElementById("contact").setAttribute('data-aos','zoom-in');
+            $(".accordion").addClass("nohover");
+            $(".buttons").addClass("nohover");
+            $(".try").addClass("nohover");
+            $(".fa").addClass("nohover");
         }
         AOS.init({
         duration: 500
