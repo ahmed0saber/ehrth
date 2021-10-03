@@ -1,0 +1,317 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code Touch</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #000;
+                color: #fff;
+            }
+            #header{
+                background-color: #222;
+            }
+            #header-right{
+                float: right;
+            }
+            #header a{
+                padding: 10px;
+                background-color: #000;
+                line-height:42px;
+                color: #eee;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 18px;
+                border: 1px solid #fff3;
+                font-family: sans-serif;
+                transition-duration: 0.3s;
+            }
+            #header a:hover{
+                background-color: #eee;
+                color: #000;
+            }
+            #border{
+                float: left;
+                margin: 20px auto;
+                padding:2px;
+                background-color: #eee4;
+                width: fit-content;
+                clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            }
+            #rightinfo{
+                height: auto;
+                width: 300px;
+                text-align: center;
+                background-color: #080808;
+                padding: 20px;
+                font-family: 'Times New Roman', Times, serif;
+                border-radius:5px;
+                clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            }
+            #rightinfo #main{
+                color:#eeec;
+                font-size: 24px;
+                margin:0px 0px 10px 0px;
+            }
+            #rightinfo #sub{
+                color:#eeea;
+                font-size: 16px;
+                margin: 0px 0px 10px 0px;
+            }
+            #leftinfo{
+                float: left;
+                margin: auto;
+                width: fit-content;
+                padding: 10px;
+            }
+            #leftinfo #main{
+                color:#eee;
+                font-size: 70px;
+                margin:15px 0px 10px 0px;
+            }
+            #leftinfo #sub{
+                color:#eeeb;
+                font-size: 35px;
+                margin:15px 0px 10px 0px;
+            }
+            .btns{
+                width: 250px;
+                height: 50px;
+                color: #eee9;
+                background-color:#2223;
+                border: 1px solid #eee5;
+                font-size:25px;
+                border-radius:5px;
+                transition-duration: 0.5s;
+                margin:40px 0px 200px calc(50% - 125px);
+            }
+            .btns:hover{
+                color: #fff;
+                background-color:#000;
+                border: 1px solid #eee5;
+                box-shadow: 0px 0px 5px #eee9;
+                font-size:25px;
+                border-radius:10px;
+            }
+            #mypic{
+                height: 150;
+                width: 150;
+                border-radius: 50%;
+                border: 1px solid #eee5;
+            }
+            #title{
+                font-size:50px;
+                text-align:center;
+                color: #fffc;
+            }
+            .container{
+                text-align:center;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+            }
+            .card{
+                width: 30%;
+                height: 500px;
+                background-color: #eee1;
+                margin: 40px auto;
+                text-align:center;
+                padding: 10px;
+                border: 1px solid #eee5;
+                box-shadow: 0 0 5px #eee7;
+                border-radius:10px;
+            }
+            .fa{
+                font-size:150px;
+            }
+            #lang{
+                font-size:30px;
+                padding: 10px;
+            }
+            #des{
+                font-size: 18px;
+                padding: 20px;
+                text-align:left;
+                opacity: 0.92;
+            }
+            .enroll{
+                width: 200px;
+                height: 50px;
+                color: #eee9;
+                background-color:#2223;
+                border: 1px solid #eee2;
+                font-size:25px;
+                border-radius:5px;
+                transition-duration: 0.5s;
+                margin:40px 0px 0px 0px;
+            }
+            .enroll:hover{
+                color: #fff;
+                background-color:#000;
+                border: 1px solid #eee5;
+                box-shadow: 0px 0px 5px #eee8;
+                border-radius:10px;
+            }
+            #contact{
+                width: 400px;
+                height:auto;
+                margin: 50px auto;
+                text-align:center;
+            }
+            #contact p{
+                font-size:35px;
+                color: #eeec;
+                margin: 5px;
+            }
+            .txt{
+                width: 80%;
+                padding: 10px;
+                background-color: #3333;
+                margin: 5px 0px;
+                border: 1px solid #eee5;
+                outline: none;
+                border-radius:5px;
+                transition-duration: 0.5s;
+            }
+            .txt:focus{
+                color: #fff;
+                background-color:#000;
+                border: 1px solid #eee5;
+            }
+            textarea{
+                height: 200px;
+            }
+            .submit{
+                width: 80%;
+                margin: 10px 0px;
+                height: 40px;
+                border: 1px solid #eee5;
+                background-color: #3333;
+                color: #eeeb;
+                font-size: 20px;
+                border-radius:5px;
+                transition-duration: 0.5s;
+            }
+            .submit:hover{
+                color: #fff;
+                background-color:#1118;
+                border: 1px solid #eee5;
+                box-shadow: 0px 0px 5px #eee8;
+                border-radius:10px;
+            }
+
+
+
+
+
+
+            
+            @media screen and (min-width: 1150px) {
+                #info{
+                position: relative;
+                height: 100%;
+                }
+                #border{
+                    position:absolute;
+                    right: 40px;
+                    top: 70px;
+                }
+                #leftinfo{
+                    position:absolute;
+                    left: 30px;
+                    top: 100px;
+                }
+                .btns{
+                margin:20px 0px 0px calc(50% - 125px);
+                }
+            }
+            @media screen and (min-width: 1300px) {
+                #border{
+                    position:absolute;
+                    right: 80px;
+                }
+                #leftinfo{
+                    position:absolute;
+                    left: 70px;
+                }
+            }
+            @media screen and (max-width: 1150px) {
+                #border{
+                    float: none;
+                }
+                #leftinfo{
+                    float: none;
+                }
+                .card{
+                    width: 45%;
+                }
+            }
+            @media screen and (max-width: 650px) {
+                #border{
+                    float: none;
+                }
+                #leftinfo{
+                    float: none;
+                }
+                .card{
+                    width: 75%;
+                }
+                .container{
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <a href="#">Home</a>
+            <div id="header-right">
+                <a href="#">About</a><a href="#">Contact</a><a href="#">Log in</a>
+            </div>
+        </div>
+        <div id="info">
+            <div id="leftinfo">
+                <p id="main">Code Touch</p>
+                <p id="sub">The best gate to enter the world of programming...!</p>
+                <button class="btns">Get started</button>
+            </div>
+            <div id="border">
+                <div id="rightinfo">
+                    <p id="main">Founder</p>
+                    <img src="a.jpg" id="mypic">
+                    <p id="main">Ahmed Saber</p>
+                    <p id="sub">"Oops" is always better than "What if"</p>
+                </div>
+            </div>
+        </div>
+        <p id="title">Available courses</p>
+        <div class="container">
+            <div class="card">
+                <i class="fa fa-html5"></i>
+                <p id="lang">HTML5</p>
+                <p id="des">What will you learn :<br><br>1- HTML basics<br>2- Its new version HTML5</p>
+                <button class="enroll">Enroll now</button>
+            </div>
+            <div class="card">
+                <i class="fa fa-css3"></i>
+                <p id="lang">CSS3</p>
+                <p id="des">What will you learn :<br><br>1- CSS basics<br>2- Its new version CSS3</p>
+                <button class="enroll">Enroll now</button>
+            </div>
+        </div>
+        <div id="contact">
+            <p>Contact us</p>
+            <form>
+                <input type="text" class="txt" placeholder="Full name">
+                <input type="text" class="txt" placeholder="Subject">
+                <textarea class="txt" placeholder="Message"></textarea>
+                <button class="submit">Send</button>
+            </form>
+        </div>
+    </body>
+</html>
